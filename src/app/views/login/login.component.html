@@ -1,52 +1,50 @@
 <!-- WELCOME TO EAT2MEET -->
-  <div class="e2m-layout vfes-color-bg-vodafone-gradient-red vfes-ws10">
-      <div class="e2m-container">
+<div class="e2m-layout vfes-color-bg-vodafone-gradient-red vfes-ws10">
+    <div class="e2m-container">
         <h1 class="e2m-title vfes-title vfes-tittle--center">
-          <span><strong>Bienvenid@ a</strong></span>
-          <img src="../../../assets/svg/logo-e2m-login.svg" title="logo EAT2MEET">
+            <span><strong>Bienvenid@ a</strong></span>
+            <img src="../../../assets/svg/logo-e2m-login.svg" title="logo EAT2MEET">
         </h1>
         <div class="e2m-form vfes-color-bg-vodafone-white">
-          <img class="" src="../../../assets/svg/plato-01.svg">
-          <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
-              <div class="vfes-form__box">
-                  <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="label" id="texto2" name="texto2" placeholder="Email" type="text" formControlName="email"/>
-                  <span class="vfes-form__label" id="label">Email</span>
-                  <p class="vfes-form__error-text">Please enter your correct email</p>
-                  <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <img class="" src="../../../assets/svg/plato-01.svg">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="vfes-form__box">
+                    <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="label" id="texto2" name="texto2" placeholder="Email" type="text" formControlName="email" />
+                    <span class="vfes-form__label" id="label">Email</span>
+                    <p class="vfes-form__error-text">Please enter your correct email</p>
+                    <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
                       <title>Warning</title>
                       <use class="icon-v3" xlink:href='#icon3-warning'></use>
                   </svg>
-                  <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+                    <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
                       <title>Tick</title>
                       <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
                   </svg>
-              </div>
-              <div class="vfes-form__box">
-                  <input class="vfes-form__input vfes-form__input" type="text" formControlName="password" placeholder="Password"/>
-                  <span class="vfes-form__label" id="label">Password</span>
-                  <p class="vfes-form__error-text">Please enter your correct password</p>
-                  <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+                </div>
+                <div class="vfes-form__box">
+                    <input class="vfes-form__input vfes-form__input" type="text" formControlName="password" placeholder="Password" />
+                    <span class="vfes-form__label" id="label">Password</span>
+                    <p class="vfes-form__error-text">Please enter your correct password</p>
+                    <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
                       <title>Warning</title>
                       <use class="icon-v3" xlink:href='#icon3-warning'></use>
                   </svg>
-                  <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+                    <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
                       <title>Tick</title>
                       <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
                   </svg>
-              </div>
-              <div class="vfes-form-flex--top">
-                  <div class="vfes-form-flex">
-                    <input class="vfes-form__switch" type="checkbox" id="switch4" name="worry-free-data" value="">
-                    <label class="vfes-form__switch-label" for="switch4"></label>
-                    <p>Recuérdame</p>
-                  </div>
-                  <a class="vfes-link vfes-link--no-chevron">¿Has olvidado la contraseña?</a>
-              </div>
-              <input class="vfes-button" type="button" aria-labelledby="label" id="texto2" name="texto2" placeholder="Email" value="Bon apetit"/>
-          </form>
+                </div>
+                <div class="vfes-form-flex--top">
+                    <div class="vfes-form-flex">
+                        <input class="vfes-form__switch" type="checkbox" id="switch4" name="worry-free-data" value="">
+                        <label class="vfes-form__switch-label" for="switch4"></label>
+                        <p>Recuérdame</p>
+                    </div>
+                    <a class="vfes-link vfes-link--no-chevron">¿Has olvidado la contraseña?</a>
+                </div>
+                <input class="vfes-button" type="button" aria-labelledby="label" id="texto2" name="texto2" placeholder="Email" value="Bon apetit" />
+            </form>
         </div>
-        <a class="e2m-link vfes-paragraph vfes-paragraph--center vfes-link vfes-link--no-chevron">¿No estás registrado?</a>
-      </div>
-  </div>
-
-
+        <a [routerLink]="['/registro']" class="e2m-link vfes-paragraph vfes-paragraph--center vfes-link vfes-link--no-chevron">¿No estás registrado?</a>
+    </div>
+</div>
