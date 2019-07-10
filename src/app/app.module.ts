@@ -12,6 +12,7 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './component/header/header.component';
 
 @NgModule({
   declarations: [

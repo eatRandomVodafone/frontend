@@ -1,0 +1,40 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.ws10.scss';
+.cont {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    width: 328px;
+    height: 82px;
+    font-family: VodafoneLt;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #333333;
+    margin-top: 14px;
+    margin-bottom: 32px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.image {
+    //width: 264px;
+    height: 405px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    $size: 48px;
+    margin-left: $size;
+    margin-right: $size;
+}
+
+.button {
+    margin: 30px 18px 23px 14px;
+}
