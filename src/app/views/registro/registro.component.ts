@@ -12,7 +12,7 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegistroComponent implements OnInit {
 
-
+  errorMail = false;
   registroForm: FormGroup;
   completeForm = false;
 
@@ -55,6 +55,9 @@ export class RegistroComponent implements OnInit {
         console.log('Registro successfull');
       });
 
+      this.errorMail = false;
+    }else{
+      this.errorMail = true;
     }
   }
 
