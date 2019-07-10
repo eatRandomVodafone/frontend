@@ -10,6 +10,9 @@ import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/tokenInt';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,17 @@ import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

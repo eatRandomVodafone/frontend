@@ -10,5 +10,5 @@ export class RegisterService {
     private http: HttpClient,
   ) { }
 
-
+  
 }

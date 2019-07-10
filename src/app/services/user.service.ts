@@ -16,4 +16,9 @@ export class UserService {
       return this.http.post(url, body);
   }
   //jwt
+
+  getUsers(){
+    return this.http.get('https://pokea23pi.co/api/v2/')
+  }
+
 }
