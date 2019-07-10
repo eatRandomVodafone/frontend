@@ -1,3 +1,31 @@
-<p>
-  registro works!
-</p>
+<form [formGroup]="registroForm">
+  <label>
+    Nombre:
+    <input type="text" formControlName="nombre">
+  </label>
+
+  <label>
+    Email:
+    <input type="text" formControlName="email">
+  </label>
+
+  <label>
+    Password:
+    <input type="text" formControlName="password">
+  </label>
+
+  <label>
+    Area:
+    <input type="text" formControlName="area">
+  </label>
+
+  <label>
+    Rol:
+    <input type="text" formControlName="rol">
+  </label>
+
+  <label>
+    Bio:
+    <input type="text" formControlName="bio">
+  </label>
+</form>
