@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-confirm',
@@ -51,9 +53,15 @@ export class ConfirmComponent implements OnInit {
       'textgrey': '5 Piezas de fruta al día dan alegría'
     }
   ]
-  constructor() { }
+  constructor(
+    private aRoute: ActivatedRoute,
+    private titleService: Title
+  ) { }
 
   ngOnInit() {
+    // Set title page
+    this.aRoute.data
+      .subscribe(data => this.titleService.setTitle(data.title));
   }
 
 }
