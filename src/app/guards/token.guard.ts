@@ -14,15 +14,12 @@ export class TokenGuard implements CanLoad {
   }
 
  async canLoad(route: Route) {
-
     const token = await this.tokenSrv.getToken();
-
     if(token){
       return Promise.resolve(true);
     }
-
     this.router.navigate(['/login'])
-    return Promise.resolve(false);
+    return Promise.resolve(true);
 
  }
 
