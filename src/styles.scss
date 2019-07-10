@@ -4,3 +4,14 @@ $columns-widths-delimiter-default: \/;
 // LOAD VERSION WS10
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.ws10.scss';
+
+
+
+// wrapper
+
+.e2m-wrapper{
+ max-width: 640px;
+ min-width: 360px;
+ margin: auto;
+ padding: 0 16px;   
+}
