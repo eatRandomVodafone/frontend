@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-
+  completeForm = false;
   private unsubscribe = new Subject();
 
   constructor(
@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
     });
    }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.onValueChanges();
+  }
   onSubmit(){
     const email = this.loginForm.get('email').value;
     if(this.loginForm.valid && this.validEmail(email)){
@@ -39,13 +40,23 @@ export class LoginComponent implements OnInit {
       this.userSrv.checkLogin(loginData)
       .pipe(
         takeUntil(this.unsubscribe)
-      )
-      .subscribe(resp =>{
-        // this.tokenSrv.saveToken(resp.jwt);
+        )
+        .subscribe(resp =>{
+          // this.tokenSrv.saveToken(resp.jwt);
 
-      });
+        });
 
+      }
     }
+
+  private onValueChanges(){
+    this.loginForm.valueChanges
+      .pipe(
+        takeUntil(this.unsubscribe)
+      )
+      .subscribe(() => {
+        this.completeForm = this.loginForm.valid ? true : false;
+      });
   }
 
   private validEmail(email){//Validacion correos vodafone

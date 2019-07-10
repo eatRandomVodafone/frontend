@@ -46,8 +46,14 @@
 
 
 
-    <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="bio" id="bio" name="bio" placeholder="Cuéntanos algo sobre ti" formControlName="bio"/>
-    <button type="button" name="cta" title="CTA" class="vfes-button vfes-button--primary" data-analytics-element="" data-analytics-category="cta">
+      <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="bio" id="bio" name="bio" placeholder="Cuéntanos algo sobre ti" formControlName="bio"/>
+    <button type="submit"
+            name="cta"
+            title="CTA"
+            class="vfes-button"
+            [ngClass]="completeForm ? 'vfes-button--primary': ''"
+            data-analytics-element=""
+            data-analytics-category="cta">
         Registrarme
     </button>
   </form>
