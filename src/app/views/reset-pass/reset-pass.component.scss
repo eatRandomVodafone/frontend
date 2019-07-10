@@ -1,0 +1,92 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.ws10.scss';
+
+.e2m-container{
+  padding: 16pxgit ;
+}
+.e2m-layout{
+  height: 100vh;
+
+  .e2m-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span{
+      font-size: 24px;
+      padding-top: 38px;
+    }
+
+    img{
+      padding: 12px 0 40px 0;
+    }
+  }
+  .e2m-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 0 16px 24px;
+    position: relative;
+
+
+    span#label{
+      color: #333;
+    }
+
+    img{
+      position: absolute;
+      top: -50px;
+    }
+
+    .vfes-button{
+      margin-top: 35px;
+      padding: 15px 0;
+      // background-color: #ccc;
+      font-size: 18px;
+      width: 100%;
+      // color: #fff;
+    }
+
+    .vfes-form__switch-label{
+      margin-right: 10px;
+    }
+  }
+
+  .vfes-form__box{
+    margin-bottom: 15px;
+  }
+
+  .vfes-form__box:nth-child(1){
+    margin-top: 81px;
+  }
+
+  .vfes-form-flex{
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .vfes-form-flex--top{
+    margin-top: 30px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+  }
+  .vfes-form__error-text{
+    display: block!important;
+    color:#E60000;
+  }
+
+  .e2m-link{
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: underline;
+    width: 100%;
+    margin-top: 40px;
+  }
+}

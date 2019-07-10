@@ -7,6 +7,7 @@ import {ProfileComponent} from './views/profile/profile.component';
 import {ConfirmComponent} from './views/confirm/confirm.component';
 import {StatusComponent} from './views/status/status.component';
 import {TokenGuard} from './guards/token.guard';
+import {ResetPassComponent} from './views/reset-pass/reset-pass.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,13 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Eat 2 Meet | Login'
+    }
+  },
+  {
+    path: 'reset-password',
+    component: ResetPassComponent,
+    data: {
+      title: 'Eat 2 Meet | Resetea tu contraseña'
     }
   },
   {
