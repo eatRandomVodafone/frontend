@@ -4,18 +4,17 @@ import { HttpClient } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AltaService {
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  checkLogin(loginData: Object){
-      const url: string = `/eatwithrandom/signin`;
-      const body = loginData;
+  insertPool(newPool: Object){
+      const url: string = `/eatwithrandom/registerQueue`;
+      const body = newPool;
       return this.http.post(url, body);
+
   }
   //jwt
-
-
 }
