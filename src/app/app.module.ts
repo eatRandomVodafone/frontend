@@ -11,9 +11,13 @@ import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/tokenInt';
 import { HeaderComponent } from './components/header/header.component';
+=======
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> feature/login
 
 @NgModule({
   declarations: [
@@ -32,6 +36,7 @@ import { HeaderComponent } from './components/header/header.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
+<<<<<<< HEAD
   ],
   providers: [
     {
@@ -39,6 +44,8 @@ import { HeaderComponent } from './components/header/header.component';
       useClass: TokenInterceptor,
       multi: true
     }
+=======
+>>>>>>> feature/login
   ],
   bootstrap: [AppComponent]
 })
