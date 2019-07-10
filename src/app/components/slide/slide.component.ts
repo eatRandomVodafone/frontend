@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation, Input } from '@angular/core';
 import Carousel from '@vodafone-es/web-simplicity-2-reboot/resources/assets/scripts/es/_carousel';
 
 @Component({
@@ -9,6 +9,7 @@ import Carousel from '@vodafone-es/web-simplicity-2-reboot/resources/assets/scri
 })
 export class SlideComponent implements OnInit, AfterViewInit {
   @ViewChild('templateCarousel') carouselHtml: ElementRef;
+  @Input() img: string;
 
   constructor() { }
 
@@ -20,6 +21,10 @@ export class SlideComponent implements OnInit, AfterViewInit {
       {
           $element: this.carouselHtml.nativeElement
       }).init(); 
+  }
+
+  generateURL(imgName: string) {
+    return `assets/img/${imgName}`;
   }
 
 }

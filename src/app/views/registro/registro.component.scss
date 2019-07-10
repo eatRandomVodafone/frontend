@@ -5,8 +5,13 @@
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.scss';
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.ws10.scss';
 
-.background {
+.vfes-wrapper {
     background-image: url('/assets/img/fondo-registro.jpg');
+    padding: 0 16px;
+}
+
+.vfes-card {
+    background-color: #ffffff;
 }
 
 .title {
