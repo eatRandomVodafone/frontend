@@ -16,12 +16,12 @@
                    disabled=true/>
                    Individual
           </label>
-
-    <p>Quiero comer una persona de...</p>
+    <!-- ONE TO ONE -->
+    <!-- <p>Quiero comer una persona de...</p>
     <select class="custom-select"  formControlName="departament">
         <option value="" disabled>Selecciona un departamento</option>
         <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
-    </select>
+    </select> -->
 
     <p>Mi horario preferido es...</p>
         <label>
@@ -36,7 +36,10 @@
                  value="14h"/>
           De 14:00 a 15:00 horas
         </label>
-
+    <div>
+      <input type="checkbox" name="wantEnglish">
+      <span>Me gustaría hablar en inglés</span>
+    </div>
     <div>
       <p>Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
     </div>
