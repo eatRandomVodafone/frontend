@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.userSrv.getUsers().subscribe(response => console.log(response));
   }
 
   onSubmit(){
