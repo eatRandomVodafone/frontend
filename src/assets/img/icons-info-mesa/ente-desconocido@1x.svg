@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="65px" viewBox="0 0 65 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>ente-desconocido@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Info-de-mesa" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.-EstamosConfirmandoMesa" transform="translate(-27.000000, -333.000000)">
+            <g id="Group-5" transform="translate(16.000000, 322.000000)">
+                <g id="Alien-3" transform="translate(11.000000, 11.000000)">
+                    <g id="Alien">
+                        <g id="Analyst_Man">
+                            <rect id="Rectangle" x="0" y="0" width="65" height="65"></rect>
+                        </g>
+                        <g id="alien" transform="translate(13.000000, 5.000000)" fill-rule="nonzero">
+                            <polygon id="Rectangle" fill="#BCE8F7" transform="translate(9.736586, 12.622753) rotate(-112.240828) translate(-9.736586, -12.622753) " points="1.21208302 10.5505137 18.2667951 10.5270957 18.2610881 14.6949922 1.20637599 14.7184103"></polygon>
+                            <polygon id="Rectangle" fill="#8EC1D6" transform="translate(30.566550, 11.884557) rotate(-157.759172) translate(-30.566550, -11.884557) " points="28.4940789 3.52901649 32.6619755 3.52330946 32.6390214 20.2400978 28.4711249 20.2458049"></polygon>
+                            <circle id="Oval" fill="#BCE8F7" cx="6.21621622" cy="4.05405405" r="4.05405405"></circle>
+                            <circle id="Oval" fill="#8EC1D6" cx="33.7837838" cy="4.05405405" r="4.05405405"></circle>
+                            <path d="M20,15.1351351 C8.95428383,15.1351351 0,23.9715773 0,34.8719278 C0,45.7722783 15.2829543,60 20,60 C24.7170457,60 40,45.7722783 40,34.8720442 C40,23.9716937 31.0457162,15.1351351 20,15.1351351 Z" id="Path" fill="#BCE8F7"></path>
+                            <path d="M20,15.1351351 L20,60 C24.7170457,60 40,45.7722783 40,34.8720442 C40,23.9716937 31.0457162,15.1351351 20,15.1351351 Z" id="Path" fill="#8EC1D6"></path>
+                            <path d="M13.6816862,30.805108 C10.8457065,29.014289 7.02702703,30.0008287 7.02702703,30.0008287 C7.02702703,30.0008287 7.80654004,33.8907976 10.6426381,35.6813785 C13.4786178,37.4721975 17.2972973,36.4856578 17.2972973,36.4856578 C17.2972973,36.4856578 16.517666,32.595927 13.6816862,30.805108 Z" id="Path" fill="#444242"></path>
+                            <path d="M26.3183138,30.8050828 C23.482334,32.5959374 22.7027027,36.4857457 22.7027027,36.4857457 C22.7027027,36.4857457 26.5212639,37.472067 29.3573619,35.6814504 C32.1933417,33.8905957 32.972973,30.0007874 32.972973,30.0007874 C32.972973,30.0007874 29.1544118,29.0143471 26.3183138,30.8050828 Z" id="Path" fill="#3A3839"></path>
+                            <rect id="Rectangle" fill="#444242" x="17.2972973" y="47.5675676" width="5.40540541" height="2.7027027"></rect>
+                            <rect id="Rectangle" fill="#3A3839" x="20" y="47.5675676" width="2.7027027" height="2.7027027"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.ws10.scss';
+
+// Override Class
+
+.vfes-card{
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+}
+
+
+// Components
+.e2m-card{
+  margin-bottom: 10px;
+  &__content{
+    align-self: center;
+  }
+  &--nomargin{
+    margin: 0;
+  }
+  &--grey{
+    color: #333;
+  }
+}
