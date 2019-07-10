@@ -35,15 +35,15 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit(){
-    const email = this.registroForm.get('email');
+    const email = this.registroForm.get('email').value;
     if(this.registroForm.valid && this.validEmail(email)){
       const registroData = {
-        nombre: this.registroForm.get('nombre'),
+        nombre: this.registroForm.get('nombre').value,
         email: email,
-        password: this.registroForm.get('password'),
-        area: this.registroForm.get('area'),
-        rol: this.registroForm.get('rol'),
-        bio: this.registroForm.get('bio'),
+        password: this.registroForm.get('password').value,
+        area: this.registroForm.get('area').value,
+        rol: this.registroForm.get('rol').value,
+        bio: this.registroForm.get('bio').value,
       }
       this.registroSrv.doRegister(registroData)
       .pipe(

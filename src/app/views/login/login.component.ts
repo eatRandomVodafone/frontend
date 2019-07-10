@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(){
-    const email = this.loginForm.get('email');
+    const email = this.loginForm.get('email').value;
     if(this.loginForm.valid && this.validEmail(email)){
       const loginData = {
         email: email,
-        password: this.loginForm.get('password')
+        password: this.loginForm.get('password').value
       }
       this.userSrv.checkLogin(loginData)
       .pipe(
