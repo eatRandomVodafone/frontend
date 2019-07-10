@@ -14,6 +14,7 @@ export class RegistroComponent implements OnInit {
 
 
   registroForm: FormGroup;
+  completeForm = false;
 
   private unsubscribe = new Subject();
 
@@ -32,6 +33,7 @@ export class RegistroComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.onValueChanges();
   }
 
   onSubmit(){
@@ -54,6 +56,16 @@ export class RegistroComponent implements OnInit {
       });
 
     }
+  }
+
+  private onValueChanges(){
+    this.registroForm.valueChanges
+      .pipe(
+        takeUntil(this.unsubscribe)
+      )
+      .subscribe(() => {
+        this.completeForm = this.registroForm.valid ? true : false;
+      });
   }
 
   private validEmail(email){//Validacion correos vodafone

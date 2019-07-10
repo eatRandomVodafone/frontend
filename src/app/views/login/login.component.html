@@ -42,7 +42,14 @@
                     </div>
                     <a class="vfes-link vfes-link--no-chevron">¿Has olvidado la contraseña?</a>
                 </div>
-                <input class="vfes-button" type="submit" aria-labelledby="label" id="texto2" name="texto2" placeholder="Email" value="Bon apetit" />
+                <input class="vfes-button"
+                       [ngClass]="completeForm ? 'vfes-button--primary': ''"
+                       type="submit"
+                       aria-labelledby="label"
+                       id="texto2"
+                       name="texto2"
+                       placeholder="Email"
+                       value="Bon apetit" />
             </form>
         </div>
         <a [routerLink]="['/registro']" class="e2m-link vfes-paragraph vfes-paragraph--center vfes-link vfes-link--no-chevron">¿No estás registrado?</a>

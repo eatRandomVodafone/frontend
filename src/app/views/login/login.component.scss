@@ -6,7 +6,7 @@
 
 .e2m-layout{
     height: 100vh;
-    
+
     .e2m-title{
         display: flex;
         flex-direction: column;
@@ -29,7 +29,7 @@
         border-radius: 6px;
         padding: 0 16px 24px;
         position: relative;
-     
+
 
         span#label{
             color: #333;
@@ -43,10 +43,10 @@
         .vfes-button{
             margin-top: 35px;
             padding: 15px 0;
-            background-color: #ccc;
+            // background-color: #ccc;
             font-size: 18px;
             width: 100%;
-            color: #fff;
+            // color: #fff;
         }
 
         .vfes-form__switch-label{
@@ -57,7 +57,7 @@
     .vfes-form__box{
         margin-bottom: 15px;
     }
-    
+
     .vfes-form__box:nth-child(1){
         margin-top: 81px;
     }
