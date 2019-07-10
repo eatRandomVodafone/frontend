@@ -10,6 +10,7 @@ import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
+import { HeaderComponent } from './component/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
     StatusComponent,
     ConfirmComponent,
     ProfileComponent,
-    SvgSpritesheetDirective
+    SvgSpritesheetDirective,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
