@@ -1,0 +1,45 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.scss';
+
+
+
+.e2m-confirm {
+  background-color: #ebebeb;
+
+  &__header {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #e60000;
+    padding: 20px 16px 55px 16px;
+    margin-bottom: 60px;
+  }
+
+  &__bubble {
+    width: calc(100% - 32px);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+  &__headings{
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  &__share,
+  &__eating,
+  &__location,
+  &__footer{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+  }
+  &__footer{
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  &__btn{
+    width: 100%;
+  }
+
+}

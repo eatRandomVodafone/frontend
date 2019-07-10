@@ -14,13 +14,18 @@
 // Components
 .e2m-card{
   margin-bottom: 10px;
+  background-color: white;
   &__content{
     align-self: center;
+    justify-self: left;
+    color: #000;
   }
   &--nomargin{
     margin: 0;
   }
   &--grey{
+    align-self: center;
+    text-align: left;
     color: #333;
   }
 }

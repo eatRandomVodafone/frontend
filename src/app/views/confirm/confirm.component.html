@@ -1,5 +1,48 @@
-<app-card [img]="'icons-registro/dancing.png'"
-          [textBold]="'Texto en Negrita'"
-          [category]="'Category Custom'"
-          [text]="'Texto Libre'"></app-card>
+<app-header></app-header>
+
+
+<section class="e2m-confirm">
+  <div class="e2m-confirm__header">
+    <h2 class="e2m-confirm__headings"><strong>¡Esta es tu mesa!</strong></h2>
+    <p><strong>Disfruta de esta experiencia única en Vodafone Plaza</strong></p>
+    <app-card class="e2m-confirm__bubble"
+              [img]="'icons-registro/dancing.png'"
+              [textBold]="'Texto en Negrita'"
+              [category]="'Category Custom'"
+              [text]="'Texto Libre'"></app-card>
+  </div>
+  <div class="e2m-confirm__share">
+    <h2 class="e2m-confirm__headings">Con quien vas a compartir hoy</h2>
+    <app-card *ngFor="let item of userList"
+
+              [img]="item.img"
+              [textBold]="item.textbold"
+              [category]="item.category"
+              [text]="item.textgrey"></app-card>
+  </div>
+  <div class="e2m-confirm__eating">
+    <h2 class="e2m-confirm__headings">Cuando vas a comer hoy</h2>
+
+    <app-card *ngFor="let item of userEating"
+
+              [img]="item.img"
+              [textBold]="item.textbold"
+              [category]="item.category"
+              [text]="item.textgrey"></app-card>
+  </div>
+  <div class="e2m-confirm__location">
+    <h2 class="e2m-confirm__headings">Ubicacion</h2>
+
+    <app-card *ngFor="let item of location"
+
+              [img]="item.img"
+              [textBold]="item.textbold"
+              [category]="item.category"
+              [text]="item.textgrey"></app-card>
+  </div>
+  <div class="e2m-confirm__footer">
+    <h2 class="e2m-confirm__headings">¿Ha surgido un imprevisto?</h2>
+    <button type="submit" class="vfes-button vfes-button--secondary e2m-confirm__btn"> Cancelar la comida</button>
+  </div>
+</section>
 
