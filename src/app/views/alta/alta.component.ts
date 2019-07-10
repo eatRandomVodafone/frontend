@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-alta',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltaComponent implements OnInit {
 
-  constructor() { }
+  meetTypeSelected: string;
+  altaForm: FormGroup;
+  departamentos: any[] = ['A','B','C'];
 
-  ngOnInit() {
+  private unsubscribe = new Subject();
+
+  constructor(
+    private fb: FormBuilder,
+  ) {
+    this.altaForm = this.fb.group({
+      meetType: ['', [Validators.required]],
+      departament: ['', [Validators.required]],
+      radioTime: ['', [Validators.required]]
+    });
   }
 
+
+  ngOnInit() {
+
+  }
+
+  onSubmit(){
+    console.log("submit");
+  }
 }
