@@ -23,7 +23,7 @@ export class AltaComponent implements OnInit {
   ) {
     this.altaForm = this.fb.group({
       meetype: ['GROUP', Validators.required],
-      departament: ['', [Validators.required]],
+      departament: ['', ],
       radiotime: ['', [Validators.required]]
     });
   }
@@ -34,11 +34,10 @@ export class AltaComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger;
     if (this.altaForm.valid) {
         const newPool = {
           queue: this.altaForm.get('meetype').value,
-          action: 'UP', // this.altaForm.get('departament'),
+          action: 'UP',
           horario: this.altaForm.get('radiotime').value
         }
         this.altaSrv.insertPool(newPool)

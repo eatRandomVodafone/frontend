@@ -11,7 +11,7 @@ export class AltaService {
   ) { }
 
   insertPool(newPool: Object){
-      const url: string = ``;
+      const url: string = `/eatwithrandom/registerQueue`;
       const body = newPool;
       return this.http.post(url, body);
 
