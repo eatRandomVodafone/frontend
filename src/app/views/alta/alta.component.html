@@ -1,24 +1,21 @@
-<form [formGroup]="altaForm">
-
-    <ul class="list-group">
-        <li class="list-group-item">
-          <input type="radio"
-                 formControlName="meetType"
-                 name="meetType"
-                 value="grupal"
-                 ngModel
-                 checked/>
-                 Grupal<!-- [(ngModel)]="meetTypeSelected"-->
-        </li>
-        <li class="list-group-item">
-          <input type="radio"
-                 formControlName="meetType"
-                 name="meetType"
-                 value="one"
-                 ngModel/>
-                 Individual <!--[(ngModel)]="meetTypeSelected"-->
-        </li>
-    </ul>
+<form [formGroup]="altaForm"
+      (ngSubmit) = "onSubmit()">
+          <label>
+              <input type="radio"
+              formControlName="meetype"
+              name="meetype"
+              value="GROUP"
+              [checked]=true/>
+              Grupal
+          </label>
+          <label>
+            <input type="radio"
+                   formControlName="meetype"
+                   name="meetype"
+                   value="FACETOFACE"
+                   disabled=true/>
+                   Individual
+          </label>
 
     <p>Quiero comer una persona de...</p>
     <select class="custom-select"  formControlName="departament">
@@ -27,16 +24,18 @@
     </select>
 
     <p>Mi horario preferido es...</p>
-    <ul class="list-group">
-        <li class="list-group-item">
-          <input type="radio" formControlName="radioTime" name="time" value="first_turn"/>
-          De 13:00 a 14:00 horas<!-- [(ngModel)]="meetTypeSelected"-->
-        </li>
-        <li class="list-group-item">
-          <input type="radio" formControlName="radioTime" name="time" value="second_turn"/> <!--[(ngModel)]="meetTypeSelected"-->
+        <label>
+          <input type="radio"
+                 formControlName="radiotime"
+                 value="13h"/>
+          De 13:00 a 14:00 horas
+        </label>
+        <label>
+          <input type="radio"
+                 formControlName="radiotime"
+                 value="14h"/>
           De 14:00 a 15:00 horas
-        </li>
-    </ul>
+        </label>
 
     <div>
       <p>Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
@@ -45,21 +44,4 @@
     <button class = "button-submit button-submit--red"
     type = "submit">Voy a tener suerte!</button>
 
-  <!-- <input type="radio" formControlName="meetType" value="grupal" checked="true">
-  <input type="radio" formControlName="meetType" value="one"> -->
-<!--
-      <input formControlName="gender" type="radio">
-      <div class="radio">
-          <label>
-              <input type="radio" name="gender" value="Male" [checked]='true' ngModel>
-
-              Male
-          </label>
-      </div>
-      <div class="radio">
-          <label>
-              <input type="radio" name="gender" value="Female" ngModel>
-              Female
-          </label>
-      </div> -->
 </form>
