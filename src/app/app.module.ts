@@ -11,7 +11,9 @@ import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/tokenInt';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,16 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
+<<<<<<< HEAD
+=======
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
+>>>>>>> be890e3059327bed6357a4c77207e3168fd09784
   bootstrap: [AppComponent]
 })
 export class AppModule { }
