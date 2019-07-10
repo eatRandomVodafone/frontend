@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="104px" height="104px" viewBox="0 0 104 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon-modal-cancelar@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="52" cy="52" r="52"></circle>
+    </defs>
+    <g id="Info-de-mesa" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="E2M-modal-cancelar" transform="translate(-122.000000, -217.000000)">
+            <g id="Overlay-/-Information-/-With_photo" transform="translate(14.000000, 10.000000)">
+                <g id="content" transform="translate(0.000000, 145.000000)">
+                    <g id="Group-2">
+                        <g id="emoji_cancelar-2" transform="translate(108.000000, 62.000000)">
+                            <g id="emoji_cancelar">
+                                <g id="Group-6-Copy">
+                                    <g id="Rectangle">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <use id="Mask" fill="#E60000" xlink:href="#path-1"></use>
+                                        <rect fill="#BD0000" mask="url(#mask-2)" transform="translate(80.876295, 73.622987) rotate(-54.000000) translate(-80.876295, -73.622987) " x="41.8762951" y="42.6229873" width="78" height="62"></rect>
+                                    </g>
+                                    <circle id="Oval" fill="#FECB00" cx="52" cy="52" r="40"></circle>
+                                    <path d="M52,92 C74.09139,92 92,74.09139 92,52 C92,29.90861 74.09139,12 52,12" id="Oval-Copy-15" fill="#EB9700"></path>
+                                </g>
+                                <path d="M40,69 L64,69" id="Path-5" stroke="#000000" stroke-width="5"></path>
+                                <path d="M29,55 L41,55" id="Path-5-Copy" stroke="#000000" stroke-width="5"></path>
+                                <path d="M62,55 L74,55" id="Path-5-Copy-2" stroke="#000000" stroke-width="5"></path>
+                                <g id="Group-8" transform="translate(16.000000, 11.000000)" stroke="#007C92" stroke-width="6">
+                                    <polyline id="Path-6" points="19.5 32 19.5 20 31.5 20"></polyline>
+                                    <g id="Group-7" transform="translate(16.000000, 6.000000) scale(1, -1) translate(-16.000000, -6.000000) ">
+                                        <polyline id="Path-6-Copy-2" points="19.5 12 19.5 0 31.5 0"></polyline>
+                                        <polyline id="Path-6-Copy-3" transform="translate(6.000000, 6.000000) scale(-1, 1) translate(-6.000000, -6.000000) " points="0 12 0 0 12 0"></polyline>
+                                    </g>
+                                    <polyline id="Path-6-Copy" transform="translate(6.000000, 26.000000) scale(-1, 1) translate(-6.000000, -26.000000) " points="0 32 0 20 12 20"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

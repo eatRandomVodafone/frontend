@@ -1,3 +1,47 @@
-<p>
-  alta works!
-</p>
+<form [formGroup]="altaForm"
+      (ngSubmit) = "onSubmit()">
+          <label>
+              <input type="radio"
+              formControlName="meetype"
+              name="meetype"
+              value="GROUP"
+              [checked]=true/>
+              Grupal
+          </label>
+          <label>
+            <input type="radio"
+                   formControlName="meetype"
+                   name="meetype"
+                   value="FACETOFACE"
+                   disabled=true/>
+                   Individual
+          </label>
+
+    <p>Quiero comer una persona de...</p>
+    <select class="custom-select"  formControlName="departament">
+        <option value="" disabled>Selecciona un departamento</option>
+        <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
+    </select>
+
+    <p>Mi horario preferido es...</p>
+        <label>
+          <input type="radio"
+                 formControlName="radiotime"
+                 value="13h"/>
+          De 13:00 a 14:00 horas
+        </label>
+        <label>
+          <input type="radio"
+                 formControlName="radiotime"
+                 value="14h"/>
+          De 14:00 a 15:00 horas
+        </label>
+
+    <div>
+      <p>Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
+    </div>
+
+    <button class = "button-submit button-submit--red"
+    type = "submit">Voy a tener suerte!</button>
+
+</form>
