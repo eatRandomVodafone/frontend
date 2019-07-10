@@ -9,6 +9,7 @@ import { AltaComponent } from './views/alta/alta.component';
 import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './views/profile/profile.component';
     AltaComponent,
     StatusComponent,
     ConfirmComponent,
-    ProfileComponent
+    ProfileComponent,
+    SvgSpritesheetDirective
   ],
   imports: [
     BrowserModule,

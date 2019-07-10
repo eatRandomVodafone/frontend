@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ws2-copySpriteSheet": "node ./node_modules/@vodafone-es/web-simplicity-2-reboot/resources/assets/scripts/angular/_vf-copy-spritesheet-to-angular.js",
+    "ws2-copyFonts": "node ./node_modules/@vodafone-es/web-simplicity-2-reboot/resources/assets/scripts/angular/_vf-copy-fonts-to-angular.js"
+
   },
   "private": true,
   "dependencies": {
@@ -20,6 +23,7 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "@vodafone-es/web-simplicity-2-reboot": "git+https://github.com/Vodafone-ES/ws2-reboot.git",
     "core-js": "^2.5.4",
     "node-sass": "^4.12.0",
     "rxjs": "~6.3.3",
