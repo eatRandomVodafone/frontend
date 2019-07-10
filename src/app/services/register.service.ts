@@ -11,7 +11,7 @@ export class RegisterService {
   ) { }
 
   doRegister(registroData: Object){
-      const url: string = ``;
+      const url: string = `/eatwithrandom/signup`;
       const body = registroData;
       return this.http.post(url, body);
 
