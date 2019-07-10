@@ -1,50 +1,83 @@
-<form [formGroup]="altaForm"
-      (ngSubmit) = "onSubmit()">
-          <label>
-              <input type="radio"
-              formControlName="meetype"
-              name="meetype"
-              value="GROUP"
-              [checked]=true/>
-              Grupal
+<div class="e2m-wrapper">
+
+  <app-header></app-header>
+  <section class="e2m-alta">
+    <form [formGroup]="altaForm"
+          (ngSubmit)="onSubmit()">
+      <fieldset class="e2m-alta__eating">
+        <legend class="e2m-alta__legend">
+          <strong>¿Con quien quieres comer hoy?</strong>
+        </legend>
+        <div class="e2m-alta__content ">
+          <label class="e2m-alta__model active">
+            <input type="radio"
+                   formControlName="meetype"
+                   name="meetype"
+                   value="GROUP"
+                   [checked]=true/>
+            <span class="e2m-alta__model--text">Un grupo</span>
           </label>
-          <label>
+          <label class="e2m-alta__model e2m-alta__model--o2o">
             <input type="radio"
                    formControlName="meetype"
                    name="meetype"
                    value="FACETOFACE"
                    disabled=true/>
-                   Individual
+            <span class="e2m-alta__model--text">Una persona</span>
           </label>
-    <!-- ONE TO ONE -->
-    <!-- <p>Quiero comer una persona de...</p>
-    <select class="custom-select"  formControlName="departament">
-        <option value="" disabled>Selecciona un departamento</option>
-        <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
-    </select> -->
+        </div>
+      </fieldset>
+      <!-- ONE TO ONE -->
+      <!-- <p>Quiero comer una persona de...</p>
+      <select class="custom-select"  formControlName="departament">
+          <option value="" disabled>Selecciona un departamento</option>
+          <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
+      </select> -->
+      <fieldset class="e2m-alta__time">
+        <p class="e2m-alta__legend-hour">
+          <strong>Mi horario preferido es...</strong>
+        </p>
+        <div class="e2m-alta__content">
+          <label (click)="checkActive('13h',$event)" class="e2m-alta__hour"
+                 [ngClass]="activeCheck == '13h'? 'active' : ''">
+            <input type="radio"
+                   formControlName="radiotime"
+                   value="13h"/>
+            De 13:00 a 14:00 h.
+          </label>
+          <label (click)="checkActive('14h', $event)" class="e2m-alta__hour"
+                 [ngClass]=" activeCheck == '14h'? 'active' : ''">
+            <input type="radio"
+                   formControlName="radiotime"
+                   value="14h"/>
+            De 14:00 a 15:00 h.
+          </label>
 
-    <p>Mi horario preferido es...</p>
-        <label>
-          <input type="radio"
-                 formControlName="radiotime"
-                 value="13h"/>
-          De 13:00 a 14:00 horas
-        </label>
-        <label>
-          <input type="radio"
-                 formControlName="radiotime"
-                 value="14h"/>
-          De 14:00 a 15:00 horas
-        </label>
-    <div>
-      <input type="checkbox" name="wantEnglish">
-      <span>Me gustaría hablar en inglés</span>
-    </div>
-    <div>
-      <p>Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
-    </div>
+        </div>
+        <div class="vfes-ws10 e2m-alta__language">
+          <div class="e2m-alta__group">
+            <input class="vfes-form__switch" type="checkbox" id="switch6" name="wantEnglish" value="">
+            <label class="vfes-form__switch-label" for="switch6"></label>
+          </div>
+          <p class="e2m-alta__text">
+            <strong>Me gustaría hablar en inglés</strong>
+          </p>
+        </div>
+        <p class="e2m-alta__msj">Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
+      </fieldset>
 
-    <button class = "button-submit button-submit--red"
-    type = "submit">Voy a tener suerte!</button>
+      <div class="e2m-alta__footer">
+        <button class="vfes-button vfes-button--primary"
+                type="submit">Voy a tener suerte!
+        </button>
+      </div>
 
-</form>
+    </form>
+
+
+  </section>
+</div>
+
+
+
+
