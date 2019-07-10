@@ -10,5 +10,11 @@ export class RegisterService {
     private http: HttpClient,
   ) { }
 
+  doRegister(registroData: Object){
+      const url: string = ``;
+      const body = registroData;
+      return this.http.post(url, body);
 
+  }
+  //jwt
 }

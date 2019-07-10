@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +18,8 @@ export class RegistroComponent implements OnInit {
   private unsubscribe = new Subject();
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private registroSrv: RegisterService
   ) {
     this.registroForm = this.fb.group({
       nombre: ['', [Validators.required]],
@@ -43,14 +45,13 @@ export class RegistroComponent implements OnInit {
         rol: this.registroForm.get('rol'),
         bio: this.registroForm.get('bio'),
       }
-      // this.userSrv.checkLogin(loginData)
-      // .pipe(
-      //   takeUntil(this.unsubscribe)
-      // )
-      // .subscribe(resp =>{
-      //   // this.tokenSrv.saveToken(resp.jwt);
-
-      // });
+      this.registroSrv.doRegister(registroData)
+      .pipe(
+        takeUntil(this.unsubscribe)
+      )
+      .subscribe(resp =>{
+        console.log('Registro successfull');
+      });
 
     }
   }
