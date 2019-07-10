@@ -23,7 +23,8 @@ import { TokenInterceptor } from './interceptors/tokenInt';
     StatusComponent,
     ConfirmComponent,
     ProfileComponent,
-    SvgSpritesheetDirective
+    SvgSpritesheetDirective,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
