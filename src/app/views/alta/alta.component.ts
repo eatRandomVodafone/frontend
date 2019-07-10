@@ -14,7 +14,7 @@ export class AltaComponent implements OnInit {
   meetTypeSelected: string;
   altaForm: FormGroup;
   departamentos: any[] = ['A', 'B', 'C'];
-
+  public activeCheck:string;
   private unsubscribe = new Subject();
 
   constructor(
@@ -32,7 +32,10 @@ export class AltaComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  checkActive(value, event){
+    this.activeCheck = value;
+    console.log(this.activeCheck);
+  }
   onSubmit() {
     if (this.altaForm.valid) {
         const newPool = {
