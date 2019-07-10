@@ -33,8 +33,6 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-<<<<<<< HEAD
-=======
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -42,7 +40,6 @@ import { HeaderComponent } from './components/header/header.component';
       multi: true
     }
   ],
->>>>>>> be890e3059327bed6357a4c77207e3168fd09784
   bootstrap: [AppComponent]
 })
 export class AppModule { }
