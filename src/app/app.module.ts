@@ -22,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusComponent,
     ConfirmComponent,
     ProfileComponent,
-    SvgSpritesheetDirective
+    SvgSpritesheetDirective,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
