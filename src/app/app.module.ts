@@ -10,7 +10,7 @@ import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -29,8 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
-  ],
-  providers: [
   ],
   bootstrap: [AppComponent]
 })
