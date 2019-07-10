@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   completeForm = false;
+  errorMail = false;
   private unsubscribe = new Subject();
 
   constructor(
@@ -45,7 +46,9 @@ export class LoginComponent implements OnInit {
           // this.tokenSrv.saveToken(resp.jwt);
 
         });
-
+        this.errorMail = false;
+      }else{
+        this.errorMail = true;
       }
     }
 

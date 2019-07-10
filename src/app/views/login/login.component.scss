@@ -74,6 +74,10 @@
         display: flex;
         justify-content: space-between;
     }
+    .vfes-form__error-text{
+        display: block!important;
+        color:#E60000;
+    }
 
     .e2m-link{
         text-align: center;
