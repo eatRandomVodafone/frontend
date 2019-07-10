@@ -1,8 +1,8 @@
 <article class="vfes-card e2m-card">
   <img [src]='generateURL(img)' alt="logo por defecto">
   <div class="e2m-card__content">
-    <p class="vfes-paragraph e2m-card--nomargin" ngif="textBold" > <strong> {{ textBold }}</strong></p>
-    <p class="vfes-paragraph e2m-card--nomargin" ngif="category"> {{ category }}</p>
-    <p class="vfes-paragraph e2m-card--nomargin e2m-card--grey" ngif="text"> {{ text }}</p>
+    <p class="vfes-paragraph e2m-card--nomargin" *ngIf="textBold" > <strong> {{ textBold }}</strong></p>
+    <p class="vfes-paragraph e2m-card--nomargin" *ngIf="category"> {{ category }}</p>
+    <p class="vfes-paragraph e2m-card--nomargin e2m-card--grey" *ngIf="text"> {{ text }}</p>
   </div>
 </article>
