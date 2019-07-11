@@ -9,7 +9,7 @@
     </div>
     <div class="e2m-confirm__share">
         <h2 class="e2m-confirm__headings">Con quien vas a compartir hoy</h2>
-        <app-card *ngFor="let item of userList" [img]="item.img" [textBold]="item.textbold" [category]="item.category" [text]="item.textgrey"></app-card>
+        <app-card *ngFor="let item of userList; let i = index" [img]="imgList[i]" [textBold]="item.textbold" [category]="item.category" [text]="textList[i]"></app-card>
     </div>
     <div class="e2m-confirm__eating">
         <h2 class="e2m-confirm__headings">Cuando vas a comer hoy</h2>
