@@ -39,8 +39,47 @@
 
         img{
             position: absolute;
-            top: -50px;
+            top: -63px;
+            width: 135px;
+         
         }
+
+
+            .slide1 {
+            animation:fade 4s infinite;
+           -webkit-animation:fade 4s infinite;
+           
+           } 
+           .slide2 {
+           animation:fade2 4s infinite;
+           -webkit-animation:fade2 4s infinite;
+           }
+           .slide3 {
+            animation:fade3 4s infinite;
+           -webkit-animation:fade3 4s infinite;
+           }
+           @keyframes fade
+           {
+             0%   {opacity:1}
+             33.333% { opacity: 0}
+             66.666% { opacity: 0}
+             100% { opacity: 1}
+           }
+           @keyframes fade2
+           {
+             0%   {opacity:0}
+             33.333% { opacity: 1}
+             66.666% { opacity: 0 }
+             100% { opacity: 0}
+           }
+           @keyframes fade3
+           {
+             0%   {opacity:0}
+             33.333% { opacity: 0}
+             66.666% { opacity: 1}
+             100% { opacity: 0}
+           }
+          
 
         .vfes-button{
             margin-top: 35px;

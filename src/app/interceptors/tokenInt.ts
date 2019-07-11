@@ -1,29 +1,32 @@
-import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders } from '@angular/common/http';
-import { TokenService } from '../services/token.service';
-import { Observable, throwError, of } from 'rxjs';
-import { catchError } from 'rxjs/operators'
-import { Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {TokenService} from '../services/token.service';
+import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable()
-export class TokenInterceptor implements HttpInterceptor{
+export class TokenInterceptor implements HttpInterceptor {
 
-    constructor(private tokenSrv: TokenService,
-                private router: Router){}
+  constructor(private tokenSrv: TokenService,
+              private router: Router) {
+  }
 
-    intercept( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>>{
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        console.log();
+    console.log('Interceptor');
 
-        const jwt = this.tokenSrv.getToken();
-        
-        const headers = new HttpHeaders({
-            Authorization: `Bearer ${jwt}`
-        })
-        let reqClone = req.clone({headers});
-    
-        return next.handle(reqClone);
-       
-    }
+    const jwt = this.tokenSrv.getToken();
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${jwt}`,
+      crossOrigin: 'false'
+    });
+    const reqClone = req.clone({headers});
+
+    console.log('Peticion: ', reqClone);
+
+    return next.handle(reqClone);
+
+  }
 
 }

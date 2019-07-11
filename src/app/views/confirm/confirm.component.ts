@@ -21,19 +21,19 @@ export class ConfirmComponent implements OnInit {
       'img': 'icons-info-mesa/ente-desconocido-verde.png',
       'textbold': 'Diego',
       'category': 'Head of',
-      'textgrey': 'La tortilla de patatas solo mola con cebolla'
+      'textgrey': '"La tortilla de patatas solo mola con cebolla"'
     },
     {
       'img': 'icons-info-mesa/ente-desconocido.png',
       'textbold': 'Marta',
       'category': 'Bussines Analist',
-      'textgrey': 'Los gatos siempre caen boca abajo'
+      'textgrey': '"Los gatos siempre caen boca abajo"'
     },
     {
       'img': 'icons-info-mesa/ente-desconocido-amarilo.png',
       'textbold': 'Ermenelgidlo',
       'category': 'Head of',
-      'textgrey': 'Arroz con abichuelas'
+      'textgrey': '"Arroz con habichuelas"'
     }
   ]
   public userEating = [
@@ -50,7 +50,7 @@ export class ConfirmComponent implements OnInit {
       'img': 'icons-info-mesa/lugar.png',
       'textbold': 'Cantina de Vodafone Plaza',
       'category': 'Mesa Oktoberfest',
-      'textgrey': '5 Piezas de fruta al día dan alegría'
+      'textgrey': '"5 Piezas de fruta al día dan alegría"'
     }
   ]
   constructor(

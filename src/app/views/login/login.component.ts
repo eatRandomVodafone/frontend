@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
-   }
+  }
 
   ngOnInit() {
     this.onValueChanges();
@@ -42,29 +42,30 @@ export class LoginComponent implements OnInit {
     this.aRoute.data
       .subscribe(data => this.titleService.setTitle(data.title));
   }
-  onSubmit(){
+
+  onSubmit() {
     const email = this.loginForm.get('email').value;
-    if(this.loginForm.valid && this.validEmail(email)){
+    if (this.loginForm.valid && this.validEmail(email)) {
       const loginData = {
         username: email,
         password: this.loginForm.get('password').value
-      }
+      };
       this.userSrv.checkLogin(loginData)
-      .pipe(
-        takeUntil(this.unsubscribe)
+        .pipe(
+          takeUntil(this.unsubscribe)
         )
         .subscribe(resp =>{
           this.route.navigate(['/alta']);
           this.tokenSrv.setToken(resp['jwt']);
 
         });
-        this.errorMail = false;
-      }else{
-        this.errorMail = true;
-      }
+      this.errorMail = false;
+    } else {
+      this.errorMail = true;
     }
+  }
 
-  private onValueChanges(){
+  private onValueChanges() {
     this.loginForm.valueChanges
       .pipe(
         takeUntil(this.unsubscribe)
@@ -74,7 +75,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  private validEmail(email){//Validacion correos vodafone
+  private validEmail(email) {//Validacion correos vodafone
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$/;
     return re.test(String(email).toLowerCase());
   }

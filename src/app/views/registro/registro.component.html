@@ -1,61 +1,64 @@
-<div class="background vfes-wrapper vfes-align--center vfes-ws10">
-  <div class="vfes-card" style="height: 188px;">
-    <app-slide></app-slide>
+<div class="vfes-align--center e2m-registro">
+  <div class="e2m-wrapper background vfes-ws10">
+    <div class="vfes-card">
+      <app-slide></app-slide>
+    </div>
+    <p class="title"><strong>Introduce los siguientes datos para registrate</strong></p>
+    <form [formGroup]="registroForm" (ngSubmit) = "onSubmit()">
+      <div class="vfes-form__box">
+        <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="nombre" id="nombre" name="nombre" placeholder="Nombre y apellidos" formControlName="nombre"/>
+        <span class="vfes-form__label" id="nombre">Nombre</span>
+        <!-- <p class="vfes-form__error-text">Introduce tu nombre y apellidos</p> -->
+        <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Warning</title>
+            <use class="icon-v3" xlink:href='#icon3-warning'></use>
+        </svg>
+        <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Tick</title>
+            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
+        </svg>
+      </div>
+      <div class="vfes-form__box">
+        <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="email" id="email" name="email" placeholder="Email" formControlName="email"/>
+        <span class="vfes-form__label" id="email">Email</span>
+        <p class="vfes-form__error-text"
+        *ngIf="errorMail">Por favor introduzca un correo corporativo</p>
+        <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Warning</title>
+            <use class="icon-v3" xlink:href='#icon3-warning'></use>
+        </svg>
+        <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Tick</title>
+            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
+        </svg>
+      </div>
+      <div class="vfes-form__box">
+        <input class="vfes-form__input vfes-form__input" type="password" aria-labelledby="password" id="password" name="password" placeholder="Password" formControlName="password"/>
+        <span class="vfes-form__label" id="password">Contraseña</span>
+        <!-- <p class="vfes-form__error-text">Introduce una contraseña</p> -->
+        <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Warning</title>
+            <use class="icon-v3" xlink:href='#icon3-warning'></use>
+        </svg>
+        <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Tick</title>
+            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
+        </svg>
+      </div>
+
+      <app-select [tipo]='["Área"]' [value]='["Marketing", "Ventas", "Legal", "Finanzas", "Digital", "Recursos Humanos", "Sistemas"]'></app-select>
+      <app-select [tipo]='["Rol"]' [value]='["Producto", "Canal Presencial", "Televenta", "E-Commerce", "Operaciones", "Control Económico", "Internet of Things","Desarrollo Web", "Diseño UX/UI", "Analítica"]'></app-select>
+
+        <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="bio" id="bio" name="bio" placeholder="Cuéntanos algo sobre ti" formControlName="bio"/>
+      <button type="submit"
+              name="cta"
+              title="CTA"
+              class="vfes-button"
+              [ngClass]="completeForm ? 'vfes-button--primary': ''"
+              data-analytics-element=""
+              data-analytics-category="cta">
+          Registrarme
+      </button>
+    </form>
   </div>
-  <p class="title"><strong>Introduce los siguientes datos para registrate</strong></p>
-  <form [formGroup]="registroForm" (ngSubmit) = "onSubmit()">
-    <div class="vfes-form__box">
-      <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="nombre" id="nombre" name="nombre" placeholder="Nombre y apellidos" formControlName="nombre"/>
-      <span class="vfes-form__label" id="nombre">Nombre</span>
-      <!-- <p class="vfes-form__error-text">Introduce tu nombre y apellidos</p> -->
-      <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-          <title>Warning</title>
-          <use class="icon-v3" xlink:href='#icon3-warning'></use>
-      </svg>
-      <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-          <title>Tick</title>
-          <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-      </svg>
-    </div>
-    <div class="vfes-form__box">
-      <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="email" id="email" name="email" placeholder="Email" formControlName="email"/>
-      <span class="vfes-form__label" id="email">Email</span>
-      <p class="vfes-form__error-text"
-      *ngIf="errorMail">Por favor introduzca un correo corporativo</p>
-      <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-          <title>Warning</title>
-          <use class="icon-v3" xlink:href='#icon3-warning'></use>
-      </svg>
-      <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-          <title>Tick</title>
-          <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-      </svg>
-    </div>
-    <div class="vfes-form__box">
-      <input class="vfes-form__input vfes-form__input" type="password" aria-labelledby="password" id="password" name="password" placeholder="Password" formControlName="password"/>
-      <span class="vfes-form__label" id="password">Contraseña</span>
-      <!-- <p class="vfes-form__error-text">Introduce una contraseña</p> -->
-      <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-          <title>Warning</title>
-          <use class="icon-v3" xlink:href='#icon3-warning'></use>
-      </svg>
-      <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-          <title>Tick</title>
-          <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-      </svg>
-    </div>
-
-
-
-      <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="bio" id="bio" name="bio" placeholder="Cuéntanos algo sobre ti" formControlName="bio"/>
-    <button type="submit"
-            name="cta"
-            title="CTA"
-            class="vfes-button"
-            [ngClass]="completeForm ? 'vfes-button--primary': ''"
-            data-analytics-element=""
-            data-analytics-category="cta">
-        Registrarme
-    </button>
-  </form>
 </div>
