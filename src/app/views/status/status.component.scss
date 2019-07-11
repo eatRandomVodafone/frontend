@@ -27,14 +27,53 @@
 .image {
     //width: 264px;
     height: 405px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    align-content: center;
     background-color: #ffffff;
-    $size: 48px;
+    $size: auto;
     margin-left: $size;
     margin-right: $size;
 }
 
 .button {
     margin: 30px 18px 23px 14px;
+}
+
+.platos {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    //align-self: center;
+    overflow: hidden;
+}
+
+.plato1 {
+    top: 228px;
+    animation-duration: 3s;
+    animation-name: sliderigth;
+    animation-iteration-count: infinite;
+}
+
+.plato2 {
+    top: 403px;
+    animation-duration: 3s;
+    animation-name: slideleft;
+    animation-iteration-count: infinite;
+}
+
+@keyframes sliderigth {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: -120px;
+    }
+}
+
+@keyframes slideleft {
+    from {
+        margin-left: -120px;
+    }
+    to {
+        margin-left: 100%;
+    }
 }

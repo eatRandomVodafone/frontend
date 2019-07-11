@@ -10,11 +10,6 @@ import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
-<<<<<<< HEAD
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './component/header/header.component';
-=======
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/tokenInt';
@@ -23,7 +18,6 @@ import { SlideComponent } from './components/slide/slide.component';
 import { CardComponent } from './components/card/card.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
->>>>>>> develop
 
 @NgModule({
   declarations: [
