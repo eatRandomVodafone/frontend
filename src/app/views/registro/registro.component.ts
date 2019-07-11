@@ -3,8 +3,8 @@ import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
-import {ActivatedRoute} from '@angular/router';
-import {Title} from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registro',
@@ -30,11 +30,11 @@ export class RegistroComponent implements OnInit {
       nombre: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      area: ['', ],
-      rol: ['', ],
+      area: ['',],
+      rol: ['',],
       bio: ['', [Validators.required]],
     });
-   }
+  }
 
   ngOnInit() {
     this.onValueChanges();
@@ -44,9 +44,9 @@ export class RegistroComponent implements OnInit {
       .subscribe(data => this.titleService.setTitle(data.title));
   }
 
-  onSubmit(){
+  onSubmit() {
     const email = this.registroForm.get('email').value;
-    if(this.registroForm.valid && this.validEmail(email)){
+    if (this.registroForm.valid && this.validEmail(email)) {
       const registroData = {
         nombre: this.registroForm.get('nombre').value,
         email: email,
@@ -56,20 +56,20 @@ export class RegistroComponent implements OnInit {
         bio: this.registroForm.get('bio').value,
       }
       this.registroSrv.doRegister(registroData)
-      .pipe(
-        takeUntil(this.unsubscribe)
-      )
-      .subscribe(resp =>{
-        console.log('Registro successfull');
-      });
+        .pipe(
+          takeUntil(this.unsubscribe)
+        )
+        .subscribe(resp => {
+          console.log('Registro successfull');
+        });
 
       this.errorMail = false;
-    }else{
+    } else {
       this.errorMail = true;
     }
   }
 
-  private onValueChanges(){
+  private onValueChanges() {
     this.registroForm.valueChanges
       .pipe(
         takeUntil(this.unsubscribe)
@@ -79,7 +79,7 @@ export class RegistroComponent implements OnInit {
       });
   }
 
-  private validEmail(email){//Validacion correos vodafone
+  private validEmail(email) {//Validacion correos vodafone
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$/;
     return re.test(String(email).toLowerCase());
   }
