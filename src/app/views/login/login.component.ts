@@ -3,8 +3,8 @@ import { UserService } from 'src/app/services/user.service';
 import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Title} from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { TokenService } from 'src/app/services/token.service';
 
 // import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
@@ -54,11 +54,31 @@ export class LoginComponent implements OnInit {
         .pipe(
           takeUntil(this.unsubscribe)
         )
-        .subscribe(resp =>{
-          this.route.navigate(['/alta']);
+        .subscribe(resp => {
+          // this.route.navigate(['/alta']);
           this.tokenSrv.setToken(resp['jwt']);
+          this.userSrv.userStatus()
+          .subscribe(res => {
+            const decodejwt = JSON.parse(atob(res['jwt'].split('.')[1]));
+            this.tokenSrv.setToken(res['jwt']);
+            let status = decodejwt['status'];
+            if(status === null){
+              this.route.navigate(['/alta']);
+              status = '';
 
+            }
+            if(status.indexOf('esperando') >= 0){
+              this.route.navigate(['/status']);
+
+            }else if(status.indexOf('mesa') >= 0){
+              this.route.navigate(['/confirm']);
+
+            }
+            console.log(decodejwt);
+            })
         });
+
+
       this.errorMail = false;
     } else {
       this.errorMail = true;

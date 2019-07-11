@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AltaService } from 'src/app/services/alta.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-alta',
@@ -23,7 +24,10 @@ export class AltaComponent implements OnInit {
     private fb: FormBuilder,
     private altaSrv: AltaService,
     private aRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private route: Router,
+    private tokenSrv: TokenService
+
   ) {
     this.altaForm = this.fb.group({
       meetype: ['GROUP', Validators.required],
@@ -55,6 +59,9 @@ export class AltaComponent implements OnInit {
           takeUntil(this.unsubscribe)
         )
         .subscribe(resp =>{
+
+          this.route.navigate(['/status']);
+          this.tokenSrv.setToken(resp['jwt']);
           console.log('Alta pool successfull');
         });
     }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -11,12 +11,15 @@ export class StatusComponent implements OnInit {
 
   constructor(
     private aRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private route: Router
   ) { }
 
   ngOnInit() {
     this.aRoute.data
         .subscribe(data => this.titleService.setTitle(data.title));
+
+    //
   }
 
 }
