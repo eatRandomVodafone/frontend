@@ -5,43 +5,55 @@
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.scss';
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.ws10.scss';
 
-.vfes-wrapper {
-    background-image: url('/assets/img/fondo-registro.jpg');
+.background {
+    background: url(/assets/img/fondo-registro.jpg) top center #ebebeb;
+    background-repeat: no-repeat;
+}
+
+.e2m-wrapper {
     padding: 0 16px;
 }
-
-.vfes-card {
-    background-color: #ffffff;
-}
-
-.title {
-    margin-top: 17px;
-    font-size: 20px;
-    line-height: 28px;
-}
-
-.vfes-ws10 .vfes-form__box {
-    margin-bottom: 16px;
-}
-
-.vfes-form {
-    &__input {
-        &:last-of-type {
-            margin-bottom: 0;
+.e2m-registro {
+    .vfes-card {
+        background-color: #ffffff;
+    }
+    
+    .title {
+        margin-top: 17px;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    
+    .vfes-ws10 .vfes-form__box {
+        margin-bottom: 16px;
+    }
+    
+    .vfes-form {
+        &__input {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    
+        &__input + .vfes-form__label {
+            background-color: #ebebeb;
         }
     }
-
-    &__input + .vfes-form__label {
-        background-color: #ebebeb;
+    
+    .vfes-button {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        background-color: #cccccc;
+        color: #ffffff;
+        
+        &.vfes-button--primary {
+            background-color: #E60000;
+        }
     }
-}
-
-.vfes-button {
-    margin-top: 20px;
-    margin-bottom: 25px;
-}
-
-.vfes-form__error-text{
-    display: block!important;
-    color:#E60000;
+    
+    .vfes-form__error-text{
+        display: block!important;
+        color:#E60000;
+    }
+    
 }
