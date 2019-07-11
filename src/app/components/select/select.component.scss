@@ -1,0 +1,16 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.ws10.scss';
+
+.vfes-form__dropdown-button {
+    background-color: #ffffff;
+}
+
+.e2m-select {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    height: 43px;
+    border: 1px solid #666666;
+    padding: 0 12px;
+}

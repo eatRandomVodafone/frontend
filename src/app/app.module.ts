@@ -18,6 +18,7 @@ import { SlideComponent } from './components/slide/slide.component';
 import { CardComponent } from './components/card/card.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
     SlideComponent,
     CardComponent,
     ModalComponent,
-    ResetPassComponent
+    ResetPassComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
