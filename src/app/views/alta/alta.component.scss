@@ -1,0 +1,139 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.ws10.scss';
+
+.e2m-alta {
+  background-color: #ebebeb;
+  height: 100vh;
+  &__legend{
+    padding: 16px 0;
+    text-align: center;
+    font-size: 20px;
+  }
+  &__legend-hour{
+    padding: 16px 0;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+  &__eating{
+    margin-bottom: 0px;
+  }
+  &__time{
+    margin-top: 32px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__hour {
+    width: 95%;
+    justify-self: center;
+    font-size: 18px;
+    padding: 16px 6px;
+    cursor: pointer;
+    border-radius: 7px;
+    border: solid 1.1px #cccccc;
+    background-color: white;
+    text-align: center;
+  }
+  &__msj {
+    background-color: #ebebeb;
+    padding: 20px 16px 50px 16px;
+    text-align: center;
+
+  }
+  &__model {
+    justify-self: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 7px;
+    border: solid 1.1px #cccccc;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    width: 140px;
+    height: 125px;
+    &:before{
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      content: url('/assets/img/icons-configurar-mesa/alien-grupo@1x.png');
+      display: block;
+    }
+    &--o2o{
+      &:before {
+        content: url('/assets/img/icons-configurar-mesa/ente-desconocido.png');
+      }
+    }
+    &--text{
+      width: 100%;
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  .active {
+    &.e2m-alta__model {
+
+      background-color: #e60000;
+
+      .e2m-alta__model--o2o{
+        background-color: #e60000;
+        color: white;
+        &:before {
+          content: url('/assets/img/icons-configurar-mesa/ente-desconocido.png');
+        }
+      }
+      .e2m-alta__model--text{
+        color: white;
+      }
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-right: 30px solid transparent;
+        border-top: 30px solid transparent;
+        border-left: 30px solid transparent;
+        border-bottom: 30px solid white;
+
+        position: absolute;
+        bottom: -36px;
+        left: 50%;
+        transform: translate(-50%,0);
+      }
+    }
+    &.e2m-alta__hour {
+      border-color: #e60000;
+      font-family: "VodafoneRegularBold", Helvetica, Arial, sans-serif;
+    }
+  }
+
+  &__language{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    column-gap: 10px;
+  }
+  &__group{
+    justify-self: right;
+  }
+
+  &__footer{
+    padding: 16px;
+    background-color: white;
+    border-radius: 7px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .vfes-button {
+    width: 100%;
+  }
+}
+

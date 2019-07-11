@@ -1,0 +1,43 @@
+<div class="e2m-layout vfes-color-bg-vodafone-gradient-red vfes-ws10">
+  <div class="e2m-container e2m-wrapper">
+    <h1 class="e2m-title vfes-title vfes-tittle--center">
+      <span><strong>Bienvenid@ a</strong></span>
+      <img src="../../../assets/svg/logo-e2m-login.svg" title="logo EAT2MEET">
+    </h1>
+    <div class="e2m-form vfes-color-bg-vodafone-white">
+      <img class="" src="../../../assets/svg/plato-01.svg">
+      <form [formGroup]="resetpassForm" (ngSubmit)="onSubmit()">
+        <div class="vfes-form__box">
+          <input class="vfes-form__input vfes-form__input" type="text" formControlName="email" placeholder="Email" />
+          <span class="vfes-form__label" id="label">Email</span>
+          <!-- <p class="vfes-form__error-text">Please enter your correct password</p> -->
+          <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Warning</title>
+            <use class="icon-v3" xlink:href='#icon3-warning'></use>
+          </svg>
+          <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
+            <title>Tick</title>
+            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
+          </svg>
+        </div>
+
+        <input class="vfes-button"
+               [ngClass]="completeForm ? 'vfes-button--primary': ''"
+               type="submit"
+               aria-labelledby="label"
+               id="texto2"
+               name="texto2"
+               placeholder="Email"
+               value="Recuperar contraseña" />
+      </form>
+    </div>
+    <!-- <button type="button" (click)="statusModal(false)"> Abrir Modal </button> -->
+  </div>
+</div>
+
+<app-modal [hidden]="isModalHidden" (onClose)="statusModal($event)">
+  <h3 class="e2m-modal__title">Tu Valoración ha sido registrada</h3>
+  <img class="e2m-modal__media" src="/assets/img/icons-modales/icon-modal-registrado.png" alt="Icono modal registrado">
+  <p class="e2m-modal__text"> Muchas gracias por ayudarnos a mejorar</p>
+  <button class="vfes-button vfes-button--primary" (click)="redirect()" type="button"> Continuar</button>
+</app-modal>

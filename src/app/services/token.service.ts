@@ -8,18 +8,12 @@ export class TokenService {
   constructor() { }
 
 
-  async setToken(token: string){
-
-    const result = await localStorage.setItem('token', token);
-
-    return result;
-
+  setToken(token: string){
+    localStorage.setItem('token', token);
   }
 
   getToken(){
-
-    return localStorage.getItem('token')
-
+    return localStorage.getItem('token');
   }
 
 

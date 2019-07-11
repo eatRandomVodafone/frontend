@@ -3,6 +3,9 @@ import { UserService } from 'src/app/services/user.service';
 import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+
 // import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
 @Component({
@@ -13,12 +16,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-
+  completeForm = false;
+  errorMail = false;
   private unsubscribe = new Subject();
 
   constructor(
     private userSrv: UserService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private aRoute: ActivatedRoute,
+    private titleService: Title
     // private tokenSrv: TokenService
   ) {
     this.loginForm = this.fb.group({
@@ -28,25 +34,41 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
-  }
+    this.onValueChanges();
 
+    // Set title page
+    this.aRoute.data
+      .subscribe(data => this.titleService.setTitle(data.title));
+  }
   onSubmit(){
-    const email = this.loginForm.get('email');
+    const email = this.loginForm.get('email').value;
     if(this.loginForm.valid && this.validEmail(email)){
       const loginData = {
         email: email,
-        password: this.loginForm.get('password')
+        password: this.loginForm.get('password').value
       }
       this.userSrv.checkLogin(loginData)
       .pipe(
         takeUntil(this.unsubscribe)
-      )
-      .subscribe(resp =>{
-        // this.tokenSrv.saveToken(resp.jwt);
+        )
+        .subscribe(resp =>{
+          // this.tokenSrv.saveToken(resp.jwt);
 
-      });
-
+        });
+        this.errorMail = false;
+      }else{
+        this.errorMail = true;
+      }
     }
+
+  private onValueChanges(){
+    this.loginForm.valueChanges
+      .pipe(
+        takeUntil(this.unsubscribe)
+      )
+      .subscribe(() => {
+        this.completeForm = this.loginForm.valid ? true : false;
+      });
   }
 
   private validEmail(email){//Validacion correos vodafone

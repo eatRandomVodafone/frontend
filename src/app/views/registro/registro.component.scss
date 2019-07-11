@@ -1,0 +1,47 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.card.ws10.scss';
+
+.vfes-wrapper {
+    background-image: url('/assets/img/fondo-registro.jpg');
+    padding: 0 16px;
+}
+
+.vfes-card {
+    background-color: #ffffff;
+}
+
+.title {
+    margin-top: 17px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.vfes-ws10 .vfes-form__box {
+    margin-bottom: 16px;
+}
+
+.vfes-form {
+    &__input {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input + .vfes-form__label {
+        background-color: #ebebeb;
+    }
+}
+
+.vfes-button {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.vfes-form__error-text{
+    display: block!important;
+    color:#E60000;
+}

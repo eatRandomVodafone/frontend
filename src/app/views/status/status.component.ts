@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-status',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private aRoute: ActivatedRoute,
+    private titleService: Title
+  ) { }
 
   ngOnInit() {
+    this.aRoute.data
+        .subscribe(data => this.titleService.setTitle(data.title));
   }
 
 }

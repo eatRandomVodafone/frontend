@@ -11,9 +11,11 @@ export class UserService {
   ) { }
 
   checkLogin(loginData: Object){
-      const url: string = ``;
+      const url: string = `/eatwithrandom/signin`;
       const body = loginData;
       return this.http.post(url, body);
   }
   //jwt
+
+
 }
