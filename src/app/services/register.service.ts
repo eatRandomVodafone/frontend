@@ -11,7 +11,7 @@ export class RegisterService {
   ) { }
 
   doRegister(registroData: Object){
-      const url: string = `/eatwithrandom/signup`;
+      const url: string = `http://18.185.48.95:4444/eatwithrandom/signup`;
       const body = registroData;
       return this.http.post(url, body);
 
