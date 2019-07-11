@@ -34,7 +34,7 @@ import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
     SlideComponent,
     CardComponent,
     ModalComponent,
-    ResetPassComponent,
+    ResetPassComponent
   ],
   imports: [
     BrowserModule,
