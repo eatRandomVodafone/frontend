@@ -3,9 +3,12 @@
     <img src="/assets/img/icons-modales/ic-close.png" alt="Cerrar modales">
   </button>
   <div class="e2m-wrapper">
-    <ng-content select="h3"></ng-content>
-    <ng-content select="img"></ng-content>
-    <ng-content select="p"></ng-content>
-    <ng-content select="button"></ng-content>
+    <div class="e2m-content">
+      <ng-content select="h3"></ng-content>
+      <ng-content select="img"></ng-content>
+      <ng-content select="p"></ng-content>
+      <ng-content select="button"></ng-content>
+    </div>
+
   </div>
 </section>
