@@ -1,0 +1,79 @@
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/08-angular/_angular.required.ws10.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.scss';
+@import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.button.ws10.scss';
+.cont {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    width: 328px;
+    height: 82px;
+    font-family: VodafoneLt;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #333333;
+    margin-top: 14px;
+    margin-bottom: 32px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.image {
+    //width: 264px;
+    height: 405px;
+    align-content: center;
+    background-color: #ffffff;
+    $size: auto;
+    margin-left: $size;
+    margin-right: $size;
+}
+
+.button {
+    margin: 30px 18px 23px 14px;
+}
+
+.platos {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    //align-self: center;
+    overflow: hidden;
+}
+
+.plato1 {
+    top: 228px;
+    animation-duration: 3s;
+    animation-name: sliderigth;
+    animation-iteration-count: infinite;
+}
+
+.plato2 {
+    top: 403px;
+    animation-duration: 3s;
+    animation-name: slideleft;
+    animation-iteration-count: infinite;
+}
+
+@keyframes sliderigth {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: -120px;
+    }
+}
+
+@keyframes slideleft {
+    from {
+        margin-left: -120px;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
