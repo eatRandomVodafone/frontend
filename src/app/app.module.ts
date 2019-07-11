@@ -16,6 +16,8 @@ import { TokenInterceptor } from './interceptors/tokenInt';
 import { HeaderComponent } from './components/header/header.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { CardComponent } from './components/card/card.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CardComponent } from './components/card/card.component';
     HeaderComponent,
     SvgSpritesheetDirective,
     SlideComponent,
-    CardComponent
+    CardComponent,
+    ModalComponent,
+    ResetPassComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,9 @@
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.scss';
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.ws10.scss';
 
-
+.e2m-container{
+  padding: 16pxgit ;
+}
 .e2m-layout{
     height: 100vh;
 
@@ -73,6 +75,10 @@
         color: #333;
         display: flex;
         justify-content: space-between;
+    }
+    .vfes-form__error-text{
+        display: block!important;
+        color:#E60000;
     }
 
     .e2m-link{

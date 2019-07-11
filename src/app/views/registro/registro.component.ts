@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +14,7 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegistroComponent implements OnInit {
 
-
+  errorMail = false;
   registroForm: FormGroup;
   completeForm = false;
 
@@ -20,7 +22,9 @@ export class RegistroComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private registroSrv: RegisterService
+    private registroSrv: RegisterService,
+    private aRoute: ActivatedRoute,
+    private titleService: Title
   ) {
     this.registroForm = this.fb.group({
       nombre: ['', [Validators.required]],
@@ -34,6 +38,10 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {
     this.onValueChanges();
+
+    // Set title page
+    this.aRoute.data
+      .subscribe(data => this.titleService.setTitle(data.title));
   }
 
   onSubmit(){
@@ -55,6 +63,9 @@ export class RegistroComponent implements OnInit {
         console.log('Registro successfull');
       });
 
+      this.errorMail = false;
+    }else{
+      this.errorMail = true;
     }
   }
 

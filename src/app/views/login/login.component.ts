@@ -3,6 +3,9 @@ import { UserService } from 'src/app/services/user.service';
 import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+
 // import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
 @Component({
@@ -14,11 +17,14 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   completeForm = false;
+  errorMail = false;
   private unsubscribe = new Subject();
 
   constructor(
     private userSrv: UserService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private aRoute: ActivatedRoute,
+    private titleService: Title
     // private tokenSrv: TokenService
   ) {
     this.loginForm = this.fb.group({
@@ -29,6 +35,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.onValueChanges();
+
+    // Set title page
+    this.aRoute.data
+      .subscribe(data => this.titleService.setTitle(data.title));
   }
   onSubmit(){
     const email = this.loginForm.get('email').value;
@@ -45,7 +55,9 @@ export class LoginComponent implements OnInit {
           // this.tokenSrv.saveToken(resp.jwt);
 
         });
-
+        this.errorMail = false;
+      }else{
+        this.errorMail = true;
       }
     }
 

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AltaService } from 'src/app/services/alta.service';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-alta',
@@ -14,12 +16,14 @@ export class AltaComponent implements OnInit {
   meetTypeSelected: string;
   altaForm: FormGroup;
   departamentos: any[] = ['A', 'B', 'C'];
-
+  public activeCheck:string;
   private unsubscribe = new Subject();
 
   constructor(
     private fb: FormBuilder,
-    private altaSrv: AltaService
+    private altaSrv: AltaService,
+    private aRoute: ActivatedRoute,
+    private titleService: Title
   ) {
     this.altaForm = this.fb.group({
       meetype: ['GROUP', Validators.required],
@@ -30,9 +34,15 @@ export class AltaComponent implements OnInit {
 
 
   ngOnInit() {
+    // Set title page
+    this.aRoute.data
+      .subscribe(data => this.titleService.setTitle(data.title));
 
   }
-
+  checkActive(value, event){
+    this.activeCheck = value;
+    console.log(this.activeCheck);
+  }
   onSubmit() {
     if (this.altaForm.valid) {
         const newPool = {

@@ -7,7 +7,7 @@
     <div class="vfes-form__box">
       <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="nombre" id="nombre" name="nombre" placeholder="Nombre y apellidos" formControlName="nombre"/>
       <span class="vfes-form__label" id="nombre">Nombre</span>
-      <p class="vfes-form__error-text">Introduce tu nombre y apellidos</p>
+      <!-- <p class="vfes-form__error-text">Introduce tu nombre y apellidos</p> -->
       <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
           <title>Warning</title>
           <use class="icon-v3" xlink:href='#icon3-warning'></use>
@@ -20,7 +20,8 @@
     <div class="vfes-form__box">
       <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="email" id="email" name="email" placeholder="Email" formControlName="email"/>
       <span class="vfes-form__label" id="email">Email</span>
-      <p class="vfes-form__error-text">Introduce un email</p>
+      <p class="vfes-form__error-text"
+      *ngIf="errorMail">Por favor introduzca un correo corporativo</p>
       <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
           <title>Warning</title>
           <use class="icon-v3" xlink:href='#icon3-warning'></use>
@@ -33,7 +34,7 @@
     <div class="vfes-form__box">
       <input class="vfes-form__input vfes-form__input" type="password" aria-labelledby="password" id="password" name="password" placeholder="Password" formControlName="password"/>
       <span class="vfes-form__label" id="password">Contraseña</span>
-      <p class="vfes-form__error-text">Introduce una contraseña</p>
+      <!-- <p class="vfes-form__error-text">Introduce una contraseña</p> -->
       <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
           <title>Warning</title>
           <use class="icon-v3" xlink:href='#icon3-warning'></use>
