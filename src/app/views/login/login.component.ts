@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     const email = this.loginForm.get('email').value;
     if (this.loginForm.valid && this.validEmail(email)) {
       const loginData = {
-        email: email,
+        username: email,
         password: this.loginForm.get('password').value
       };
       this.userSrv.checkLogin(loginData)
