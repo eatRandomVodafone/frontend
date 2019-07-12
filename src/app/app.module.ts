@@ -12,7 +12,6 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { SvgSpritesheetDirective } from './directives/sprite-sheet.directive';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './interceptors/tokenInt';
 import { HeaderComponent } from './components/header/header.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { CardComponent } from './components/card/card.component';
@@ -44,13 +43,7 @@ import { SelectComponent } from './components/select/select.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

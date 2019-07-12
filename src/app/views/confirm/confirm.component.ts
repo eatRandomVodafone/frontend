@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-confirm',
@@ -9,32 +10,18 @@ import {Title} from '@angular/platform-browser';
 })
 export class ConfirmComponent implements OnInit {
 
-
-  public userList = [
-    {
-      'img': 'icons-info-mesa/ente-desconocido-amarilo.png',
-      'textbold': 'Pilar',
-      'category': 'Analist Digital',
-      'textgrey': '"Me gustan los macarrones"'
-    },
-    {
-      'img': 'icons-info-mesa/ente-desconocido-verde.png',
-      'textbold': 'Diego',
-      'category': 'Head of',
-      'textgrey': '"La tortilla de patatas solo mola con cebolla"'
-    },
-    {
-      'img': 'icons-info-mesa/ente-desconocido.png',
-      'textbold': 'Marta',
-      'category': 'Bussines Analist',
-      'textgrey': '"Los gatos siempre caen boca abajo"'
-    },
-    {
-      'img': 'icons-info-mesa/ente-desconocido-amarilo.png',
-      'textbold': 'Ermenelgidlo',
-      'category': 'Head of',
-      'textgrey': '"Arroz con habichuelas"'
-    }
+  public userList = [];
+  public imgList = [
+      'icons-info-mesa/ente-desconocido-amarilo.png',
+      'icons-info-mesa/ente-desconocido-verde.png',
+      'icons-info-mesa/ente-desconocido.png',
+      'icons-info-mesa/ente-desconocido-amarilo.png',
+      ]
+  public textList = [
+    'Me gusta la tortilla con patatas',
+    'Los chuletones cuando más grandes, mejor',
+    'Odio la verdura',
+    'Unas birras "pa" cuando'
   ]
   public userEating = [
     {
@@ -53,15 +40,36 @@ export class ConfirmComponent implements OnInit {
       'textgrey': '"5 Piezas de fruta al día dan alegría"'
     }
   ]
+  public asignaciones: any = {};
+  private decodejwt : string;
+
   constructor(
     private aRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private tokenSrv: TokenService
   ) { }
 
   ngOnInit() {
     // Set title page
     this.aRoute.data
       .subscribe(data => this.titleService.setTitle(data.title));
+
+
+      this.decodejwt = JSON.parse(atob(this.tokenSrv.getToken().split('.')[1]));
+      console.log('confirm', this.decodejwt);
+
+      this.decodejwt['detalleAsignacion'].forEach((element, index) => {
+        let tempo = element.split('%');
+        let aux = {
+          'img': 'icons-info-mesa/ente-desconocido-amarilo.png',
+          'textbold': tempo[0],
+          'category': tempo[1],
+          'textgrey': '"Me gustan los macarrones"'
+        }
+        this.userList.push(aux);
+        this.asignaciones[index] = tempo;
+       });
+      console.log(this.asignaciones);
   }
 
 }

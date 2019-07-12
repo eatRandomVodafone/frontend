@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {UserService} from 'src/app/services/user.service';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Title} from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { Subject } from 'rxjs';
+import { filter, map, takeUntil } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { TokenService } from 'src/app/services/token.service';
 
 // import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
@@ -24,8 +25,9 @@ export class LoginComponent implements OnInit {
     private userSrv: UserService,
     private fb: FormBuilder,
     private aRoute: ActivatedRoute,
-    private titleService: Title
-    // private tokenSrv: TokenService
+    private titleService: Title,
+    private route: Router,
+    private tokenSrv: TokenService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
@@ -53,9 +55,30 @@ export class LoginComponent implements OnInit {
           takeUntil(this.unsubscribe)
         )
         .subscribe(resp => {
-          // this.tokenSrv.saveToken(resp.jwt);
+          // this.route.navigate(['/alta']);
+          this.tokenSrv.setToken(resp['jwt']);
+          this.userSrv.userStatus()
+          .subscribe(res => {
+            const decodejwt = JSON.parse(atob(res['jwt'].split('.')[1]));
+            this.tokenSrv.setToken(res['jwt']);
+            let status = decodejwt['status'];
+            if(status === null){
+              this.route.navigate(['/alta']);
+              status = '';
 
+            }
+            if(status.indexOf('esperando') >= 0){
+              this.route.navigate(['/status']);
+
+            }else if(status.indexOf('mesa') >= 0){
+              this.route.navigate(['/confirm']);
+
+            }
+            console.log(decodejwt);
+            })
         });
+
+
       this.errorMail = false;
     } else {
       this.errorMail = true;
