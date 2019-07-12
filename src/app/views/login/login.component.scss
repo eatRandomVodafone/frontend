@@ -4,7 +4,7 @@
 @import '@vodafone-es/web-simplicity-2-reboot/resources/assets/styles/06-components/_component.form.ws10.scss';
 
 .e2m-container{
-  padding: 16pxgit ;
+  padding: 16px;
 }
 .e2m-layout{
     height: 100vh;
@@ -41,15 +41,15 @@
             position: absolute;
             top: -63px;
             width: 135px;
-         
+
         }
 
 
             .slide1 {
             animation:fade 4s infinite;
            -webkit-animation:fade 4s infinite;
-           
-           } 
+
+           }
            .slide2 {
            animation:fade2 4s infinite;
            -webkit-animation:fade2 4s infinite;
@@ -79,7 +79,7 @@
              66.666% { opacity: 1}
              100% { opacity: 0}
            }
-          
+
 
         .vfes-button{
             margin-top: 35px;
