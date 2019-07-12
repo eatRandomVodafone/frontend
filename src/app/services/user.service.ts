@@ -15,13 +15,13 @@ export class UserService {
   checkLogin(loginData: Object){
 
 
-      const url: string = `http://18.185.48.95:4444/eatwithrandom/signin`;
+      const url: string = `https://eat2meet.herokuapp.com/eatwithrandom/signin`;
 
       return this.http.post(url, loginData);
   }
 
   userStatus(){
-    const url: string = `http://18.185.48.95:4444/eatwithrandom/status`;
+    const url: string = `https://eat2meet.herokuapp.com/eatwithrandom/status`;
     const jwt = this.tokenSrv.getToken();
 
         const headers = new HttpHeaders({

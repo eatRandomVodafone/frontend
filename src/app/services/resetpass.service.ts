@@ -11,7 +11,7 @@ export class ResetPassService {
   ) { }
 
   resetPass(resetPassData: Object){
-      const url: string = `http://18.185.48.95:4444/eatwithrandom/recoverpwd`;
+      const url: string = `https://eat2meet.herokuapp.com/eatwithrandom/recoverpwd`;
       const body = resetPassData;
       return this.http.post(url, body);
 

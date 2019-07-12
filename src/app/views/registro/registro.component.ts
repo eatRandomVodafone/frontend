@@ -48,8 +48,8 @@ export class RegistroComponent implements OnInit {
     const email = this.registroForm.get('email').value;
     if (this.registroForm.valid && this.validEmail(email)) {
       const registroData = {
-        nombre: this.registroForm.get('nombre').value,
-        email: email,
+        name: this.registroForm.get('nombre').value,
+        username: email,
         password: this.registroForm.get('password').value,
         area: this.registroForm.get('area').value,
         rol: this.registroForm.get('rol').value,
