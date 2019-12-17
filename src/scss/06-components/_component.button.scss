@@ -1,0 +1,197 @@
+
+.#{$ns-prefix}button {
+    font-family: $font-family-vodafone-regular;
+    text-align: center;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-size: $font-size-text;
+    line-height: $line-height-text;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+
+    &:visited {
+        color: $color-vodafone-white;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:active,
+    &:focus {
+        outline: 3px solid $color-blue-lagoon;
+    }
+
+    &--primary {
+        background-color: $color-red;
+        color: $color-white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $color-red-berry;
+            color: $color-white;
+        }
+
+        &-dark {
+            background-color: $color-guardsman-red;
+            color: $color-white;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $color-red-berry;
+                color: $color-white;
+            }
+        }
+    }
+
+    &--secondary {
+        background-color: $color-dove-gray;
+        color: $color-white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $color-mine-shaft;
+            color: $color-white;
+        }
+
+        &-dark {
+            background-color: $color-silver-chalice;
+            color: $color-vodafone-gray;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $color-silver;
+                color: $color-vodafone-gray;
+            }
+        }
+    }
+
+    &--tertiary {
+        background-color: $color-white;
+        border: 1px solid $color-dusty-gray;
+        color: $color-dove-gray;
+        padding: 9px 20px;
+
+        &:visited {
+            color: $color-dove-gray; 
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $color-wild-sand;
+            border: 1px solid $color-mine-shaft;
+            color: $color-mine-shaft;
+        }
+
+        &-dark {
+            &-1 {
+                background-color: transparent;
+                border: 1px solid $color-white;
+                color: $color-white;
+                padding: 9px 20px;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $color-abbey;
+                    color: $color-white;
+                }
+            }
+            &-2 {
+                background-color: $color-white;
+                color: $color-vodafone-gray;
+
+                &:visited {
+                    color: $color-dove-gray; 
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $color-gallery;
+                    color: $color-mine-shaft;
+                }
+            }
+        }
+    }
+
+
+    &--purple {
+        background-color: $color-seance;
+        color: $color-white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $color-finn;
+            color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-green;
+        color: $color-white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $green-hoverSDK;
+            color: $color-white;
+        }
+
+        &-dark {
+            background-color: $color-green;
+            color: $color-white;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $green-hoverSDKdark;
+                color: $color-white;
+            }
+        }
+
+        .icon,
+        &-dark .icon {
+            vertical-align: top;
+            margin-left: 6px;
+            stroke-width: 0;
+            position: relative;
+            top: 2px;
+            stroke: $color-vodafone-white;
+        }
+    }
+    &[disabled],
+    &--disabled {
+        background-color: $color-silver;
+        color: $color-white;
+        pointer-events: none;
+    }
+
+    &--disabled-dark,
+    &--disabled-dark[disabled] {
+        background-color: $color-dove-gray;
+        color: $color-mine-shaft;
+        pointer-events: none;
+    }
+
+    @media only screen and (min-width: $breakpoint-mov) {
+        padding: 10px 20px;
+        font-size: $font-size-text-large;
+        line-height: $line-height-text-large;
+        width: auto;
+    }
+}

@@ -1,0 +1,98 @@
+.#{$ns-prefix}tooltip {
+    display: inline-block;
+    height: 0;
+    position: relative;
+    font-size: $font-size-text-large;
+    line-height: $line-height-text-large;
+    font-family: $font-family-vodafone-regular;
+    
+    &__content {
+        color: $color-black;
+        border-radius: 10px;
+        padding: 36px 20px 20px;
+        width: 324px;
+        filter: drop-shadow(0 1px 4px $color-silver-chalice);
+        position: absolute;
+        bottom: 14px;
+        left: -20px;
+        display: none;
+        z-index: 9998;
+        text-align: left;
+
+        &.#{$ns-prefix}color-bg-vodafone-white + .#{$ns-prefix}tooltip__trigger::before {
+            border-top-color: $color-vodafone-white; 
+        }
+
+        &.#{$ns-prefix}color-bg-dove-gray + .#{$ns-prefix}tooltip__trigger::before {
+            border-top-color: $color-dove-gray;
+        }
+
+        &.#{$ns-prefix}color-bg-dove-gray .icon {
+            color: $color-vodafone-white;
+        }
+
+        &.#{$ns-prefix}color-bg-dove-gray {
+            color: $color-vodafone-white;
+        }
+    }
+
+    &__trigger {
+        position: relative;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    &__close {
+        right: 14px;
+        position: absolute;
+        top: 10px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 2px;
+    }
+
+    &__trigger *, &__close * {
+        pointer-events: none;
+    }
+
+    &--active &__content {
+        display: block;
+    }
+
+    .icon {
+        display: inline-block;
+    }
+
+    &--active &__trigger::before {
+        content: '';
+        border: 12px solid transparent;
+        border-top-color: $color-wild-sand;
+        position: absolute;
+        filter: drop-shadow(0 2px 1px $color-silver-chalice);
+        z-index: 9999;
+        margin-left: 50%;
+        top: -15px;
+        transform: translateX(-50%);
+    }
+
+    &--right {
+        .#{$ns-prefix}tooltip__content {
+            left: 0;
+            right: 0;
+            width: 320px;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-mov) {
+    
+        &__content {
+            width: 300px;
+            padding: 36px 16px 32px;
+            font-size: $font-size-text;
+            line-height: $line-height-text
+        }
+    }
+}

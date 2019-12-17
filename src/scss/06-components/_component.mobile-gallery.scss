@@ -1,0 +1,114 @@
+.#{$ns-prefix}mobile-gallery {
+    text-align: center;
+    letter-spacing: -.325em;
+    .#{$ns-prefix}title {
+        text-align: center;
+    }
+
+    .#{$ns-prefix}paragraph {
+        margin: 0;
+    }
+
+    &__head, &__information {
+        margin-bottom: 8px;
+    }
+
+    &__item {
+        max-width: 280px;
+        width: calc((100% / 4) - 15px);
+        display: inline-block;
+        margin-right: 20px;
+        padding: 4px 0;
+        letter-spacing: normal;
+        vertical-align: top;
+
+        &:last-of-type {
+            margin-right: 0px;
+        }
+    }
+    &__colors {
+        margin-top: 8px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    &__color {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background-color: $color-leg-red;
+        border-radius: 50%;
+        margin-right: 8px;
+        cursor: pointer;
+        &:last-of-type {
+            margin-right: 0px;
+        }
+    }
+    &__iva {
+        margin-bottom: 12px;
+        letter-spacing: normal;
+        .#{$ns-prefix}link {
+            font-size: $font-size-text-large;
+            line-height: $line-height-text-large;
+            &.active {
+                font-family: $font-family-vodafone-regular-bold;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpoint-mov) and (max-width: $breakpoint-tablet) {
+    .#{$ns-prefix}mobile-gallery {
+        &__item {
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 60px;
+            &:nth-of-type(odd) {
+                margin-right: 0px;
+            }
+            &:nth-last-of-type(2) {
+                margin-bottom: 48px;
+            }
+            &:last-of-type {
+                margin-bottom: 48px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-mov) {
+    .#{$ns-prefix}mobile-gallery {
+        &__item {
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 16px;
+            margin-right: 0px;
+            &:last-of-type {
+                margin-bottom: 8px;
+            }
+        }
+
+        & + .#{$ns-prefix}button {
+            margin-top: 0px !important;
+        }
+
+        .#{$ns-prefix}1\/2-mov {
+            padding-right: 5px;
+
+            &:nth-of-type(odd) {
+                padding-right: 0;
+                padding-left: 5px;
+            }
+
+            &:nth-last-of-type(2) {
+                margin-bottom: 0px;
+            }
+        }
+
+        .#{$ns-prefix}button {
+            width: 100%;
+        }
+    }
+}

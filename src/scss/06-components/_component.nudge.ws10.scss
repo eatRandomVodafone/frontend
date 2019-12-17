@@ -1,0 +1,165 @@
+.#{$ns-prefix}ws10 .#{$ns-prefix}colours-bg-vodafone-white .#{$ns-prefix}nudge,
+.#{$ns-prefix}ws10.#{$ns-prefix}colours-bg-vodafone-white .#{$ns-prefix}nudge {
+    background-color: $colours-vodafone-white;
+    color: $colours-dark-gray;
+
+    &__close {
+        color: $colours-dark-gray;
+    }
+
+    &__icon {
+        color: $colours-dark-gray;
+    }
+
+    a {
+        color: $colours-dark-gray;
+    }
+}
+
+.#{$ns-prefix}nudge {
+    font-family: $font-family-vodafone-regular;
+    position: relative;
+    color: $colours-vodafone-white;
+    background-color: $colours-vodafone-gray;
+    text-align: center;
+    padding: 11px 16px;
+
+    strong {
+        vertical-align: top;
+    }
+
+    .#{$ns-prefix}button {
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .#{$ns-prefix}paragraph {
+        margin-bottom: 0;
+    }
+
+    .#{$ns-prefix}paragraph + .#{$ns-prefix}button{
+        margin-bottom: 20px;
+    }
+
+    &__close {
+        background: transparent;
+        border: 0;
+        padding: 5px;
+        margin: 0;
+        top: 8px;
+        right: 8px;
+        position: absolute;
+
+        .icon {
+            vertical-align: top;
+        }
+    }
+
+    &--text-icon {
+        display: flex;
+        text-align: left;
+        padding: 11px 16px 11px 13px;
+
+        .#{$ns-prefix}nudge__icon {
+            margin-right: 14px;
+        }
+
+        .#{$ns-prefix}paragraph {
+            flex: 1 0;
+        }
+    }
+
+    &--close {
+        padding: 60px 16px 20px;
+    }
+
+    &--icon {
+        padding: 20px 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .#{$ns-prefix}nudge__icon {
+            border-radius: 100%;
+            vertical-align: bottom;
+            margin-right: 14px;
+        }
+
+        &-close {
+            padding: 60px 50px 30px 50px;
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        
+        &-up {                
+            top: 0;
+        }
+
+        &-down {
+            bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        padding-left: 20px;
+        padding-right: 62px;
+
+        .#{$ns-prefix}paragraph {
+            font-size: $font-size-text-large;
+            line-height: $line-height-text-large;
+            margin-bottom: 0;
+
+            strong {
+                margin-left: 4px;
+                margin-right: 16px;
+            }
+
+            & + .#{$ns-prefix}button {
+                margin-left: 15px;
+            }
+        }
+
+        .#{$ns-prefix}button {
+            margin-bottom: 0;
+            margin-right: 12px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &__close {
+            top: 5px;
+            right: 10px;
+            padding: 8px;
+        }
+
+        &--close {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 17px;
+            padding-bottom: 17px;
+        }
+
+        &--icon {
+            padding-top: 17px;
+            padding-bottom: 17px;
+            text-align: center;
+    
+            .icon {
+                width: 30px;
+                height: 30px;
+                margin-right: 21px;
+            }
+        }
+    }
+}

@@ -1,0 +1,186 @@
+.#{$ns-prefix}ws10 .#{$ns-prefix}carousel,
+.#{$ns-prefix}ws10.#{$ns-prefix}carousel {
+	
+
+	&--loaded {
+		
+	}
+	/*Se comenta porque en los estilos del DSL no lo vemos*/
+	// &--small {
+	// 	.#{$ns-prefix}carousel__bullets-bullet {
+	// 		width: 5px;
+	// 		height: 5px;
+	// 	}
+
+	// 	&-gutter .#{$ns-prefix}carousel__list-element {
+	// 		padding: 0 5px;
+	// 	}
+
+	// 	&-arrows .#{$ns-prefix}carousel__arrow {
+			
+	// 		&::after {
+	// 			width: 10px;
+	// 			height: 10px;
+	// 		}
+
+	// 		&--right {
+	// 			&::after {
+	// 				transform: translate(-70%, -50%) rotate(45deg);
+	// 				width: 10px;
+	// 				height: 10px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	&--active {
+		/*padding-left: 10px;
+		padding-right: 10px;*/
+
+		.#{$ns-prefix}carousel__list {
+			
+
+			&-element {
+				
+			}
+		}
+	}
+
+	&__list {
+		
+	}
+
+	&__arrow {
+
+		&--right {
+
+			&.#{$ns-prefix}carousel__arrow--disabled {
+				
+			}
+		}
+
+		&--disabled {
+			
+		}
+	}
+
+	&__bullets {
+		margin-top: 28px;
+
+		&-bullet {
+			
+
+			&::before {
+				background-color: $colours-silver;
+			}
+
+			&::after {
+				
+			}
+
+			&[type='button'] {
+				
+
+				.noTouchDevice &:hover {
+					&::before {
+						
+					}
+
+					&::after {
+						
+					}
+				}
+			}
+
+			&--active {
+	
+
+				&::before {
+					
+				}
+
+				&::after {
+					background-color: $colours-vodafone-red;
+					width: 8px;
+					height: 8px;
+					border: 0;
+				}
+			}
+		}
+	}
+
+}
+
+@media only screen and (min-width: $breakpoint-mov) {
+	.#{$ns-prefix}ws10 .#{$ns-prefix}carousel {
+		&__arrow {
+			&::after {
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+		&--active &__list-element {
+			
+		}
+
+		&__bullets-bullet {
+			
+		}
+
+		&__bullets {
+			margin-top: 40px;
+		}
+
+		&--small {
+	
+			&-arrows .#{$ns-prefix}carousel__arrow {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+	.#{$ns-prefix}ws10 .#{$ns-prefix}carousel,
+	.#{$ns-prefix}ws10.#{$ns-prefix}carousel {
+		&__arrow {
+			&::after {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		&--active &__list-element {
+			
+		}
+
+		&--small {
+	
+			&-arrows .#{$ns-prefix}carousel__arrow {
+				width: 48px;
+				height: 48px;
+				
+				&::after {
+					width: 15px;
+					height: 15px;
+				}
+			}
+
+		}
+	}
+}
+
+.#{$ns-prefix}color-bg-vodafone-gray .#{$ns-prefix}carousel__bullets-bullet{
+	&::before {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	&--active::after {
+		background-color: $colours-vodafone-white;
+	}
+}
+
+
+      

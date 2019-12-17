@@ -1,0 +1,595 @@
+.#{$ns-prefix}card-shop {
+    text-align: center;
+    letter-spacing: normal;
+    vertical-align: top;
+    border: 1px solid $color-gallery;
+    font-family: $font-family-vodafone-regular;
+    background-color: $color-vodafone-white;
+    
+    &__head {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(to bottom, $color-dark-red, $color-vodafone-red);
+        color: $color-vodafone-white;
+        overflow: hidden;
+        margin-bottom: 12px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        & * {
+            margin: 0;
+            color: $color-vodafone-white;
+        }
+        .#{$ns-prefix}paragraph {
+            margin-bottom: 16px;
+        }
+        &-title {
+            font-size: $font-size-h2;
+            line-height: $line-height-h2;
+            font-family: $font-family-vodafone-regular-bold;
+            margin-top: 16px;
+            &:only-child {
+                margin: 28px 0;
+            }
+        }
+        &-subtitle {
+            font-size: $font-size-h4;
+            line-height: $line-height-h4;
+            font-family: $font-family-vodafone-light;
+            margin-top: 22px;
+            &+.#{$ns-prefix}card-shop__head-title {
+                margin: 0;
+            }
+            &~.#{$ns-prefix}paragraph {
+                margin-bottom: 22px;
+            }
+        }
+        &+.#{$ns-prefix}card-shop__bundle {
+            margin-top: 0;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 32px 40px;
+
+        .#{$ns-prefix}card-shop__bundle {
+            margin: 0;
+            width: 30%;
+        }
+        .#{$ns-prefix}card-shop__bottom {
+            width: 100%;
+            max-width: 258px;
+            padding: 0;
+            .#{$ns-prefix}paragraph {
+                margin-top: 12px;
+            }
+        }
+        .#{$ns-prefix}card-shop__bundle-white {
+            padding: 0;
+        }
+    }
+    &__bundle {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid $color-vodafone-red;
+
+        &-title {
+            font-family: $font-family-vodafone-regular-bold;
+        }
+
+        &-red,
+        &-white {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 12px 14px;
+            width: 100%;
+            flex: 1;
+            * {
+                margin: 0;
+            }
+        }
+
+        &-red {
+            background-image: linear-gradient(to bottom, $color-dark-red, $color-vodafone-red);
+            color: $color-vodafone-white;
+
+            .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h4;
+                line-height: $line-height-h4;
+            }
+        }
+        &-white {
+            color: $color-vodafone-red;
+
+            .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h3;
+                line-height: $line-height-h3;
+            }
+        }
+        &--medium .#{$ns-prefix}card-shop__bundle-red {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h2;
+                line-height: $line-height-h2;
+            }
+        }
+        &--big .#{$ns-prefix}card-shop__bundle-red {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h1;
+                line-height: $line-height-h1;
+            }
+        }
+
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden;
+        }
+    }
+    &__offer {
+        padding: 22px 20px 18px;
+        * {
+            margin: 0;
+        }
+    }
+    &__price {
+        font-family: $font-family-vodafone-regular-bold;
+        font-size: $font-size-h3;
+        line-height: $line-height-h3;
+        margin-bottom: 4px;
+    }
+    &__before {
+        color: $color-vodafone-red;
+        font-family: $font-family-vodafone-regular;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    &__accordion {
+        &-content {
+            background-color: $color-wild-sand;
+            border-bottom: 1px solid $color-silver-chalice;
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            font-size: $font-size-text;
+            line-height: $line-height-text;
+
+            .#{$ns-prefix}paragraph {
+                margin-top: 9px;
+            }
+        }
+        &-button {
+            cursor: pointer;
+            position: relative;
+            padding: 11px 12px 12px;
+            display: inline-block;
+            padding-right: 20px;
+            font-size: 16px;
+            line-height: 20px;
+            &::after {
+                content: '';
+                @include arrow($direction: "down", $width: 12px, $color: $color-vodafone-red, $thin: "true", $stroke: 1px);
+                position: absolute;
+                top: 12px;
+                right: 0;
+            }
+        }
+        &.open {
+            .#{$ns-prefix}card-shop__accordion-content {
+                height: auto;
+                padding: 18px 15px 26px;
+            }
+            .#{$ns-prefix}card-shop__accordion-button::after {
+                transform: rotate(-45deg);
+                top: 20px;
+            }
+        }
+        .#{$ns-prefix}link {
+            color: $color-vodafone-gray;
+        }
+    }
+    &__bottom {
+        padding: 8px 24px 20px;
+        .#{$ns-prefix}paragraph {
+            margin-top: 17px;
+            margin-bottom: 0;
+        }
+    }
+    &__dropdown {
+        background-color: $color-vodafone-white;
+        border: 1px solid $color-dusty-gray;
+        margin-top: 20px;
+        text-align: left;
+        border-radius: 10px;
+
+        &:not(.#{$ns-prefix}card-shop__dropdown-open):hover {
+            background-color: $color-wild-sand;
+            border-color: $color-vodafone-gray;
+        }
+        &-title {
+            padding: 11px 16px;
+            position: relative;
+            margin: 0;
+            cursor: pointer;
+            font-size: $font-size-text-large;
+            line-height: $line-height-text-large;
+            width: 100%;
+            color: inherit;
+            &::after {
+                content: '';
+                @include arrow($direction: "down", $width: 10px, $color: $color-vodafone-gray, $thin: "true", $stroke: 1px);
+                position: absolute;
+                top: 12px;
+                right: 16px;
+            }
+        }
+        &-content {
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            background-color: $color-gallery;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            .#{$ns-prefix}link {
+                color: $color-vodafone-gray;
+            }
+
+            .#{$ns-prefix}list--simple {
+                margin: 0;
+            }
+
+            li {
+                padding-bottom: 8px;
+            }
+        }
+        &.open {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+            
+            .#{$ns-prefix}card-shop__dropdown-title {
+                color: $color-dove-gray;
+                &::after {
+                    transform: rotate(-45deg);
+                    top: 20px;
+                }
+            }
+            &.#{$ns-prefix}card-shop__dropdown--gray,
+            &.#{$ns-prefix}card-shop__dropdown--red,
+            &.#{$ns-prefix}card-shop__dropdown--purple {
+                & .#{$ns-prefix}card-shop__dropdown-title {
+                    color: $color-vodafone-white;
+                    &::after {
+                        border-top-color: $color-vodafone-white;
+                        border-right-color: $color-vodafone-white;
+                    }
+                }
+            }
+            .#{$ns-prefix}card-shop__dropdown-content {
+                height: auto;
+                padding: 21px 15px 18px;
+            }
+        }
+        &--gray {
+            background-color: $color-dove-gray;
+            border-color: $color-gallery;
+            color: $color-vodafone-white;
+            &:not(.#{$ns-prefix}card-shop__dropdown-open):hover {
+                background-color: $color-vodafone-gray;
+            }
+            .#{$ns-prefix}card-shop__dropdown-title::after {
+                border-top-color: $color-vodafone-white;
+                border-right-color: $color-vodafone-white;
+            }
+            .#{$ns-prefix}card-shop__dropdown-content {
+                background-color: $color-vodafone-white;
+                * {
+                    color: $color-dove-gray;
+                }
+            }
+        }
+        &--red {
+            background-color: $color-vodafone-red;
+            border-color: $color-gallery;
+            color: $color-vodafone-white;
+            &:not(.#{$ns-prefix}card-shop__dropdown-open):hover {
+                background-color: $color-maroon;
+            }
+            .#{$ns-prefix}card-shop__dropdown-title::after {
+                border-top-color: $color-vodafone-white;
+                border-right-color: $color-vodafone-white;
+            }
+            .#{$ns-prefix}card-shop__dropdown-content {
+                background-color: $color-vodafone-white;
+                * {
+                    color: $color-vodafone-red;
+                }
+            }
+        }
+        &--purple {
+            background-color: $color-red-violet;
+            border-color: $color-gallery;
+            color: $color-vodafone-white;
+            &:not(.#{$ns-prefix}card-shop__dropdown-open):hover {
+                background-color: $color-albergine;
+            }
+            .#{$ns-prefix}card-shop__dropdown-title::after {
+                border-top-color: $color-vodafone-white;
+                border-right-color: $color-vodafone-white;
+            }
+            .#{$ns-prefix}card-shop__dropdown-content {
+                background-color: $color-vodafone-white;
+                * {
+                    color: $color-red-violet;
+                }
+            }
+        }
+    }
+
+    &--full-width {
+        .#{$ns-prefix}card-shop__header {
+            align-items: flex-start;
+        }
+        .#{$ns-prefix}card-shop__header .#{$ns-prefix}card-shop__bundle-white {
+            padding: 12px;
+        }
+        .#{$ns-prefix}card-shop__bundle {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .#{$ns-prefix}card-shop__accordion-open .#{$ns-prefix}card-shop__accordion-content {
+            padding: 32px;
+        }
+        >.#{$ns-prefix}card-shop__bottom {
+            display: none;
+        }
+    }
+
+    .#{$ns-prefix}link {
+        text-decoration: underline;
+        &::after {
+            display: none;
+        }
+    }
+
+    .#{$ns-prefix}button--full-width {
+        width: 100%;
+    }
+
+    &:not(.#{$ns-prefix}card-shop--full-width).#{$ns-prefix}tag-label--border .#{$ns-prefix}card-shop__bundle-white{
+        border-right: 0;
+    }
+    
+    &--extra {
+        
+        .#{$ns-prefix}card-shop {
+            width: 100%;
+            max-width: 100%;
+            &__bottom {
+                padding: 0px 12px 20px;
+            }
+            &__accordion-button {
+                text-decoration: none;
+                color: $color-vodafone-gray;
+                background-color: transparent;
+                border: 0;
+            }
+            &__accordion-open {
+                .#{$ns-prefix}card-shop__accordion-content {
+                    padding: 17px 16px 15px;
+                }
+                .#{$ns-prefix}paragraph {
+                    margin: 0;
+                    &:first-of-type {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+
+            &__offer {
+                padding-top: 0;
+            }
+        }
+
+        &__icon .icon{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        &__car {
+            width: 100%;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            .#{$ns-prefix}card-shop--extra__icon .icon {
+                margin-top: 18px;
+            }
+            .#{$ns-prefix}card-shop__bottom {
+                padding-bottom: 17px;
+            }
+        }
+    }
+
+    &.#{$ns-prefix}tag-label .#{$ns-prefix}tag-label__outstanding +  &__bundle {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+    .#{$ns-prefix}card-shop {
+        margin-top: 40px;
+        &:first-child,
+        &:nth-child(2) {
+            margin-top: 0px;
+        }
+        &__offer {
+            padding-bottom: 22px;
+            padding-top: 20px;
+        }
+        &__dropdown-title {
+            padding: 10px 16px;
+        }
+        &--full-width {
+            .#{$ns-prefix}card-shop__header {
+                flex-direction: column;
+                padding: 0;
+                align-items: center;
+                .#{$ns-prefix}card-shop__bundle {
+                    width: 100%;
+                    margin-top: 20px;
+                    &--medium {
+                        margin-top: 8px;
+                    }
+                    &--big {
+                        margin-top: 0;
+                    }
+                }
+                .#{$ns-prefix}card-shop__bottom {
+                    display: none;
+                }
+            }
+            >.#{$ns-prefix}card-shop__bottom {
+                display: block;
+                .#{$ns-prefix}button {
+                    width: calc(100% - 20px);
+                    max-width: 258px;
+                    vertical-align: top;
+                    margin-right: 20px;
+                }
+                .#{$ns-prefix}card-shop__dropdown {
+                    max-width: 258px;
+                    width: 100%;
+                    margin-top: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+        }
+        &--extra {
+            margin-top: 0px;
+
+            &.#{$ns-prefix}tag-label--border .#{$ns-prefix}card-shop__bottom {
+                padding-bottom: 17px;
+            }
+    
+            &__icon .icon{
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            &__car {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-mov) {
+    .#{$ns-prefix}card-shop {
+        margin-bottom: 0px;
+        margin-top: 24px;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:nth-child(even) {
+            margin-top: 24px;
+        }
+        &.#{$ns-prefix}tag-label {
+            margin-top: 48px;
+            &:first-child {
+                margin-top: 20px;
+            }
+        }
+        &.#{$ns-prefix}tag-label {
+            width: 100%; // -40px
+        }
+        &--full-width >.#{$ns-prefix}card-shop__bottom{
+            .#{$ns-prefix}button,
+            .#{$ns-prefix}card-shop__dropdown {
+                width: 100%;
+                max-width: 100%;
+            }
+            .#{$ns-prefix}card-shop__dropdown {
+                margin-top: 12px;
+            }
+        }
+        &__head {
+            margin-bottom: 0;
+        }
+        &__subtitle {
+            margin-top: 26px;
+        }
+        &__bundle {
+            &-white .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h4;
+                line-height: $line-height-h4;
+            }
+            &-red .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h4;
+                line-height: $line-height-h4;
+            }
+            &--medium .#{$ns-prefix}card-shop__bundle-red .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h3;
+                line-height: $line-height-h3;
+            }
+            &--big .#{$ns-prefix}card-shop__bundle-red .#{$ns-prefix}card-shop__bundle-title {
+                font-size: $font-size-h2;
+                line-height: $line-height-h2;
+            }
+        }
+        &__offer {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            .#{$ns-prefix}title--3 {
+                font-size: $font-size-h4;
+                line-height: $line-height-h4;
+            }
+            .#{$ns-prefix}paragraph--large {
+                font-size: $font-size-text;
+                line-height: $line-height-text;
+            }
+        }
+        &__price {
+            font-size: $font-size-h5;
+            line-height: $line-height-h5;
+        }
+        &__before {
+            font-size: $font-size-text;
+            line-height: $line-height-text;
+        }
+        &__accordion-button {
+            padding-bottom: 12px;
+        }
+        &__accordion-open &__accordion-content {
+            padding: 7px 20px 16px;
+        }
+        &__bottom {
+            padding: 0px 10px 15px;
+            .#{$ns-prefix}paragraph {
+                margin-top: 15px;
+            }
+        }
+        &__dropdown-open &__dropdown-content {
+            padding: 17px 11px 20px;
+        }
+        &__dropdown-title {
+            font-size: $font-size-text;
+            line-height: $line-height-text;
+        }
+
+        &--extra {
+            margin-bottom: 38px;
+
+            &:only-of-type, &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

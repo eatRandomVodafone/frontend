@@ -1,0 +1,1388 @@
+.#{$ns-prefix}tabs {
+    font-family: $font-family-vodafone-regular;
+    text-align: center;
+
+    &, & * {
+        box-sizing: border-box;
+    }
+
+    /* Elements */
+    &__container {
+        text-align: center;
+        margin-bottom: 4px;
+        letter-spacing: -.325rem;
+        padding-left: 0;
+        margin-top: 40px;
+        border-bottom: 1px solid $color-silver;
+        border: 0px;
+    }
+    
+    &__tab {
+        cursor: pointer;
+        display: inline-block;
+        font-family: $font-family-vodafone-regular;
+        font-size: $font-size-text-large;
+        line-height: 20px;
+        max-width: 190px;
+        position: relative;
+        text-align: center;
+        letter-spacing: normal;
+        vertical-align: bottom;
+        
+        &:hover {
+            color: $color-vodafone-red;
+        }
+
+        &-button {
+            color: $color-vodafone-gray;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 20px;
+
+            * {
+                pointer-events: none;
+            }
+        }
+
+        &-active {
+            color: $color-vodafone-red;
+
+            &::before {
+                content: '';
+                height: 2px;
+                width: 100%;
+                bottom: 0;
+                position: absolute;
+                left: 0;
+                background-color: $color-vodafone-red;
+            }
+
+            &::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-top: 5px solid $color-vodafone-red;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                transform: translate(-50%);
+            }
+
+            .#{$ns-prefix}tabs__tab-button {
+                color: $color-vodafone-red;
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+        background-color: $color-gallery;
+        display: none;
+        margin-top: -4px;
+        padding: 24px 0;
+        color: $color-vodafone-gray;
+        letter-spacing: normal;
+        text-align: initial;
+
+        &-copy {
+            display: none;
+        }
+
+        &-open {
+            display: block;
+        }
+
+        & > .#{$ns-prefix}tabs > .#{$ns-prefix}tabs__container {
+            margin-top: 0;
+        }
+    }
+
+    &:not([class*='tabs--']) > &__content,
+    &--dropdown > &__content {
+        padding-top: 23px;
+    }
+
+    &__link {
+        &-column {
+            max-width: 100%;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 16px;
+            font-size: $font-size-text-large;
+            line-height: $line-height-text-large;
+
+            &-full {
+                width: 100%;
+            }
+
+            &:last-child {
+                margin-right: 0 !important;
+            }  
+        }
+
+        &-box {
+            display: block;
+            padding: 22px 20px 20px;
+            width: 100%;
+        }
+    }
+
+    &__close {
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        position: absolute;
+        top: 28px;
+        right: 28px;
+        cursor: pointer;
+        stroke: $color-vodafone-gray;
+        stroke-width: 0;
+    }
+
+    .#{$ns-prefix}accordion {
+        &-item {
+            padding: 24px 16px 35px;
+        }
+
+        &__item {
+            padding: 0px 20px;
+        }
+
+        .#{$ns-prefix}card {
+            padding: 0;
+            width: 100%;
+            margin-bottom: 0;
+            
+            &__img + .#{$ns-prefix}card__content {
+                padding-left: 20px;
+
+                .#{$ns-prefix}button {
+                    margin-top: 28px;
+                }
+            }
+            
+            &__content {
+                padding: 0;
+            }
+
+            &.#{$ns-prefix}box-shadow {
+                border: 0;
+                box-shadow: 0 0 0 0 transparent;
+                outline: 0;
+            }
+
+            .#{$ns-prefix}title {
+                margin-bottom: 20px;
+            }
+
+            .#{$ns-prefix}link {
+                padding: 0;
+                border: 0;
+
+                &::after {
+                    position: static;
+                }
+            }
+
+            .#{$ns-prefix}button {
+                color: $color-vodafone-white;
+                margin-top: 28px;
+            }
+        }
+
+        .#{$ns-prefix}paragraph {
+            font-size: $font-size-text;
+            line-height: $line-height-text;
+            padding: 0;
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 16px;
+            }
+
+            &:only-child,
+            &:only-of-type,
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    /* Modifiers */
+    & > &__content > &--group {
+        max-width: $wrapper-width-desktop;
+        margin: 0 auto;
+
+        & > .#{$ns-prefix}tabs__content {
+            text-align: left;
+        }
+    }
+
+    &--group {
+        & .#{$ns-prefix}tabs__tab {
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+
+        & .#{$ns-prefix}tabs__tab,
+        &.#{$ns-prefix}tabs__tab {
+            border: 1px solid $color-vodafone-white;
+            width: 140px;
+            max-width: 100%;
+            overflow: hidden;
+            
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            &:hover {
+                background-color: $color-gallery;
+                color: $color-vodafone-gray;
+            }
+
+            .#{$ns-prefix}tabs__tab-button.#{$ns-prefix}tabs__tab-active {
+                background-color: $color-vodafone-gray;
+                color: $color-vodafone-white;
+                border-color: $color-vodafone-gray;
+
+                &:hover {
+                    background-color: $color-vodafone-gray;
+                    color: $color-vodafone-white;
+                }
+
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+
+            & > .#{$ns-prefix}tabs__tab-button {
+                padding: 17px;
+                width: 100%;
+                background-color: $color-gallery;
+                color: $color-vodafone-gray;
+                border-radius: 0;
+            }
+        }
+
+        & > .#{$ns-prefix}tabs__content {
+            border-top: 0;
+
+            & > .#{$ns-prefix}button {
+                margin-top: 48px;
+            }
+        }
+    }
+
+    &--topics {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        & > .#{$ns-prefix}title {
+            margin: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        & > .#{$ns-prefix}tabs__container {
+            margin-right: 20px;
+            margin-top: 0;
+            max-width: 280px;
+            width: calc((100% / 4) - 15px);
+            letter-spacing: normal;
+            white-space: normal;
+            padding-bottom: 0px;
+
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+
+            & > .#{$ns-prefix}tabs__tab {
+                display: block;
+                max-width: 100%;
+                width: 100%;
+                margin-bottom: 20px;
+
+                &-button {
+                    border-radius: 10px;
+                    padding: 23px 44px 15px;
+                    background-color: $color-vodafone-white;
+                    border: 1px solid $color-silver;
+                    color: $color-vodafone-white;
+
+                    &:hover {
+                        background-color: $color-vodafone-white;
+                        color: $color-vodafone-red;
+                        border: 1px solid $color-vodafone-red;
+    
+                        svg {
+                            color: $color-vodafone-red;
+                            stroke: $color-vodafone-red;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                svg {
+                    display: inline-block;
+                    width: 48px;
+                    height: 48px;
+                    color: $color-vodafone-gray;
+                    fill: transparent;
+                    stroke-width: 0;
+                    stroke: $color-vodafone-gray;
+                }
+
+                p {
+                    font-size: $font-size-text-large;
+                    line-height: 20px;
+                    margin: 16px 0 0;
+                }
+
+                &-active {
+
+                    .#{$ns-prefix}tabs__tab-button {
+                        background-color: $color-vodafone-red;
+                        color: $color-vodafone-white;
+                        border: 1px solid $color-vodafone-red;
+
+                        &:hover {
+                            background-color: $color-vodafone-red;
+                            color: $color-vodafone-white;
+    
+                            svg {
+                                color: $color-vodafone-white;
+                                stroke: $color-vodafone-white;
+                            }
+                        }
+                    }
+
+                    margin-bottom: 36px;
+
+                    &::before {
+                        display: none;
+                    }
+
+                    &::after {
+                        content: '';
+                        bottom: -37px;
+                        border-top: 20px solid transparent;
+                        border-left: 20px solid transparent;
+                        border-right: 20px solid transparent;
+                        border-bottom: 20px solid $color-gallery;
+                        transform: translateX(-50%);
+                    }
+
+                    svg {
+                        color: $color-vodafone-white;
+                        stroke: $color-vodafone-white;
+                    }
+
+                    & + .#{$ns-prefix}tabs__content {
+                        display: block;
+                        text-align: left;
+                        position: absolute;
+                        left: 0;
+                        padding: 56px 80px 40px;
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            & > .#{$ns-prefix}tabs__content {
+                border-top: 0;
+                z-index: 1;
+            }
+        }
+
+        .#{$ns-prefix}card {
+            max-width: 100%;
+            width: 100%;
+            text-align: right;
+            margin-right: 0;
+            letter-spacing: normal;
+            margin-left: 0;
+            
+
+            .#{$ns-prefix}title {
+                margin-bottom: 16px;
+            }
+
+            .#{$ns-prefix}button {
+                width: auto;
+                margin-right: 20px;
+                margin-top: 32px;
+
+                &:only-of-type,
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            &-full {
+                width: 100%;
+            }
+        }
+
+        & > .#{$ns-prefix}1\/1 > .#{$ns-prefix}button {
+            margin-top: 20px;
+        }
+    }
+
+    &--circle {
+        & > .#{$ns-prefix}tabs__container {
+            margin-bottom: 32px;
+            border-bottom: 0px;
+            display: flex;
+            justify-content: center;
+        }
+
+        & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab,
+        &.#{$ns-prefix}tabs__tab-circle {
+            background-color: transparent;
+            max-width: 120px;
+            width: calc((100% / 6) - 80px);
+            margin-right: 80px;
+            padding: 0;
+            vertical-align: top;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: $color-vodafone-red;
+            }
+
+            svg.icon--small, vfes-icon {
+                display: inline-block;
+                width: 64px;
+                height: 64px;
+                color: $color-vodafone-red;
+                fill: transparent;
+                background-color: $color-vodafone-white;
+                border: 1px solid $color-vodafone-red;
+                padding: 12px;
+                border-radius: 100%;
+                stroke: $color-vodafone-red;
+            }
+
+            p {
+                line-height: 20px;
+                font-size: $font-size-text-large;
+                margin: 16px 0 0;
+            }
+
+            .#{$ns-prefix}tabs__tab-active.#{$ns-prefix}tabs__tab-button {
+                background-color: transparent;
+                color: $color-vodafone-red;
+
+                &:hover {
+                    background-color: transparent;
+                    color: $color-vodafone-red;
+
+                    .icon {
+                        background-color: $color-vodafone-red;
+                        color: $color-vodafone-white;
+                        stroke: $color-vodafone-white;
+                    }
+                }
+
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    content: '';
+                    bottom: -33px;
+                    border-top: 20px solid transparent;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 20px solid $color-gallery;
+                    transform: translateX(-50%);
+                }
+
+                .icon--small, vfes-icon {
+                    background-color: $color-vodafone-red;
+                    border-color: $color-vodafone-red;
+                    color: $color-vodafone-white;
+                    stroke: $color-vodafone-white;
+                }
+            }
+        }
+
+        &.#{$ns-prefix}tabs__tab-circle {
+            width: 100%;
+        }
+
+        & > .#{$ns-prefix}tabs__content {
+            border-top: 0;
+        }
+    }
+
+    &--gray {
+        background-color: $color-gallery;
+
+        & > .#{$ns-prefix}tabs__content,
+        &.#{$ns-prefix}tabs__content {
+            background-color: $color-vodafone-white;
+            border-top-color: $color-vodafone-white;
+        }
+
+        &.#{$ns-prefix}tabs--topics {
+            & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab-active::after {
+                border-bottom-color: $color-dove-gray;
+            }
+            
+            & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__content {
+                background-color: $color-dove-gray;
+                border-top-color: $color-dove-gray;
+                color: $color-vodafone-white;
+            }
+        }
+
+        &.#{$ns-prefix}tabs--circle {
+            & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab-active::after {
+                border-bottom-color: $color-vodafone-white;
+            }
+        }
+    }
+
+    &--black {
+        background-color: $color-abbey;
+        color: $color-vodafone-white;
+
+        & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab {
+            color: $color-silver;
+
+            &:hover {
+                color: $color-vodafone-white;
+            }
+
+            &-active {
+                color: $color-vodafone-white;
+
+                &::before {
+                    background-color: $color-vodafone-white;
+                }
+                &::after {
+                    border-top-color: $color-vodafone-white;
+                }
+            }
+        }
+
+        &.#{$ns-prefix}tabs--group {
+            background-color: $color-vodafone-gray;
+
+            & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab {
+                color: $color-silver;
+                background-color: $color-abbey;
+                border-color: $color-dusty-gray;
+
+                &:hover {
+                    background-color: $color-dove-gray;
+                }
+
+                &-active {
+                    background-color: $color-wild-sand;
+                    color: $color-vodafone-gray;
+                    border-color: $color-silver;
+
+                    &:hover {
+                        background-color: $color-wild-sand;
+                        color: $color-vodafone-gray;
+                    }
+                }
+            }
+        }
+
+        & > .#{$ns-prefix}tabs__content,
+        &.#{$ns-prefix}tabs__content {
+            background-color: $color-vodafone-gray;
+            border-top-color: $color-dove-gray;
+            color: $color-vodafone-white;
+        }
+
+        &.#{$ns-prefix}tabs--dropdown {
+            background-color: $color-vodafone-gray;
+
+            & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab {
+                border: 0;
+                background-color: $color-abbey;
+                color: $color-silver;
+
+                &:hover {
+                    color: $color-silver;
+                }
+
+                &::after {
+                    background-color: $color-abbey;
+                    border-top-color: $color-silver;
+                    border-right-color: $color-silver;
+                }
+
+                &::before {
+                    display: none;
+                }
+
+                &-active {
+                    color: $color-silver;
+
+                    & + .#{$ns-prefix}tabs__content-copy {
+                        background-color: $color-abbey;
+                        color: $color-silver;
+                        border: 0;
+        
+                        &::after {
+                            background-color: $color-abbey;
+                        }
+                    }
+
+                    &::before {
+                        display: block;
+                        background-color: $color-silver;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Media Querys
+@media only screen and (min-width: $breakpoint-mov) {
+    .#{$ns-prefix}tabs {
+        &__link-column:nth-last-child(n+2):first-child,
+        &__link-column:nth-last-child(n+2):first-child ~ &__link-column {
+            margin-right: 20px;
+            width: calc((100% / 2) - 10px);
+        }
+
+        &__link-column:nth-last-child(n+2):first-child ~ &__link-column:nth-last-child(n+2) {
+            margin-right: 0;
+        }
+        
+        &--topics .#{$ns-prefix}card {
+            &:nth-last-child(n+2):first-child,
+            &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card {
+                margin-right: 20px;
+                width: calc((100% / 2) - 12px);
+            }
+
+            &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card:last-child,
+            &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card:nth-last-child(n+2) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+@media only screen and (min-width: $breakpoint-tablet) {
+    .#{$ns-prefix}tabs {
+        &__link-column:nth-last-child(n+3):first-child,
+        &__link-column:nth-last-child(n+3):first-child ~ &__link-column {
+            margin-right: 30px;
+            width: calc((100% / 3) - 20px);
+        }
+
+        &__link-column:nth-last-child(n+2):first-child ~ &__link-column:nth-last-child(n+2) {
+            margin-right: 30px;
+        }
+        
+        &__link-column:nth-last-child(n+3):first-child ~ &__link-column:last-child,
+        &__link-column:nth-last-child(n+3):first-child ~ &__link-column:nth-last-child(n+3) {
+            margin-right: 0;
+        }
+
+        &--topics {
+            position: relative;
+
+            .#{$ns-prefix}card {
+                &:nth-last-child(n+3):first-child,
+                &:nth-last-child(n+3):first-child ~ .#{$ns-prefix}card {
+                    margin-right: 30px;
+                    width: calc((100% / 3) - 23px);
+                }
+    
+                &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card:nth-last-child(n+2) {
+                    margin-right: 30px;
+                }
+    
+                &:nth-last-child(n+3):first-child ~ .#{$ns-prefix}card:last-child,
+                &:nth-last-child(n+3):first-child ~ .#{$ns-prefix}card:nth-last-child(n+3) {
+                    margin-right: 0;
+                }
+    
+                &:nth-last-child(n+3):first-child,
+                &:nth-last-child(n+3):first-child ~ .#{$ns-prefix}card {
+    
+                    .#{$ns-prefix}button {
+                        width: 100%;
+                        margin-right: 0;
+                        margin-top: 12px;
+    
+                        &:first-of-type,
+                        &:only-of-type,
+                        &:only-child {
+                            margin-top: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+	.#{$ns-prefix}tabs {
+        
+        /* Elements */
+        &__container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            white-space: nowrap;
+
+        }
+        &__tab {
+            max-width: 129px;
+            padding: 12px 20px;
+            width: 100%;
+            white-space: normal;
+        }
+
+        &__close {
+            top: 8px;
+            right: 8px;
+        }
+
+        .#{$ns-prefix}card {
+            &:nth-last-child(n+2):first-child,
+            &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card {
+                margin-right: 20px;
+                width: calc((100% / 2) - 10px);
+            }
+
+            &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card:last-child,
+            &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card:nth-last-child(n+2) {
+                margin-right: 0;
+            }
+        }
+
+        .#{$ns-prefix}accordion {
+            &-item {
+                padding-top: 22px;
+            }
+            .#{$ns-prefix}card {
+                &__img {
+                    margin-top: 7px;
+
+                    img {
+                        height: 140px;
+                        object-position: center;
+                    }
+                }
+
+                &__img + .#{$ns-prefix}card__content {
+                    padding-top: 21px;
+                    padding-left: 0;
+                }
+                
+                &__content {
+                    .#{$ns-prefix}title {
+                        margin-bottom: 16px;
+                    }
+
+                    .#{$ns-prefix}paragraph:last-child {
+                        margin-bottom: 5px;
+                    }
+
+                    .#{$ns-prefix}button {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+
+        /* Modifiers */
+        & > &__content > &--group {
+            max-width: $wrapper-width-tablet;
+        }
+
+        &--group {
+            & > .#{$ns-prefix}tabs__container {
+                margin-left: 20px;
+                margin-right: 20px;
+            
+                & > .#{$ns-prefix}tabs__tab {
+                    max-width: 149px;
+                    padding: 13px 20px;
+                    width: 100%;
+                }
+            }
+        }
+
+        &--topics {
+            max-width: 768px;
+            & > .#{$ns-prefix}tabs__container {
+                max-width: 229px;
+                width: calc((100% / 3) - 20px);
+
+                &:nth-of-type(4n) {
+                    margin-right: 20px;
+                }
+    
+                & > .#{$ns-prefix}tabs__tab {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                & > .#{$ns-prefix}tabs__tab-active + .#{$ns-prefix}tabs__content {
+                    padding: 56px 42px 40px;
+                }
+
+                .#{$ns-prefix}accordion__item {
+                    &:last-of-type {
+                        margin-bottom: 16px;
+                    }
+                }
+
+            }
+
+            .#{$ns-prefix}card {
+                &:nth-last-child(n+2):first-child,
+                &:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card {
+                    .#{$ns-prefix}button {
+                        width: 100%;
+                        margin-right: 0;
+                        margin-top: 12px;
+
+                        &:first-of-type {
+                            margin-top: 36px;
+                        }
+
+                    }
+                }
+
+                &:last-of-type {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+
+        &--circle {
+            & .#{$ns-prefix}tabs__container {
+                padding-bottom: 32px;
+            }
+
+            & .#{$ns-prefix}tabs__tab {
+                max-width: 102px;
+                padding: 0;
+                width: 100%;
+                margin-right: 22px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            & > .#{$ns-prefix}tabs__content {
+                margin-top: -33px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: $breakpoint-mov) {
+	.#{$ns-prefix}tabs {
+        &__link-box {
+            padding: 18px 12px;
+        }
+
+        &__link-column {
+            margin-bottom: 12px;
+
+            &:first-of-type {
+                margin-bottom: 12px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__close {
+            height: 20px;
+            width: 20px;
+            top: 16px;
+            right: 10px;
+        }
+
+        &__content .#{$ns-prefix}button {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .#{$ns-prefix}card,
+        .#{$ns-prefix}card:nth-last-child(n+2):first-child,
+        .#{$ns-prefix}card:nth-last-child(n+2):first-child ~ .#{$ns-prefix}card {
+            width: 100%;
+            max-width: 100%;
+            margin-right: 0;
+            display: block;
+        }
+
+        .#{$ns-prefix}accordion {
+            &__item:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &-item {
+                padding: 24px 4px 35px;
+            }
+
+            &__heading {
+                padding: 17px 4px;
+                margin-left: 4px;
+            }
+
+            &__content {
+                margin-top: 0;
+            }
+
+            .#{$ns-prefix}card {
+
+                &__img {
+                    max-width: 0;
+                }
+
+                &__img + .#{$ns-prefix}card__content {
+                    padding-top: 13px;
+                    padding-left: 0;
+                }
+
+                &--large > .#{$ns-prefix}card__img{
+                    min-width: 200px;
+                    max-width: fit-content;
+                }
+                
+                &__content {
+
+                    .#{$ns-prefix}paragraph:last-child {
+                        margin-bottom: 6px;
+                    }
+
+                    .#{$ns-prefix}button {
+                        margin-top: 12px;
+                        font-size: $font-size-text-large;
+                        line-height: $line-height-text-large;
+                        
+                        &:first-of-type {
+                            margin-top: 26px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        & > .#{$ns-prefix}title--1 {
+            font-size: $font-size-h2;
+            line-height: $line-height-h2;
+        }
+
+        &--group {
+            & > .#{$ns-prefix}tabs__container {
+                margin-left: 10px;
+                margin-right: 10px;
+
+                & > .#{$ns-prefix}tabs__tab::after {
+                    display: none;
+                }
+                
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child {
+                    position: relative;
+                }
+
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child::after {
+                    content: '';
+                    display: inline-block;
+                    border: 0;
+                    @include arrow($direction: "up", $width: 10px, $color: $color-vodafone-gray, $thin: "true", $stroke: 1px);
+                    left: auto;
+                    top: 16px;
+                    right: 16px;
+                    background-color: transparent;
+                    position: absolute;
+                }
+                
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child,
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab {
+                    max-width: 100%;
+                    width: 100%;
+                    border: 1px solid $color-silver-chalice;
+                    background-color: $color-wild-sand;
+                    padding: 10px 66px 10px 16px;
+                    margin: 0;
+                    text-align: left;
+                    color: $color-vodafone-gray;
+                    display: block;
+                }
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child {
+                    border-bottom: 0;
+                    border-bottom-left-radius: 0;
+                    border-top-right-radius: 10px;
+                }
+
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab {
+                    border-top: 0;
+                    border-bottom: 0;
+                }
+
+
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab:nth-child(even) {
+                    background-color: $color-gallery;
+                }
+
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3) ~ .#{$ns-prefix}tabs__tab:last-child {
+                    border-bottom: 1px solid $color-silver-chalice;
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: 6px;
+                }
+            }
+        }
+
+        &--group-close {
+            & > .#{$ns-prefix}tabs__container {
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child,
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab {
+                    display: none;
+                }
+
+                & > .#{$ns-prefix}tabs__tab-active.#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child,
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab-active {
+                    display: block;
+                    border-top: 1px solid $color-silver-chalice;
+                    border-bottom: 1px solid $color-silver-chalice;
+                    background-color: $color-wild-sand !important;
+                    border-radius: 6px;
+                }
+
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child::after,
+                & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3) ~ .#{$ns-prefix}tabs__tab-active::after {
+                    content: '';
+                    display: inline-block;
+                    border: 0;
+                    @include arrow($direction: "down", $width: 10px, $color: $color-vodafone-gray, $thin: "true", $stroke: 1px);
+                    top: auto;
+                    bottom: 16px;
+                    left: auto;
+                    right: 16px;
+                }
+            }
+        }
+
+        &--topics {
+            max-width: 320px;
+
+            & > .#{$ns-prefix}tabs__container {
+                width: calc(50% - 5px);
+                padding-bottom: 0;
+                margin-left: 10px;
+                margin-right: 0px;
+
+                &:nth-of-type(1) {
+                    margin-left: 0px;
+                }
+                &:nth-of-type(2n) {
+                    margin-right: 0px;
+                }
+                &:nth-of-type(2n+1) {
+                    margin-left: 0px;
+                }
+    
+                & > .#{$ns-prefix}tabs__tab {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    margin-bottom: 12px;
+
+                    p {
+                        font-size: $font-size-text;
+                    }
+
+                    &.#{$ns-prefix}tabs__tab-active {
+                        margin-bottom: 24px;
+
+                        &::after {
+                            bottom: -27px;
+                        }
+                    }
+                }
+
+                & > .#{$ns-prefix}tabs__tab-active + .#{$ns-prefix}tabs__content {
+                    padding: 52px 8px 28px;
+                }
+            }
+
+            .#{$ns-prefix}card {
+
+                &--large > .#{$ns-prefix}card__img {
+                    min-width: 0;
+                    max-width: fit-content;
+                }
+
+                .#{$ns-prefix}title {
+                    margin-bottom: 12px;
+                }
+
+                .#{$ns-prefix}button {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-top: 12px;
+
+                    &:first-of-type {
+                        margin-top: 36px !important;
+                    }
+                }
+            }
+
+            & > .#{$ns-prefix}1\/1 > .#{$ns-prefix}button {
+                margin-top: 12px;
+                width: 100%;
+            }
+        }
+
+        &--circle {
+            & .#{$ns-prefix}tabs__container {
+                margin: 0 24px 4px;
+                padding-bottom: 27px;
+            }
+
+            & .#{$ns-prefix}tabs__tab {
+                max-width: 60px;
+                padding: 0;
+                width: 100%;
+                margin-right: 24px;
+            }
+
+            & .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab  {
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &-active::after {
+                    bottom: -27px;
+                    border-width: 15px;
+                }
+
+                svg.icon--small, vfes-icon {
+                    width: 60px;
+                    height: 60px;
+                    stroke-width: 0;
+                }
+
+                vfes-icon {
+                    padding: 10px;
+                }
+
+                p {
+                    font-size: $font-size-text;
+                    margin-top: 9px;
+                }
+            }
+
+            & .#{$ns-prefix}tabs__content {
+                margin-top: -5px;
+            }
+        }
+
+        &--dropdown {
+            & > .#{$ns-prefix}tabs__container {
+                padding: 1px 10px 0;
+                margin-top: 0;
+            }
+
+            & .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab  {
+                display: block;
+                width: 100%;
+                line-height: 24px;
+                max-width: 100%;
+                padding: 18px 64px 16px 20px;
+                text-align: left;
+                border: 1px solid $color-silver;
+                border-bottom: 0;
+                margin-bottom: 10px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+                border-radius: 10px;
+
+                &::after {
+                    @include arrow($direction: "down", $width: 15px, $color: $color-vodafone-red, $thin: "true", $stroke: 1px);
+                    border-left: 0;
+                    border-bottom: 0;
+                    left: auto;
+                    right: 20px;
+                    top: 19px;
+                    position: absolute;
+                }
+
+                &::before {
+                    content: '';
+                    height: 1px;
+                    bottom: 0;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    background-color: $color-silver;
+                    box-sizing: border-box;
+                    z-index: 2;
+                    display: none;
+                }
+
+                &:hover {
+                    color: $color-vodafone-gray;
+                }
+
+                &-active {
+                    color: $color-vodafone-red;
+                    margin-bottom: 0;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+
+                    &:hover {
+                        // color: $color-vodafone-red;
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                        top: 29px;
+                    }
+
+                    &::before {
+                        width: auto;
+                        left: 8px;
+                        right: 8px;
+                        display: block;
+                    }
+
+                    & + .#{$ns-prefix}tabs__content-copy {
+                        // display: block;
+                        // border: 1px solid $color-silver;
+                        // border-top: 0;
+                        // letter-spacing: normal;
+                        // text-align: left;
+                        // padding: 14px 8px 24px;
+                        // color: $color-vodafone-gray;
+                        // margin-bottom: 12px;
+                        // position: relative;
+                        // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+                        // white-space: normal;
+                        // border-bottom-left-radius: 10px;
+                        // border-bottom-right-radius: 10px;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            background: $color-vodafone-white;
+                            top: -3px;
+                            height: 8px;
+                            position: absolute;
+                            width: 100%;
+                            left: 0;
+                            z-index: 1;
+                        }
+
+                        & > .#{$ns-prefix}layout__wrapper {
+                            padding: 0;
+                        }
+
+                        .#{$ns-prefix}tabs__container {
+                            margin: 0;
+
+                            .#{$ns-prefix}tabs__tab {
+                                max-width: 138px;
+                                display: flex;
+                                float: left;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+
+                        .#{$ns-prefix}tabs__content {
+                            padding: 0;
+                            padding-top: 24px;
+                        }
+                    }
+                }
+            }
+
+            & > .#{$ns-prefix}tabs__content {
+                display: none !important;
+
+                &-copy {
+                    display: none;
+                }
+            }
+            
+        }
+
+        &--black {
+            &.#{$ns-prefix}tabs--group {
+                & > .#{$ns-prefix}tabs__container {
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child {
+                        border-top-color: $color-dusty-gray;
+                    }
+        
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child::after {
+                        border-top-color: $color-silver;
+                        border-right-color: $color-silver;
+                    }
+                    
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child,
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab {
+                        border-color: $color-silver;
+                        color: $color-silver;
+                        background-color: $color-abbey;
+                    }
+
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child:hover,
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab:hover {
+                        color: $color-silver;
+                    }
+        
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab:nth-child(even) {
+                        background-color: $color-dove-gray;
+                    }
+        
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3) ~ .#{$ns-prefix}tabs__tab:last-child {
+                        border-bottom-color: $color-dusty-gray;
+                    }
+                }
+            }
+
+            &.#{$ns-prefix}tabs--group-close {
+                & > .#{$ns-prefix}tabs__container {
+                    & > .#{$ns-prefix}tabs__tab-active.#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child,
+                    & > .#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child ~ .#{$ns-prefix}tabs__tab-active {
+                        background-color: $color-abbey !important;
+                    }
+                }
+            }
+        }
+    }
+}

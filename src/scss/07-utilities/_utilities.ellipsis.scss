@@ -1,0 +1,25 @@
+/**
+
+	Utilidad para poder hacer la ellipsis de un párrafo de una línea o multilínea.
+
+**/
+
+.#{$ns-prefix}#{$ns-utils}ellipsis--single-line {
+	// Single Line
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@each $line in 2,3,4,5,6,7,8,9{
+	.#{$ns-prefix}#{$ns-utils}ellipsis--multiline-#{$line} {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		// Multiline
+		display: -webkit-box;
+		/* autoprefixer: ignore next */
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $line;
+	}
+}
+

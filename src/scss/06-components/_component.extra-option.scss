@@ -1,0 +1,62 @@
+.#{$ns-prefix}extra-option {
+    padding: 16px 20px 20px;
+    margin-bottom: 24px;
+
+    &__price {
+        float: right;
+    }
+
+    .#{$ns-prefix}paragraph {
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .#{$ns-prefix}title strong {
+        vertical-align: top;
+    }
+
+    .#{$ns-prefix}title--2 {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        padding: 12px 8px 20px;
+
+        .#{$ns-prefix}paragraph--small {
+            padding-top: 12px;
+        }
+
+        .#{$ns-prefix}paragraph {
+            font-size: 16px;
+        }
+
+        .#{$ns-prefix}title--5 {
+            font-size: 18px;
+        }
+
+        .#{$ns-prefix}title--2 {
+            margin-bottom: 36px;
+            font-size: 30px;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+
+        text-align: center;
+        padding: 16px 20px 20px;
+        max-width: 580px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+
+        .#{$ns-prefix}paragraph--small {
+            padding-top: 12px;
+        }
+
+        .#{$ns-prefix}title--2 {
+            margin-bottom: 36px;
+            padding-top: 40px;
+        }
+    }
+}

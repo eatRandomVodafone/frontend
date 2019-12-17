@@ -1,0 +1,98 @@
+.#{$ns-prefix}bubble-voice {
+    border-radius: 28px;
+    display: inline-block;
+    padding: 24px 15.9px 44px 22px;
+    position: relative;
+    text-align: left;
+    max-width: 288px;
+    max-height: 100px;
+    width: 100%;
+    clear: both;
+
+    &__title{
+        &.#{$ns-prefix}paragraph {
+            font-family: $font-family-vodafone-light;
+            color: $color-vodafone-white;
+            top: 24px;
+            font-size: 24px;
+            margin-bottom: 0;    
+        }
+    }    
+
+    &__message {
+        margin: 0;
+        color: $color-vodafone-white;
+    }
+
+    &__tail {
+        color: $color-mine-shaft-light;
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        height: 28px;
+        left: -11px;
+    }
+
+    .icon--fill, .icon--fill:hover {
+        stroke: none;
+        stroke-width: 0;
+        fill: currentColor;
+    }
+
+    &--new {
+        &::before {
+            content: '';
+            border-radius: 2px;
+            background-color: $color-leg-red;
+            width: 4px;
+            height: 52px;
+            position: absolute;
+            bottom: 24px;
+            top: 24px;            
+            left: 22px;
+            z-index: 1;
+        }
+        > .#{$ns-prefix}paragraph {
+            padding-left: 15px;
+        }
+        
+    }
+
+    &--light {
+        .#{$ns-prefix}paragraph {
+            color: $color-black;
+        }
+    }    
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+        max-width: 388px;
+        max-height: 124px;
+        
+        &__title {
+            font-size: 26px;
+            padding: 10px 0 0 15px;
+        }
+
+        &__message {
+            &.#{$ns-prefix}paragraph {
+                font-size: 20px;
+                padding-left: 15px;
+            }
+        }
+        
+        &--new {
+            &::before {
+                width: 4.1px;
+                height: 60px;
+                z-index: 1;
+                bottom: 32px;
+                top: 32px; 
+                left: 36px;                
+            }
+            > .#{$ns-prefix}paragraph {                
+                padding-left: 48px;
+            }
+            
+        }
+    }
+}

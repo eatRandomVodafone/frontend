@@ -1,0 +1,120 @@
+.#{$ns-prefix}grid-template {
+    .#{$ns-prefix}card--large {
+        .#{$ns-prefix}card__content {
+            padding: 24px 12px;
+        }
+        .#{$ns-prefix}button {
+            margin-right: 12px;
+            &:last-of-type {
+                margin-right: 0px;
+            }
+        }
+    }
+    .#{$ns-prefix}card__img img:not(.#{$ns-prefix}card__icon),
+    .#{$ns-prefix}card--large.#{$ns-prefix}1\/1.#{$ns-prefix}flex.#{$ns-prefix}flex__direction--row-reverse .#{$ns-prefix}card__img,
+    .#{$ns-prefix}card--large.#{$ns-prefix}1\/1.#{$ns-prefix}flex .#{$ns-prefix}card__img {
+        //height: 156px;
+    }
+    .#{$ns-prefix}paragraph {
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 12px;
+    }
+
+    .#{$ns-prefix}link::after {
+        top: 0;
+        margin-left: 0;
+    }
+
+    .#{$ns-prefix}box-shadow {
+        border: 0;
+    }
+
+    .icon {
+        margin-right: 12px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+// Breakpoint Tablet
+
+@media only screen and (min-width: $breakpoint-mov) {
+    .#{$ns-prefix}grid-template {
+        .#{$ns-prefix}paragraph {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .#{$ns-prefix}card--large {
+            .#{$ns-prefix}card__content {
+                padding: 24px;
+            }
+        }
+        .#{$ns-prefix}card__img img:not(.#{$ns-prefix}card__icon) {
+            height: 184px;
+        }
+        .#{$ns-prefix}card--large.#{$ns-prefix}1\/1.#{$ns-prefix}flex.#{$ns-prefix}flex__direction--row-reverse {
+            .#{$ns-prefix}card__img {
+                height: 100%;
+                img {
+                    height: 100%;
+                }
+            }
+            .#{$ns-prefix}card__content {
+                max-width: calc(50% + 20px);
+                right: calc(100% - 50% - 20px);
+            }
+        }
+        .#{$ns-prefix}card--large.#{$ns-prefix}1\/1.#{$ns-prefix}flex .#{$ns-prefix}card__img {
+            //height: 364px;
+            //max-width: calc(50% + 20px);
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+// Breakpoint Desktop
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    .#{$ns-prefix}grid-template {
+        .#{$ns-prefix}card--large.#{$ns-prefix}flex .#{$ns-prefix}button:first-child, .#{$ns-prefix}card--large.#{$ns-prefix}flex .#{$ns-prefix}button:first-of-type {
+            margin-top: 32px;
+        }
+        .#{$ns-prefix}card__content .#{$ns-prefix}button:first-of-type {
+            margin-top: 32px;
+        }
+        .#{$ns-prefix}card__img img:not(.#{$ns-prefix}card__icon) {
+            height: 232px;
+        }
+        .#{$ns-prefix}card--large.#{$ns-prefix}1\/1.#{$ns-prefix}flex.#{$ns-prefix}flex__direction--row-reverse {
+            .#{$ns-prefix}card__content {
+                max-width: 300px;
+                right: calc(100% - 300px);
+            }
+            .#{$ns-prefix}card__img {
+                max-width: calc(100% - 300px);
+                width: 100%;
+            }
+        }
+        .#{$ns-prefix}card--large.#{$ns-prefix}1\/1.#{$ns-prefix}flex .#{$ns-prefix}card__img {
+            //width: 300px;
+            height: auto;
+
+        }
+        .#{$ns-prefix}card--grid {
+            .#{$ns-prefix}card__img {
+                height: auto;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+        .#{$ns-prefix}card--large .icon + .#{$ns-prefix}paragraph {
+            margin-top: 32px;
+        }
+    }
+}

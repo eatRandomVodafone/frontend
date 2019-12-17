@@ -1,0 +1,120 @@
+.#{$ns-prefix}timeline {
+
+    &--steps {
+        .#{$ns-prefix}timeline {
+            &__list {
+                padding: 0;
+                max-width: 475px;
+                margin: 0 auto;
+            }
+            &__item {
+                display: grid;
+                grid-column-gap: 47px;
+                grid-template-columns: 64px auto;
+                padding: 0 0 22px;
+                color: $colours-dark-gray;
+                border-left-width: 0;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 2px;
+                    height: 100%;
+                    background-color: $colours-anthracite;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    bottom: 0;
+                    left: 85px;
+                }
+
+                &::after {
+                    content: '';
+                    width: 13px;
+                    height: 13px;
+                    background-color: $colours-vodafone-white;
+                    position: absolute;
+                    left: 85px;
+                    top: 12px;
+                    border: 2px solid $colours-anthracite;
+                    border-radius: 100%;
+                    transform: translateX(-50%);
+                }
+
+                &:first-of-type::before {
+                    height: calc(100% - 12px);
+                }
+
+                &:last-of-type::before {
+                    height: 12px;
+                    top: 0;
+                }
+            }
+
+            &__icon {
+                grid-column-start: 1;
+                grid-row-end: 3;
+                grid-row-start: 1;
+                justify-self: flex-end;
+            }
+
+            .#{$ns-prefix}paragraph {
+                grid-column-start: 2;
+
+                &:first-of-type {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        &--steps {
+            .#{$ns-prefix}timeline {
+                &__icon {
+                    margin-bottom: 54px;
+                    width: 68px;
+                    height: 68px;
+                }
+
+                &__list {
+                    max-width: 100%;
+                    margin: 0;
+                }
+
+                &__item {
+                    display: inline-block;
+                    padding: 0 25px 34px;
+                    color: $colours-dark-gray;
+                    width: 20%;
+
+                    &::before {
+                        height: 2px;
+                        width: 100%;
+                        top: 90px;
+                        transform: translateX(0);
+                        left: 0;
+                    }
+
+                    &::after {
+                        transform: translate(-50%, -50%);
+                        top: 90px;
+                        left: 50%;
+                    }
+
+                    &:first-of-type::before {
+                        height: 2px;
+                        width: 50%;
+                        right: 0;
+                        left: initial;
+                    }
+
+                    &:last-of-type::before {
+                        height: 2px;
+                        width: 50%;
+                        top: 90px;
+                    }
+                }
+            }
+        }
+    }
+}

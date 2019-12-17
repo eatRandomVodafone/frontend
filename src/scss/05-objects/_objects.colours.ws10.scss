@@ -1,0 +1,239 @@
+.#{$ns-prefix}colours {
+    //Primary colors
+	&--vodafone-red {
+		color: $colours-vodafone-red;
+	}
+
+	&--vodafone-gray,
+	&--vodafone-grey {
+		color: $colours-vodafone-gray;
+	}
+
+	&--vodafone-white {
+		color: $colours-vodafone-white;
+	}
+    //Secondary colors
+    &--turqoise {
+		color: $colours-turqoise;
+    }
+
+    &--aqua-blue {
+		color: $colours-aqua-blue;
+    }
+    
+    &--albergine {
+		color: $colours-albergine;
+    }
+    
+    &--red-violet {
+		color: $colours-red-violet;
+    }
+    
+    &--spring-green {
+		color: $colours-spring-green;
+    }
+    
+    &--fresh-orange {
+		color: $colours-fresh-orange;
+    }
+    
+    &--lemon-yellow {
+		color: $colours-lemon-yellow;
+    }
+    //Digital colors
+    &--digital-green {
+		color: $colours-digital-green;
+	}
+
+    &--maroon {
+		color: $colours-maroon;
+    }
+    
+    &--dark-red {
+		color: $colours-dark-red;
+    }
+    //Monochrome colors
+    &--black {
+		color: $colours-black;
+	}
+    
+	&--dark-gray,
+	&--dark-grey {
+		color: $colours-dark-gray;
+	}
+
+	&--anthracite {
+		color: $colours-anthracite;
+	}
+
+	&--mid-gray,
+	&--mid-grey {
+		color: $colours-mid-gray;
+	}
+
+	&--platinum {
+		color: $colours-platinum;
+	}
+
+	&--silver {
+		color: $colours-silver;
+	}
+
+	&--aluminium {
+		color: $colours-aluminium;
+	}
+
+	&--light-gray,
+	&--light-grey {
+		color: $colours-light-gray;
+	}
+
+	&-bg {
+		&-vodafone-red {
+			background-color: $colours-vodafone-red;
+			color: $colours-vodafone-white;
+        }
+        
+		&-vodafone-gray,
+		&-vodafone-grey {
+			background-color: $colours-vodafone-gray;
+			color: $colours-vodafone-white;
+
+			&.#{$ns-prefix}paragraph a,
+			&.#{$ns-prefix}paragraph a:hover,
+			&.#{$ns-prefix}paragraph a:focus,
+			.#{$ns-prefix}paragraph a,
+			.#{$ns-prefix}paragraph a:hover,
+			.#{$ns-prefix}paragraph a:focus {
+				color: $colours-vodafone-white;
+				text-decoration: underline;
+			}
+
+			.#{$ns-prefix}list--checkmarks li::after {
+				border-color: $colours-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet::before {
+				background-color: $colours-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet--active::after {
+				border-color: $colours-vodafone-white;
+			}
+        }
+        
+        &-vodafone-white {
+            background-color: $colours-vodafone-white;
+            color: $colours-dark-gray;
+        }
+        
+        &-turqoise {
+			background-color: $colours-turqoise;
+			color: $colours-vodafone-white;
+
+			.#{$ns-prefix}carousel__bullets-bullet::before {
+				background-color: $colours-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet--active::after {
+				border-color: $colours-vodafone-white;
+			}
+        }
+        
+        &-aqua-blue {
+			background-color: $colours-aqua-blue;
+			color: $colours-vodafone-white;
+        }
+        
+        &-albergine {
+			background-color: $colours-albergine;
+			color: $colours-vodafone-white;
+        }
+        
+        &-red-violet {
+			background-color: $colours-red-violet;
+			color: $colours-vodafone-white;
+        }
+        
+        &-spring-green {
+			background-color: $colours-spring-green;
+			color: $colours-vodafone-white;
+        }
+        
+        &-fresh-orange {
+			background-color: $colours-fresh-orange;
+			color: $colours-vodafone-white;
+        }
+        
+        &-lemon-yellow {
+			background-color: $colours-lemon-yellow;
+			color: $colours-vodafone-white;
+        }
+        
+        &-digital-green {
+			background-color: $colours-digital-green;
+			color: $colours-vodafone-white;
+        }
+        
+        &-maroon {
+			background-color: $colours-maroon;
+			color: $colours-vodafone-white;
+        }
+        
+        &-dark-red {
+			background-color: $colours-dark-red;
+			color: $colours-vodafone-white;
+        }
+        
+        &-black {
+			background-color: $colours-black;
+			color: $colours-vodafone-white;
+		}
+
+		&-dark-gray,
+		&-dark-grey {
+			background-color: $colours-dark-gray;
+			color: $colours-vodafone-white;
+		}
+
+        	&-anthracite {
+            background-color: $colours-anthracite;
+						color: $colours-vodafone-white;
+						
+						&--alpha {
+							background-color: rgba(0,0,0,0.5);
+						}
+						
+					}
+
+        
+
+		&-mid-gray,
+		&-mid-grey {
+            background-color: $colours-mid-gray;
+            color: $colours-black;
+        }
+
+        &-platinum {
+            background-color: $colours-platinum;
+            color: $colours-black;
+        }
+
+		&-silver {
+			background-color: $colours-silver;
+			color: $colours-black;
+		}
+
+		&-aluminium {
+			background-color: $colours-aluminium;
+			color: $colours-black;
+		}
+
+		&-light-gray,
+		&-light-grey {
+			background-color: $colours-light-gray;
+			color: $colours-black;
+		}
+	}
+}
+

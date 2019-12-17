@@ -1,0 +1,255 @@
+// Estilos para Hero-Image
+
+.#{$ns-prefix}hero-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    &__wrapper {
+        max-width: 783px;
+        margin: 0 auto;
+    }
+
+    .#{$ns-prefix}title--1 {
+        padding: 48px 0;
+        text-align: center;
+        margin-bottom: 0;
+
+        &:only-child{
+            padding: 88px 0;
+        }
+    }
+
+    .#{$ns-prefix}title--3 {
+        text-align: center;
+        padding-top: 8px;
+        margin: 0 auto;
+
+        &:last-child {
+            padding-bottom: 48px;
+        }
+        & + .#{$ns-prefix}layout {
+            margin-top: 24px;
+        }
+    }
+
+    .#{$ns-prefix}button {
+        margin-top: 32px;
+        margin-bottom:60px;
+        margin-right: 20px;
+
+        &:last-child, &:only-of-type {
+            margin-right: 0px;
+        }
+    }
+
+    &[data-vfes-js="_bgImage"] {
+
+        .#{$ns-prefix}title--1 {
+            padding: 48px 0 0 0;
+
+            &:only-child{
+                padding: 118px 0;
+            }
+        }
+    }
+
+    &__iconwrap {
+        margin-top: 24px;
+    }
+
+    .icon {
+        stroke-width: 0;
+        stroke: $color-vodafone-white;
+        color: $color-vodafone-white;
+    }
+
+    .#{$ns-prefix}layout{
+        margin-top: 20px;
+
+        &__item {
+            max-width: 128px;
+            margin-right: 68px;
+            margin-bottom: 54px;
+            
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+
+    .#{$ns-prefix}paragraph {
+        text-align: center;
+        margin-top: 2px;
+    }
+
+    .#{$ns-prefix}carousel__list-element {
+        text-align: center;
+
+        .#{$ns-prefix}title--1 {
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 3px;
+        }
+    }
+
+    .#{$ns-prefix}carousel__arrow {
+        box-shadow: none;
+        background-color: transparent;
+
+        &::after{
+            border-top-color: $color-vodafone-white;
+            border-right-color: $color-vodafone-white;
+        }
+    }
+
+    .#{$ns-prefix}carousel__bullets-bullet {
+
+        &::before {
+            background-color: $color-vodafone-white;
+        }
+
+        &--active {
+
+            &::before {
+                background-color: transparent;
+            }
+
+            &::after {
+                border-color: $color-vodafone-white;
+            }
+        }
+    }
+} 
+
+// Responsive Tablet
+
+@media only screen and (max-width: $breakpoint-tablet) {
+
+    .#{$ns-prefix}hero-image {
+    
+        .#{$ns-prefix}title--3 {
+            max-width: 660px;
+        }
+
+        &[data-vfes-js="_bgImage"] .#{$ns-prefix}title--1:only-child {
+            padding: 88px 0;
+        }
+    
+        .#{$ns-prefix}layout__item{
+            margin-right: 38px;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+// Responsive Movil
+
+@media only screen and (max-width: $breakpoint-mov) {
+
+    .#{$ns-prefix}hero-image {
+    
+        .#{$ns-prefix}title--3 {
+            max-width: 272px;
+            font-size: 16px;
+            line-height: 20px;
+            padding-top: 12px;
+
+            & + .#{$ns-prefix}layout {
+                margin-top: 12px;
+            }
+            
+            &:last-child {
+                padding-bottom: 32px;
+            }
+        }
+
+        .#{$ns-prefix}paragraph {
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 0;
+        }
+
+        &[data-vfes-js="_bgImage"] .#{$ns-prefix}title--1 {
+            padding-top: 24px; 
+            
+            &:only-child {
+                padding: 42px 0;
+            }
+        }
+
+        .#{$ns-prefix}button {
+            margin-top: 20px;
+            margin-bottom: 0px;
+            padding: 12px 20px;
+            width: 50%;
+            margin-right: 0px;
+
+            &:last-of-type {
+                margin-top: 12px;
+                margin-bottom: 44px;
+
+                &:only-of-type {
+                    margin-top: 28px;
+                }
+            }
+        }
+    
+        .#{$ns-prefix}layout__item {
+            margin-right: 0px;
+            max-width: 140px;
+            margin-bottom: 16px;
+        }
+
+        .#{$ns-prefix}title--1 {
+            padding: 42px 0;
+            font-size: 30px;
+            line-height: 36px;
+
+            &:only-child {
+                padding: 42px 0;
+            }
+        }
+
+        // Modificador de iconos
+
+        &__iconwrap {
+            &--noicons {
+
+                max-width: 200px;
+                margin: 12px auto 0 !important;
+               
+                .#{$ns-prefix}hero-image .#{$ns-prefix}title--3 + .#{$ns-prefix}-layout {
+                    margin-top: 20px;
+                }
+                .icon {
+                    display: none;
+                }
+                .#{$ns-prefix}layout__item {
+                    max-width: 200px;
+                    position: relative;
+                    padding-bottom: 8px;
+                    margin-bottom: 10px;
+
+                    &::after {
+                        content: "";
+                        height: 1px;
+                        width: 50%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transform: translateX(50%);
+                        background-color: $color-vodafone-white;
+                    }
+
+                    &:last-of-type {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}

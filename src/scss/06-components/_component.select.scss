@@ -1,0 +1,189 @@
+@mixin ellipsis() {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.#{$ns-prefix}select {
+    font-family: $font-family-vodafone-regular;
+    position: relative;
+
+    &__label {
+        border: 1px solid $color-dusty-gray;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+		position: relative;
+		text-align: left;
+		width: 100%;
+        border-radius: 6px;
+        font-size: 18px;
+        line-height: 1.125;
+        font-family: $font-family-vodafone-regular-bold;
+        padding: 6px 48px 8px 12px;
+        
+        &::after {
+            content: '';
+            @include arrow($direction: "down", $width: 10px, $color: $color-vodafone-gray, $thin: "true", $stroke: 1px);
+            position: absolute;
+            right: 20px;
+            top: 23px;
+            cursor: pointer;
+        }
+
+        &[disabled] {
+            background-color: $color-wild-sand;
+            color: $color-dusty-gray;
+            border-radius: 6px;
+
+            .#{$ns-prefix}select__options {
+                border-color: $color-dusty-gray;
+                color: $color-dusty-gray;
+                background-color: $color-wild-sand;
+            }
+
+            .#{$ns-prefix}select__tag {
+                background-color: $color-dusty-gray;
+            }
+        }
+
+        * {
+            pointer-events: none;
+        }
+    }
+    
+    &__options {
+        display: flex;
+        font-family: $font-family-vodafone-regular;
+        font-size: 16px;
+        line-height: 1;
+        color: $color-vodafone-gray;
+    }
+    
+    &__tag {
+        display: inline-block;
+        font-family: $font-family-vodafone-regular;
+        font-size: 16px;
+        line-height: 1;
+        margin-right: 2px;
+        padding: 1px 4px;
+        border: 1px solid $color-abbey;
+        color: $color-vodafone-gray;
+        border-radius: 12px;
+        max-width: 80px;
+        @include ellipsis();
+        width: 100%;
+        text-align: center;
+    }
+
+    &__num {
+        background-color: $color-abbey;
+		border-radius: 12px;
+		max-width: 32px;
+		color: $color-vodafone-white;
+		text-align: center;
+		padding: 2px;
+		@include ellipsis();
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+    }
+
+    &__list {
+        background-color: $color-white;
+        border-top: 0;
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        margin-top: 3px;
+        max-height: 320px;
+        overflow-y: auto;
+        border-radius: 6px;
+
+        &[aria-expanded="true"] {
+            display: block;
+        }
+    }
+
+    &__option {
+        position: relative;
+        display: inline-block;
+        font-family: $font-family-vodafone-regular;
+        width: 100%;
+
+        &-checkbox {
+            position: absolute;
+            opacity: 0;
+
+            &:checked + .#{$ns-prefix}select__option-label::after {
+                content: '';
+			    position: absolute;
+                top: 43%;
+                left: 15px;
+                display: block;
+                width: 11px;
+                height: 6px;
+                border: 1px solid $color-digital-green;
+                border-top: 0;
+                border-right: 0;
+                transform: rotate(-45deg);
+            }
+
+            & + .#{$ns-prefix}select__option-label::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                border: 1px solid $color-dusty-gray;
+                background-color: $color-vodafone-white;
+                position: absolute;
+                left: 0;
+                box-sizing: border-box;
+                box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+                border-radius: 3px;
+                transform: translate(50%, -50%);
+            }
+
+            &:focus + .#{$ns-prefix}select__option-label::before {
+                outline: 2px solid $color-turqoise;
+            }
+        }
+
+        &-label {
+            border-top: 1px solid $color-silver;
+            padding: 17px 49px 18px 42px;
+            color: $color-dove-gray;
+            cursor: pointer;
+            position: relative;
+            display: block;
+            font-size: 16px;
+            line-height: 1;
+
+            &:hover {
+                background-color: $color-wild-sand;
+                color: $color-vodafone-gray;
+            }
+        }
+    }
+
+    &__button {
+        border-top: 1px solid $color-silver;
+        padding: 17px 49px 18px 42px;
+        color: $color-dove-gray;
+        cursor: pointer;
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: left;
+
+        &:hover {
+            background-color: $color-wild-sand;
+            color: $color-vodafone-gray;
+        }
+    }
+}

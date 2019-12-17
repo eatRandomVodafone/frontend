@@ -1,0 +1,103 @@
+.#{$ns-prefix}tag-label, .#{$ns-prefix}tag-label {
+	border-top-left-radius: 0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    
+    &--border {
+        border: solid 1px $colours-vodafone-red;
+    }
+
+    &::after {
+        border: 0;
+    }
+
+    &--gray, &--grey {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: $colours-silver;
+            color: $colours-black;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 1px $colours-silver;
+        }
+    }
+
+    &--blue {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: $colours-turqoise;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 1px $colours-turqoise;
+        }
+    }
+
+    &--black {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: $colours-dark-gray;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 1px $colours-dark-gray;
+        }
+    }
+
+    &--red-violet {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: $colours-red-violet;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 1px $colours-red-violet;
+        }
+    }
+
+    &--red {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: $colours-vodafone-red;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 1px $colours-vodafone-red;
+        }
+    }
+
+    &--green {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: $colours-digital-green;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 1px $colours-digital-green;
+        }
+    }
+
+    &--right {
+        .#{$ns-prefix}tag-label__outstanding {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &__outstanding {
+        line-height: 22px;
+        padding: 5px 14px 5px 16px;
+        left: -1px;
+        top: -32px;
+        border-bottom-right-radius: 0;
+        background: $colours-vodafone-red;
+
+        .icon {
+            margin-right: 6px;
+        }
+    }
+}
+
+vfes-tag-label {
+    .icon {
+        margin-right: 6px;
+        vertical-align: top;
+        display: inline-block;
+        stroke-width: 0;
+        stroke: #fff;
+    }
+}

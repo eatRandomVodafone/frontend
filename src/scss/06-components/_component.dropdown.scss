@@ -1,0 +1,465 @@
+.#{$ns-prefix}dropdown {
+    &__select {
+		border: 1px solid $color-dusty-gray;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+		font-family: $font-family-vodafone-regular;
+		position: relative;
+		text-align: left;
+		width: 100%;
+		border-radius: 6px;
+	
+		&-value {
+			padding: 6px 48px 8px 12px;
+			position: relative;
+			margin: 0;
+			cursor: pointer;
+			background: none;
+			border: none;
+			width: 100%;
+			text-align: left;
+
+			&::after {
+				content: '';
+				@include arrow($direction: "down", $width: 10px, $color: $color-vodafone-gray, $thin: "true", $stroke: 1px);
+				position: absolute;
+				right: 20px;
+				top: 23px;
+				cursor: pointer;
+			}
+
+			&[disabled] {
+				background-color: $color-wild-sand;
+				color: $color-dusty-gray;
+				border-radius: 6px;
+			}
+
+			* {
+				pointer-events: none;
+			}
+
+			.#{$ns-prefix}paragraph {
+				margin-bottom: 0;
+			}
+		}
+		
+		&--error {
+			border: 2px solid $color-lemon-yellow;
+		}
+
+		&-list {
+			display: none;
+			border-radius: 6px;
+		}
+
+		&-open {
+
+			.#{$ns-prefix}dropdown__select-value::after {
+				transform: rotate(-45deg);
+				top: 28px;
+			}
+
+			.#{$ns-prefix}dropdown__select-list {
+				background-color: $color-white;
+				border-top: 0;
+				box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+				display: block;
+				list-style: none;
+				margin: 0;
+				padding-left: 0;
+				position: absolute;
+				width: 100%;
+				z-index: 3;
+				margin-top: 3px;
+				max-height: 320px;
+				overflow-y: auto;
+				border-radius: 6px;
+
+				&-item {
+					border-top: 1px solid $color-silver;
+					padding: 17px 49px 18px 42px;
+					color: $color-dove-gray;
+					cursor: pointer;
+					position: relative;
+
+					&:hover {
+						background-color: $color-wild-sand;
+						color: $color-vodafone-gray;
+					}
+				}
+
+				&-item.#{$ns-prefix}dropdown__button-all {
+					padding-bottom: 10px;
+					padding-top: 10px;
+				}
+			}
+
+			.#{$ns-prefix}form__checkbox + .#{$ns-prefix}form__label::before {
+				top: 50%;
+				left: 16px;
+				transform: translateY(-50%);
+			}
+
+			.#{$ns-prefix}form__checkbox:checked + .#{$ns-prefix}form__label::after {
+				top: 40%;
+				left: 20px;
+				transform: rotate(-55deg);
+			}
+
+			.#{$ns-prefix}form__label {
+				font-size: 16px;
+				line-height: 20px;
+				min-height: 0;
+			}
+		}
+	}
+	
+	&__placeholder {
+		color: $color-dove-gray;
+	}
+    
+    &__box {
+		position: relative;
+		display: inline-block;
+		font-family: $font-family-vodafone-regular;
+		width: 100%;
+
+		&-ok {
+			padding: 46px 0 53px 0;
+			text-align: center;
+
+			.#{$ns-prefix}title {
+				font-family: $font-family-vodafone-regular;
+			}
+        }
+	}
+
+	&__text {
+		border: 1px solid $color-abbey;
+		border-radius: 12px;
+		max-width: 80px;
+		text-align: center;
+		padding: 1px 4px;
+		color: $color-vodafone-gray;
+		display: inline-block;
+		width: 100%;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow: ellipsis;
+		margin-right: 4px;
+		vertical-align: top;
+
+		&:hover:not(.#{$ns-prefix}dropdown__text--disabled) {
+			border-color: $color-black;
+			color: $color-black;
+		}
+
+		&--disabled {
+			border-color: $color-dusty-gray;
+			color: $color-dusty-gray;
+			background-color: $color-wild-sand;
+		}
+
+		&--tick {
+			position: relative;
+			padding-left: 25px;
+			text-align: left;
+
+			&::after {
+				content:'';
+				top: 5px;
+				left: 9px;
+				display: block;
+				width: 11px;
+				height: 6px;
+				border: 1px solid $color-vodafone-gray;
+				border-top: 0;
+				border-right: 0;
+				transform: rotate(-45deg);
+				position: absolute;
+			}
+		}
+	}
+
+	&__button-all {
+		background: none;
+		border: none;
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 30px;
+		margin-bottom: 0;
+		line-height: 20px;
+		font-size: 16px;
+		color: $color-dove-gray;
+		cursor: pointer;
+		width: 100%;
+		text-align: left;
+
+		&::before {
+			content: '';
+			width: 20px;
+			height: 20px;
+			top: 50%;
+			border: 1px solid $color-dusty-gray;
+			background-color: $color-vodafone-white;
+			position: absolute;
+			left: 16px;
+			box-sizing: border-box;
+			box-shadow: inset 0 3px 6px 0 rgba(0,0,0,0.12);
+			transform: translateY(-50%);
+			display: inline-block;
+			border-radius: 3px;
+		}
+
+		&--tick {
+			&::after {
+				content:'';
+				top: 14px;
+				left: 20px;
+				display: block;
+				width: 11px;
+				height: 6px;
+				border: 1px solid $color-digital-green;
+				border-top: 0;
+				border-right: 0;
+				transform: rotate(-45deg);
+				position: absolute;
+			}
+		}
+
+		&--less {
+			&::after {
+				content:'';
+				top: 19px;
+				left: 21px;
+				display: block;
+				width: 8px;
+				border: 2px solid $color-dusty-gray;
+				border-top: 0;
+				border-right: 0;
+				position: absolute;
+			}
+		}
+
+		* {
+			pointer-events: none;
+		}
+	}
+
+	&__number {
+		background-color: $color-abbey;
+		border-radius: 12px;
+		max-width: 32px;
+		color: $color-vodafone-white;
+		text-align: center;
+		padding: 2px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow: ellipsis;
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+
+		&--disabled {
+			background-color: $color-dusty-gray;
+		}
+	}
+
+	&--color-ligth-orange {
+		background-color: #fbeacc;
+		
+		&:hover {
+			background-color: $color-fresh-orange;
+		}
+	}
+
+	&--color-ligth-purple {
+		background-color: #ebd4ec;
+		
+		&:hover {
+			background-color: #bd89c8;
+		}
+	}
+
+	&--color-ligth-yellow {
+		background-color: #fff5cc;
+		
+		&:hover {
+			background-color: $color-lemon-yellow;
+		}
+	}
+
+	&--color-ligth-green {
+		background-color: #eef0cc;
+		
+		&:hover {
+			background-color: $color-spring-green;
+		}
+	}
+
+	&__tiles {
+		margin-bottom: 8px;
+
+		.#{$ns-prefix}form__box {
+			margin-bottom: 0;
+			display: inline-flex;
+		}
+		
+		.#{$ns-prefix}form__box-margin {
+			margin-bottom: 8px;
+		}
+		
+		& .#{$ns-prefix}form__label, &--card .#{$ns-prefix}form__label,
+		&.#{$ns-prefix}form__label {
+			display: inline-flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: 20px 74px 20px 62px;
+			background-color: $color-vodafone-white;
+			border-radius: 6px;
+			
+			&::before {
+				width: 24px;
+				height: 24px;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-left: 22px;
+				border-radius: 3px;
+			}
+		}
+		
+		.#{$ns-prefix}form__checkbox:checked + .#{$ns-prefix}form__label::after,
+		.#{$ns-prefix}form__checkbox:checked + &.#{$ns-prefix}form__label::after  {
+			top: 26px;
+			left: 4px;
+			margin-left: 24px;
+		}
+	
+		.#{$ns-prefix}accordion__heading {
+			padding: 0;
+			background-color: none;
+	
+			&--active::before {
+				left: 0;
+				right: 0;
+			}
+		}
+	
+		.#{$ns-prefix}accordion:focus {
+			outline: 2px solid $color-turqoise;
+		}
+	
+		.#{$ns-prefix}paragraph {
+			margin-bottom: 0;
+		}
+	
+		.icon, &-icon {
+			vertical-align: bottom;
+		}
+	
+		&__border {
+			border-left: 2px solid $color-spring-green;
+		}
+	}
+	
+	&__cards {
+		background-color: $color-vodafone-white;
+		display: inline-block;
+		width: 100%;
+		max-width: 268px;
+		height: 200px;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+		border-top: 2px solid $color-spring-green;
+		padding: 0; 
+		border-radius: 6px;
+
+		.#{$ns-prefix}paragraph {
+			padding: 0;
+			margin-right: 0;
+		}
+
+		.#{$ns-prefix}dropdown__left {
+			margin-left: -25px;
+		}
+
+		.#{$ns-prefix}form__checkbox:checked + .#{$ns-prefix}form__label::after,
+		.#{$ns-prefix}form__checkbox:checked + &-label.#{$ns-prefix}form__label::after {
+			top: 20px;
+			left: 4px;
+			margin-left: 24px;
+		}
+
+		.#{$ns-prefix}form__label,
+		&-label.#{$ns-prefix}form__label {
+			width: 100%;
+			padding: 14px 16px 16px 46px;
+
+			.icon {
+				vertical-align: bottom;
+			}
+
+			&--column{
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			&::before {
+				width: 24px;
+				height: 24px;
+				top: 14px;
+				margin-left: 22px;
+				transform: translateY(0);
+			}
+		}
+
+		&-icon {
+			vertical-align: bottom;
+		}
+
+		.#{$ns-prefix}dropdown__date {
+			margin-bottom: 8px;
+			line-height: 48px;
+			font-size: 32px;
+			padding-top: 24px;
+		}
+
+		.#{$ns-prefix}dropdown__text {
+			margin-bottom: 17px;
+		}
+
+		.#{$ns-prefix}dropdown-text-rigth {
+			text-align: right;
+		}
+
+	}
+
+	&--disabled {
+		background-color: $color-gallery;
+		color: $color-dove-gray;
+		pointer-events: none;
+
+		.#{$ns-prefix}form__box {
+			background-color: $color-gallery;
+			border-top-color: $color-dusty-gray;
+			color:  $color-dusty-gray;
+		}
+
+		.#{$ns-prefix}form__label {
+			background-color: $color-gallery;
+		
+			&::before {
+				background-color: $color-gallery;
+			}
+		}
+
+		.#{$ns-prefix}dropdown__text {
+			background-color: $color-silver-chalice;
+			color: $color-vodafone-white;
+			border: none;
+		}
+
+		&.#{$ns-prefix}dropdown__border {
+			border-left-color: $color-dusty-gray;
+		}
+	}
+}

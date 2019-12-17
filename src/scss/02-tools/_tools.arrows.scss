@@ -1,0 +1,45 @@
+@mixin arrow($direction: "down", $width: 15px, $color: currentColor, $thin: "false", $stroke: 1px) {
+	@if $thin == "true" {
+		border-right: $stroke solid $color;
+		border-top: $stroke solid $color;
+		content: "";
+		display: block;
+		height: $width;
+		width: $width;
+		@if $direction == "up" {
+			transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+		} @else if $direction == "right" {
+			transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+		} @else if $direction == "down" {
+			transform: rotate(135deg);
+			-ms-transform: rotate(135deg);
+		} @else if $direction == "left" {
+			transform: rotate(-135deg);
+			-ms-transform: rotate(-135deg);
+		}
+	} @else {
+		border: $width solid transparent;
+		border-top-color: $color;
+		display: block;
+		height: 0;
+		width: 0;
+		@if $direction == "up" {
+			transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+		} @else if $direction == "right" {
+			transform: rotate(270deg);
+			-ms-transform: rotate(270deg);
+		} @else if $direction == "down" {
+			transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+		} @else if $direction == "left" {
+			transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+		} @else {
+			@warn "#{$direction} not allowed";
+		}
+	}
+
+}

@@ -1,0 +1,28 @@
+.#{$ns-prefix}property-list {
+    margin-bottom: 28px;
+
+    .#{$ns-prefix}paragraph {
+        margin-bottom: 0;
+    }
+
+    &__text {
+        margin-left: 12px;
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        &--colum {
+            margin: 0 auto;
+            max-width: 580px;
+    
+            .#{$ns-prefix}property-list:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        &--colum & {
+            margin-bottom: 28px;
+        }
+    } 
+}

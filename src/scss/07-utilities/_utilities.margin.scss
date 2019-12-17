@@ -1,0 +1,6 @@
+.#{$ns-prefix}m {
+	@include margin-classes;
+	@include margin-classes($breakpoint: $breakpoint-tablet);
+	@include margin-classes($breakpoint: $breakpoint-mov);
+	@include margin-classes($breakpoint: $breakpoint-desktop);
+}

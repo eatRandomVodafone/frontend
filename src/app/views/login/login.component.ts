@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
         username: email,
         password: this.loginForm.get('password').value
       };
+
+      // TODO: Revisar este codigo
       this.userSrv.checkLogin(loginData)
         .pipe(
           takeUntil(this.unsubscribe)

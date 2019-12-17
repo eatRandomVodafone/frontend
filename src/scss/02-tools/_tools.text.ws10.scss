@@ -1,0 +1,18 @@
+@mixin paragraphsws10 {
+	// color: inherit;
+	font-size: $font-size-text;
+	font-family: $font-family-vodafone-regular;
+	font-weight: $font-weight-normal;
+	line-height: $line-height-text;
+	margin-bottom: 12px;
+	margin-top: 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media only screen and (min-width: $breakpoint-mov) {
+		font-size: $font-size-text-large;
+		line-height: $line-height-text-large;
+	}
+}

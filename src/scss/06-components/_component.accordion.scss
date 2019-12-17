@@ -1,0 +1,138 @@
+.#{$ns-prefix}accordion {
+    font-family: $font-family-vodafone-regular;
+    
+    &__item {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+        margin-bottom: 12px;
+        border: 1px solid $color-wild-sand;
+        background: $color-vodafone-white;
+        border-radius: 10px;
+
+        a {
+            color: $color-vodafone-gray;
+        }
+    }
+
+    &__heading {
+        display: block;
+        font-size: $font-size-text-large;
+        line-height: $line-height-text-large;
+        padding: 18px 20px;
+        position: relative;
+        width: 100%;
+        text-align: left;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: 2px solid $color-turqoise;
+        }
+
+        &::after {
+            @include arrow($direction: "down", $width: 13px, $color: $color-red, $thin: "true", $stroke: 1px);
+            position: absolute;
+            display: inline-block;
+            right: 15px;
+            transition: all 0.5s;
+            transform: translateY(-50%) rotate(135deg);
+            top: 50%;
+        }
+
+        &--active + .#{$ns-prefix}accordion__content {
+            height: auto;
+            padding: 22px 20px 18px 20px;
+        }
+
+        &--active::after {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &--active::before {
+            content: '';
+            bottom: 0;
+            height: 1px;
+            left: 8px;
+            right: 8px;
+            background-color: $color-silver;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
+    &__content {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: 0.3s height;
+
+        .#{$ns-prefix}link,
+        &-block .#{$ns-prefix}link {
+            display: block;
+            font-size: $font-size-text-large;
+            line-height: $line-height-text-large;
+            position: relative;
+
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+            &::after {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+    }
+
+    &__block {
+        &--separator {
+            border-bottom: 1px solid $color-silver;
+            padding: 20px 12px;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-mov) {
+        &__heading {
+            font-size: $font-size-h5;
+            line-height: $line-height-h5;
+
+            &::after {
+                right: 32px;
+            }
+        }
+
+        &__heading--active + &__content {
+            padding: 39px 25px 39px 36px;
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-tablet) {        
+        &__heading--active + &__content {
+            padding: 39px 105px 39px 36px;
+        }
+        
+    }
+}
+
+vfes-accordion-link {
+    display: block;
+    padding: 20px 12px;
+    border-bottom: 1px solid $color-silver;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}

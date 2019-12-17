@@ -1,0 +1,86 @@
+.#{$ns-prefix}list {
+    padding-left: 30px;
+    list-style-type: disc;
+    box-sizing: border-box;
+    font-family: $font-family-vodafone-regular;
+
+    li {
+        margin-bottom: 12px;
+
+        &:only-of-type,
+        &:last-of-type,
+        &:only-child,
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--checkmarks {
+        padding-left: 0;
+        list-style-type: none;
+
+        li {
+            display: block;
+            font-size: $font-size-text;
+            line-height: $line-height-text;
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+
+            &::after {
+                content: '';
+                border: 1px solid $color-digital-green;
+                border-top: 0;
+                border-right: 0;
+                display: block;
+                height: 7px;
+                left: 0px;
+                position: absolute;
+                top: 0;
+                transform: rotate(-45deg);
+                width: 14px;
+            }
+        }
+    }
+
+    &--simple {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    &--gutter {
+        padding-left: 92px;
+
+        &.#{$ns-prefix}list--checkmarks {
+            padding-left: 62px;
+        }
+    }
+
+    &--horizontal {
+        display: flex;
+        flex-flow: row wrap;
+        margin-right: 12px;
+    }
+}
+
+
+/*
+
+DON'T USE TAG SELECTOR
+
+ul {
+    display: block;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-family-vodafone-regular;
+
+    li {
+        padding-bottom: 16px;
+        font-size: $font-size-text;
+        line-height: $line-height-text;
+    }
+}
+*/

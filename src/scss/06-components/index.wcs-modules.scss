@@ -1,0 +1,21 @@
+/*
+	Import files WS2
+*/
+
+@import "component.mobile-gallery";
+@import "component.tag-label";
+@import "component.dropdown";
+@import "component.button";
+@import "component.form";
+
+
+/*
+	Import files WS10
+*/
+
+.#{$ns-prefix}ws10 {
+	@import "component.button.ws10";
+	@import "component.overlay.ws10";
+    @import "component.card.ws10";
+    @import "component.form.ws10";
+}

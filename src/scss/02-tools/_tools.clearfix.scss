@@ -1,0 +1,23 @@
+%clearfix {
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+@mixin clearfix($extend: false) {
+	@if $extend {
+		@extend %clearfix;
+	} @else {
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		}
+	}
+}

@@ -1,0 +1,151 @@
+.#{$ns-prefix}navigation-steps {
+    &__list {
+        display: flex;
+        list-style: none;
+        position: relative;
+    }
+
+    &__item {
+        position: relative;
+
+        &::after {
+            content: '';
+            background-color: $colours-vodafone-red;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            border-radius: 100%;
+        }
+
+        &--active {
+            
+            .#{$ns-prefix}paragraph {
+                font-family: $font-family-vodafone-regular-bold;
+            }
+
+            &::after {
+                box-shadow: 0 0 0 1px $colours-vodafone-red;
+                border: 1px solid $colours-vodafone-white;
+            }
+
+            & ~ .#{$ns-prefix}navigation-steps__item {
+                color: #666666;
+
+                &::after {
+                    background-color: #cccccc;
+                }
+            }
+        }
+    }
+
+    &--inline {
+        .#{$ns-prefix}navigation-steps {
+            &__list {
+                flex-direction: row;
+            }
+
+            &__item {
+                padding: 20px 4px;
+                text-align: center;
+        
+                &::before{
+                    content: '';
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    background-color: $colours-vodafone-red;
+                    display: block;
+                    height: 1px;
+                    width: 100%;
+                }
+        
+                &::after {
+                    left: 50%;
+                    top: 0;
+                    transform: translate(-50%, -50%);
+                    margin-bottom: 6px;
+                }
+        
+                &:first-child::before {
+                    width: 50%;
+                    right: 0;
+                    left: initial;
+                }
+        
+                &:last-child::before {
+                    width: 50%;
+                }
+        
+                &--active {
+                    
+                    .#{$ns-prefix}paragraph {
+                        font-size: 18px;
+                    }
+        
+                    &::before {
+                        background: linear-gradient(to right, #e60000 0%, #e60000 50%, #cccccc 50%, #cccccc 100%);
+                    }
+
+                    &:first-child::before {
+                        background: #cccccc;
+                    }
+                    
+                    &:last-child::before {
+                        background: #e60000;
+                    }
+
+                    & ~ .#{$ns-prefix}navigation-steps__item::before {
+                        background: #cccccc;
+                    }
+                }
+            }
+        }
+    }
+
+    &--vertical {
+        .#{$ns-prefix}navigation-steps {
+            &__list {
+                flex-direction: column;
+                padding-left: 9px;
+            }
+
+            &__item {
+                padding: 0 33px;
+                border-left: 1px solid $colours-vodafone-red;
+                min-height: 40px;
+        
+                &::after {
+                    left: 0;
+                    top: 0;
+                    transform: translateX(-50%);
+                }
+
+                &:last-child {
+                    border-color: transparent;
+                }
+        
+                &--active {
+                    border-color: #cccccc;
+                    
+                    .#{$ns-prefix}paragraph {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        &--inline {
+            .#{$ns-prefix}paragraph {
+                font-size: 18px;
+            }
+        }
+
+        &--vertical {
+            .#{$ns-prefix}paragraph {
+                font-size: 20px;
+            }
+        }
+    }
+}

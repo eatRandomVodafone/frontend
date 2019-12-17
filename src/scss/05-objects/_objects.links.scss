@@ -1,0 +1,61 @@
+.#{$ns-prefix}link {
+	color: $color-mine-shaft;
+	font-size: $font-size-text;
+	line-height: $line-height-text;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: $font-family-vodafone-regular;
+	display: inline-block;
+
+	&:hover,
+	&:focus {
+		color: $color-mine-shaft;
+	}
+
+	&::after {
+		@include chevron($direction: "right", $scale: 12px);
+
+		content: "";
+		display: inline-block;
+		margin-left: 8px;
+		vertical-align: baseline;
+		position: relative;
+		top: 0.5px;
+	}
+
+	&--no-chevron::after {
+		display: none;
+	}
+
+	&--red-chevron::after {
+		border-color: $color-vodafone-red;
+	}
+
+	&--white-chevron::after {
+		border-color: $color-vodafone-white;
+	}
+
+	&--dark {
+		color: $color-white;
+
+		&:hover,
+		&:focus {
+			color: $color-white;
+			text-decoration: underline;
+		}
+
+		&::after {
+			border-color: $color-white;
+		}
+	}
+
+	&--small {
+		font-size: $font-size-text-small;
+		line-height: $line-height-text-small;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}

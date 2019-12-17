@@ -1,0 +1,79 @@
+.#{$ns-prefix}cards-standard {
+    display: flex;
+    align-items: center;
+    
+    &.#{$ns-prefix}link {
+        padding: 21px 80.3px 22px 16px;
+        position: relative;
+
+        &--black {
+            border-left: 4px solid;
+            border-left-color: $color-vodafone-gray;
+        }
+
+        &--blue {
+            border-left: 4px solid;
+            border-left-color: $color-aqua-blue;
+        }
+
+        &--red {
+            border-left: 4px solid;
+            border-left-color: $color-vodafone-red;
+        }
+
+        &::after {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            right: 23px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            margin: 0;
+        }
+    }
+
+    &__icon {
+        width: 56px;
+        height: 56px;
+        padding: 6px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        & > .#{$ns-prefix}title {
+            margin-bottom: 0;
+        }
+
+        .#{$ns-prefix}paragraph {
+            margin-left: 1px;
+        }
+    }
+
+    &__icon + &__text {
+        padding-left: 10px;
+    }
+
+    @media only screen and (min-width: $breakpoint-mov) {        
+        &.#{$ns-prefix}link {
+            padding: 22px 116px 22px 30px;
+        }
+
+        &--inline {
+            flex-direction: row;
+            align-items: center;
+
+            .#{$ns-prefix}paragraph {
+                margin-left: 32px;
+            }
+        }
+    }
+    
+    @media only screen and (min-width: $breakpoint-tablet) {        
+        &.#{$ns-prefix}link {
+            padding: 22px 243.9px 22px 36px;
+        }        
+    }
+}

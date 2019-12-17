@@ -1,0 +1,10 @@
+.#{$ns-prefix}{
+    @include columns-classes();
+    @include columns-classes($breakpoint: $breakpoint-tablet);
+    @include columns-classes($breakpoint: $breakpoint-mov);
+    @include columns-classes($breakpoint: tablet);
+    @include columns-classes($breakpoint: $breakpoint-desktop);
+    @include columns-classes($breakpoint: lap);
+    @include columns-classes($breakpoint: lapup);
+    @include columns-classes($breakpoint: desk);
+}

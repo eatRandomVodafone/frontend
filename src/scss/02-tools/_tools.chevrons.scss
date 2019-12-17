@@ -1,0 +1,20 @@
+@mixin chevron($direction: "down", $scale: 20px, $width: 1px, $color: $color-mine-shaft) {
+	border-top: $border-width-small solid $color;
+	border-right: $border-width-small solid $color;
+	border-width: $width;
+	display: block;
+	width: $scale;
+	height: $scale;
+
+	@if $direction == "up" {
+		transform: rotate(-45deg);
+	} @else if $direction == "right" {
+		transform: rotate(45deg);
+	} @else if $direction == "down" {
+		transform: rotate(135deg);
+	} @else if $direction == "left" {
+		transform: rotate(225deg);
+	} @else {
+		@warn "#{$direction} not allowed";
+	}
+}

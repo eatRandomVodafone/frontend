@@ -1,0 +1,15 @@
+.#{$ns-prefix}paragraph {
+	@include paragraphs;
+
+	&--large {
+		font-size: $font-size-text-large;
+		line-height: $line-height-text-large;
+		margin-bottom: 16px;
+	}
+
+	&--small {
+		font-size: $font-size-text-small;
+		line-height: $line-height-text-small;
+		margin-bottom: 8px;
+	}
+}

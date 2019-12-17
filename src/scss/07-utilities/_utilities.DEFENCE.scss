@@ -1,0 +1,27 @@
+// El propósito de este fichero es contrarrestar el código legacy
+// Para ello se puden crear reglas como se desee, incluso con !important o #ids siempre que:
+// 1- Se documente primero con un comentario para que módulo y con que proposito se está escribiendo
+// 2- No interfiera con el funcionamiento normal del Framework Reboot
+a.btn {
+    text-decoration: none;
+    
+    &:hover {
+        color: #fff;
+    }
+}
+
+a.accordion__heading {
+    text-decoration: none;
+}
+
+.btn a {
+    text-decoration: none;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.cards__heading .getLink {
+    text-decoration: none;
+}

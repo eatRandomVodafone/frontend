@@ -1,0 +1,6 @@
+.#{$ns-prefix}p {
+	@include padding-classes;
+	@include padding-classes($breakpoint: $breakpoint-tablet);
+	@include padding-classes($breakpoint: $breakpoint-mov);
+	@include padding-classes($breakpoint: $breakpoint-desktop);
+}

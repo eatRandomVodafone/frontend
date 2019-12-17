@@ -1,0 +1,896 @@
+.#{$ns-prefix}colours-bg-dark-gray .#{$ns-prefix}form {
+    &__checkbox {
+        & + .#{$ns-prefix}form__label::before {
+            border-color: $colours-vodafone-white;
+            background-color: $colours-dark-gray;
+        }
+
+        &:checked + .#{$ns-prefix}form__label::after {
+            border-color: $colours-dark-gray;
+        }
+
+        &:checked + .#{$ns-prefix}form__label::before {
+            background-color: $colours-vodafone-white;
+        }
+
+        &[disabled] {
+            .#{$ns-prefix}form__label::before {
+				opacity: 0.3;
+            }
+            
+            &:checked + .#{$ns-prefix}form__label::after {
+                border-color: $colours-vodafone-gray;
+            }
+
+            &:checked + .#{$ns-prefix}form__checkbox:checked + .#{$ns-prefix}form__label::after {
+                background-color: $colours-silver;
+            }
+		}
+
+		&--legal {
+			& + .#{$ns-prefix}form__label {
+				color: $colours-vodafone-white;
+			}
+
+			& ~ .#{$ns-prefix}form__warning .icon {
+				color: $colours-vodafone-white;
+			}
+		}
+
+		&--blue {
+			&:checked + .#{$ns-prefix}form__label::after {
+				border-color: $colours-dark-gray;
+			}
+	
+			&:checked + .#{$ns-prefix}form__label::before {
+				background-color: $colours-aqua-blue;
+			}
+		}
+	}
+
+	&__radio {
+		.#{$ns-prefix}form__label::before {
+            border-color: $colours-vodafone-white;
+            background-color: $colours-vodafone-gray;
+		}
+		
+		&:checked + .#{$ns-prefix}form__label::after {
+			background-color: $colours-vodafone-white;
+            border-color: $colours-vodafone-white;
+		}
+		
+		&:checked + .#{$ns-prefix}form__label::before {
+			border-color: $colours-vodafone-white;
+			background-color: $colours-dark-gray;
+		}
+		
+		&[disabled] {
+			
+			& + .#{$ns-prefix}form__label::after {
+				opacity: 0.25;
+			}
+
+			& + .#{$ns-prefix}form__label::before {
+				background-color: $colours-silver;
+			}
+			
+			&:checked + .#{$ns-prefix}form__label::before {
+				border-color: $colours-silver;
+                background-color: $colours-dark-gray;
+            }
+            
+            &:checked + .#{$ns-prefix}form__label::after {
+                border-color: $colours-vodafone-gray;
+            }
+
+            &:checked + .#{$ns-prefix}form__checkbox:checked + .#{$ns-prefix}form__label::after {
+                background-color: $colours-silver;
+            }
+		}
+
+		&--blue {
+			&:checked + .#{$ns-prefix}form__label::after {
+				background-color: $colours-aqua-blue;
+				border-color: $colours-aqua-blue;
+			}
+			
+			&:checked + .#{$ns-prefix}form__label::before {
+				border-color: $colours-aqua-blue;
+				background-color: $colours-dark-gray;
+			}
+		}
+	}
+	
+	&__switch {
+		& + .#{$ns-prefix}form__switch-label {
+			border: 1px solid $colours-vodafone-white;
+			background-color: $colours-vodafone-gray;
+
+			&::after {
+				top: 0;
+				left: 0;
+			}
+		}
+
+		&:checked + .#{$ns-prefix}form__switch-label {
+			background-color: $colours-vodafone-gray;
+
+			&::after {
+				left: calc(50% - 3px);
+			}
+
+			&--blue {
+				background-color: $colours-aqua-blue;
+			}
+		}
+
+		&:disabled + .#{$ns-prefix}form__switch-label {
+			pointer-events: none;
+			background-color: $colours-silver;
+
+			&::after {
+				background-color: $colours-light-gray;
+			}
+
+			&:checked + .#{$ns-prefix}form__switch-label {
+				background-color: $colours-silver;
+			}
+		}
+	}
+}
+
+.#{$ns-prefix}ws10 .#{$ns-prefix}form,
+.#{$ns-prefix}ws10.#{$ns-prefix}form {
+
+	&__box {
+		margin-bottom: 0;
+
+		& .#{$ns-prefix}form__help-text{
+			font-size: 14px;
+			color: $colours-anthracite;
+			margin-left: 13px;
+			font-family: $font-family-vodafone-regular;
+		}
+	}
+
+	&__label {
+		
+	}
+
+	&--right-checkbox, &--right-radio {
+		.#{$ns-prefix}form__label {
+			display: inline-block;
+			padding-left: 30px;
+		}
+
+		& > .#{$ns-prefix}form__label::before {
+			right: 0;
+		}
+	}
+
+	&__checkbox {
+		
+		&:focus + .#{$ns-prefix}form__label::before {
+			
+		}
+
+		& + .#{$ns-prefix}form__label {
+			
+		}
+
+		& + .#{$ns-prefix}form__label::before {
+			box-shadow: 0 0 0 0 transparent;
+		}
+
+		&:checked + .#{$ns-prefix}form__label::after {
+			width: 10px;
+            height: 7px;
+            border-color: $colours-vodafone-white;
+        }
+        
+        &:checked + .#{$ns-prefix}form__label::before {
+            background-color: $colours-turqoise;
+            border: $colours-turqoise;
+        }
+        
+        &[disabled] {
+
+			& ~ .#{$ns-prefix}form__label {
+				pointer-events: none;
+			}
+			
+            & + .#{$ns-prefix}form__label::before {
+                background-color: $colours-silver;
+            }
+
+            &:checked + .#{$ns-prefix}form__label::after {
+                border-color: $colours-vodafone-gray;
+                opacity: 0.25;
+            }
+
+            &:checked + .#{$ns-prefix}form__label::before {
+                background-color: $colours-silver;
+                border: $colours-silver;
+            }
+		}
+		
+		&--right {
+			& + .#{$ns-prefix}form__label {
+				display: inline-block;
+				padding-right: 30px;
+				padding-left: 0;
+			}
+	
+			& + .#{$ns-prefix}form__label::before {
+				left: initial;
+				right: 0;
+			}
+
+			& + .#{$ns-prefix}form__label::after {
+				left: initial;
+				right: 4px;
+			}
+		}
+
+		&--legal {
+
+			& + .#{$ns-prefix}form__label {
+				font-size: 14px;
+			}
+
+			& ~ .#{$ns-prefix}form__warning .icon {
+				color: $colours-vodafone-red;
+			}
+
+		}
+	}
+
+	&__warning {
+		display: none;
+		margin-top: 14px;
+		.#{$ns-prefix}paragraph--small {
+			margin-left: 10px;
+		}
+	}
+
+	&__radio {
+		& + .#{$ns-prefix}form__label::before {
+			box-shadow: 0 0 0 0 transparent;
+		}
+
+		&:checked + .#{$ns-prefix}form__label::after {
+            background-color: $colours-turqoise;
+            width: 12px;
+            height: 12px;
+            margin: 4px;
+        }
+        
+        &:checked + .#{$ns-prefix}form__label::before {
+			border-color: $colours-turqoise;
+        }
+        
+        &[disabled] {
+
+			& ~ .#{$ns-prefix}form__label {
+				pointer-events: none;
+			}
+
+            & + .#{$ns-prefix}form__label::before {
+                border-color: $colours-silver;
+            }
+
+            &:checked + .#{$ns-prefix}form__label::after {
+                background-color: $colours-silver;
+            }
+		}
+		
+		&--right {
+			& + .#{$ns-prefix}form__label {
+				display: inline-block;
+				padding-right: 30px;
+				padding-left: 0;
+			}
+	
+			& + .#{$ns-prefix}form__label::before {
+				left: initial;
+				right: 0;
+			}
+
+			& + .#{$ns-prefix}form__label::after {
+				left: initial;
+				right: 0;
+			}
+		}
+	}
+
+	&__input {
+		position: relative;
+		z-index: 1;
+		box-shadow: none;
+		border-color: $colours-anthracite;
+
+		& + .#{$ns-prefix}form__label {
+			position: absolute;
+			display: inline-block;
+			z-index: 0;
+			left: 10px;
+			top: 15px;
+			padding: 0 4px 4px;
+			background-color: $colours-vodafone-white;
+			font-size: $font-size-text-small;
+			margin-bottom: 0;
+			background-color: inherit;
+		}
+
+		&[aria-expanded='true'],
+		&:focus,
+		&:active {
+			border-color: $colours-turqoise;
+			outline: none;
+
+			& + .#{$ns-prefix}form__label {
+				display: block;
+				top:0px;
+				transform: translate(0,-50%);
+				background-color: $colours-vodafone-white;
+				z-index: 1;
+				transition: top .5s ease;
+			}
+			&::placeholder {
+				color: $colours-vodafone-white;
+			}
+
+		}
+
+		&::placeholder {
+			color: $colours-anthracite;
+			font-size: $font-size-text-small;
+		}
+
+		& ~ .#{$ns-prefix}form__icon, 
+		vfes-icon .#{$ns-prefix}form__icon {
+			display: none;
+			top: 6px;
+			margin-right: 16px;
+			pointer-events: none;
+		}
+
+		& ~ .#{$ns-prefix}form__error-text {
+			display: none;
+		}
+
+		&--info,
+		&--ok,
+		&--error {
+			
+		}
+
+		&--ok {
+			border: 1px solid $colours-mid-gray;
+
+			& ~ .#{$ns-prefix}form__icon {
+
+				&.#{$ns-prefix}form__icon-tick,
+				vfes-icon .#{$ns-prefix}form__icon-tick {
+					display: block;
+					color: $colours-digital-green;
+				}
+				
+				&.#{$ns-prefix}form__icon-warning,
+				vfes-icon .#{$ns-prefix}form__icon-warning {
+					display: none;
+				}
+			}
+
+			& ~ .#{$ns-prefix}form__error-text {
+				display: none;
+			}
+		}
+
+		&--error {
+			border-color: $colours-vodafone-red;
+
+			&:focus {
+				border-color: $colours-vodafone-red;
+			}
+
+			& + .#{$ns-prefix}form__label {
+				color: $colours-vodafone-red;
+			}
+
+			& ~ .#{$ns-prefix}form__icon {
+
+				&.#{$ns-prefix}form__icon-tick,
+				vfes-icon .#{$ns-prefix}form__icon-tick {
+					display: none;
+				}
+				
+				&.#{$ns-prefix}form__icon-warning,
+				vfes-icon .#{$ns-prefix}form__icon-warning {
+					display: block;
+					color: $colours-vodafone-white;
+					background-color: $colours-vodafone-red;
+				}
+			}
+
+			& ~ .#{$ns-prefix}form__error-text {
+				text-align: right;
+				color: $colours-vodafone-red;
+				font-size: $font-size-text;
+				display: block;
+				margin-top: 3px;
+				margin-bottom: 0;
+			}
+
+
+			&::placeholder {
+				color: $colours-vodafone-red;
+			}
+		}
+
+		&--autocomplete {
+			& ~ .#{$ns-prefix}form__icon {
+				display: block;
+				color: $colours-vodafone-red;
+				height: 32px;
+				cursor: pointer;
+				margin-right: 10px;
+			}
+
+			&.#{$ns-prefix}form__icon {
+				display: block;
+				color: $colours-vodafone-red;
+				height: 32px;
+				cursor: pointer;
+			}
+		}
+
+		&--dropdown {
+			&.#{$ns-prefix}form__input {
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+				&[aria-expanded='true'] ~ .#{$ns-prefix}form__icon {
+					&-down {
+						display: none;
+					}
+	
+					&-up {
+						display: block;
+					}
+				}
+
+				&:focus ~ .#{$ns-prefix}form__icon {
+					&-down {
+						display: none;
+					}
+	
+					&-up {
+						display: block;
+					}
+				}
+			}
+
+			& ~ .#{$ns-prefix}form__icon,
+			vfes-icon .#{$ns-prefix}form__icon {
+				color: $colours-dark-gray;
+
+				&-down {
+					display: block;
+				}
+
+				&-up {
+					display: none;
+				}
+			}
+		}
+
+		&[disabled] {
+			background-color: $colours-vodafone-white;
+			border-color: $colours-mid-gray;
+			color: $colours-mid-gray;
+			pointer-events: none;
+
+			&-dark {
+
+			}
+		}
+
+		&[aria-expanded='false'] ~ .#{$ns-prefix}form__autocomplete-list {
+			display: none;
+		}
+	}
+
+	&__autocomplete-list {
+		margin-top: 4px;
+		box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25);
+		background-color: transparent;
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+
+		&-option {
+			background-color: $colours-light-gray;
+			padding: 13px 16px;
+			border-bottom: 1px solid $colours-silver;
+			cursor: pointer;
+
+			&:first-of-type {
+				border-top-right-radius: 6px;
+				border-top-left-radius: 6px;
+			}
+			
+			&:last-of-type {
+				border-bottom: none;
+				border-bottom-right-radius: 6px;
+				border-bottom-left-radius: 6px;
+			}
+
+			&:hover {
+				background-color: $colours-aluminium;
+			}
+		}
+	}
+
+
+	&__autocomplete-list-option.hidden {
+		display: none;
+	}
+
+	&__autocomplete-list-option.selected {
+		background-color: $colours-aluminium;
+	}
+
+	&__textarea {
+		
+
+		&:focus,
+		&:active {
+			
+		}
+
+		&::placeholder {
+			
+		}
+	}
+
+	&__icon {
+		// reset style button
+		
+
+		&:focus {
+			
+			&:after {
+				
+			}
+		}
+
+		& + .#{$ns-prefix}form__input {
+			
+		}
+
+		&-ok-message {
+			
+
+			.icon {
+				
+			}
+		}
+		&-search:focus:after {
+			
+		}
+	}
+
+	&__box {
+		position: relative;
+
+		&-ok {
+			
+
+			.#{$ns-prefix}title {
+				
+			}
+		}
+	}
+
+	&__dropdown {
+		
+
+		&-button {
+			
+
+			&:focus {
+				
+			}
+
+			&::before {
+				
+			}
+
+			&.opened {
+				
+				
+				&::before {
+					
+				}
+			}
+		}
+
+		&-list {
+			
+
+			&.opened {
+				
+
+				&::before {
+					
+				}
+			}
+
+			&-button {
+				
+
+				&:not([disabled]) {
+					
+				}
+
+				&:hover:not([disabled]),
+				&:focus {
+					
+				}
+
+				&:focus {
+					
+				}
+			}
+		}
+	}
+
+	&__select:focus,
+	&__select:active {
+		+ .#{$ns-prefix}form__dropdown {
+			
+		}
+	}
+
+	&__alert {
+		
+
+		&-close {
+			// Reset style button
+			
+			&:focus {
+				
+			}
+		}
+
+		&-icon {
+			
+		}
+
+		&-icon-box {
+			
+
+			&::after {
+				
+			}
+		}
+
+		&-body {
+			
+		}
+
+		&-show {
+			
+		}
+
+		&--error {
+			.#{$ns-prefix}form__alert-icon-box {
+				
+
+				&::after {
+					
+				}
+			}
+
+			.#{$ns-prefix}form__alert-icon {
+				
+			}
+
+			.#{$ns-prefix}form__alert-body {
+				
+			}
+
+			&.#{$ns-prefix}form__alert-show ~ .#{$ns-prefix}form__input {
+				
+			}
+		}
+
+		&--info {
+			.#{$ns-prefix}form__alert-icon-box {
+				
+
+				&::after {
+					
+				}
+			}
+
+			.#{$ns-prefix}form__alert-icon {
+				
+			}
+
+			.#{$ns-prefix}form__alert-body {
+				
+			}
+
+			&.#{$ns-prefix}form__alert-show ~ .#{$ns-prefix}form__input {
+				
+			}
+		}
+
+		&--ok {
+			.#{$ns-prefix}form__alert-icon-box {
+				
+
+				&::after {
+					
+				}
+			}
+
+			.#{$ns-prefix}form__alert-body {
+				
+			}
+
+			&.#{$ns-prefix}form__alert-show ~ .#{$ns-prefix}form__input {
+				
+			}
+		}
+	}
+
+	&__switch {
+
+		&:focus {
+			& + .#{$ns-prefix}form__switch-label{
+				outline: 2px solid $colours-turqoise;
+			}
+		}
+			 
+		& + .#{$ns-prefix}form__switch-label {
+            width: 28px;
+			height: 20px;
+            background-color: $colours-mid-gray;
+			border-radius: 100px;
+			display: inline-block;
+			position: relative;
+
+			&::after {	
+				content: '';
+				background-color: $colours-light-gray;
+				width: 16px;
+				height: 16px;
+				top: 2px;
+				left: 2px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 100%;
+				position: absolute;
+				transition: left .3s;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+			}
+		}
+
+		&:checked + .#{$ns-prefix}form__switch-label {
+			background-color: $colours-turqoise;
+
+			&::after {
+				left: calc(50% - 4px);
+			}
+		}
+
+		&:disabled + .#{$ns-prefix}form__switch-label {
+			pointer-events: none;
+			background-color: $colours-silver;
+
+			&::after {
+				background-color: $colours-aluminium;
+			}
+
+			&:checked + .#{$ns-prefix}form__switch-label::after {
+				background-color: $colours-aluminium;
+			}
+
+			&:checked + .#{$ns-prefix}form__switch-label {
+				background-color: $colours-silver;
+			}
+		}
+		
+		&--medium + .#{$ns-prefix}form__switch-label {
+			width: 40px;
+			height: 24px;
+
+			&::after {
+				height: 22px;
+				width: 22px;
+				top: 1px;
+			}
+			
+		}
+
+		&--large + .#{$ns-prefix}form__switch-label {
+			width: 48px;
+			height: 28px;
+
+			&::after {
+				height: 26px;
+				width: 26px;
+				top: 1px;
+			}
+		}
+	}
+
+	
+
+	@media screen and (min-width: $breakpoint-mov) {
+		&__alert {
+			&-body {
+				
+
+				& .#{$ns-prefix}paragraph {
+					
+				}
+			}
+
+			&-icon {
+				
+
+				&-box {
+					
+				}
+			}
+
+			&--error .#{$ns-prefix}form__alert-icon {
+				
+			}
+
+			&--info .#{$ns-prefix}form__alert-icon {
+				
+			}
+		}
+
+		&__box-ok {
+			
+
+			.#{$ns-prefix}title {
+				
+			}
+		}
+
+		&__icon-ok-message {
+			
+
+			.icon {
+				
+			}
+		}
+	}
+}
+
+// Estos estilos afectan cuando es web component
+
+vfes-autocomplete-item {
+	background-color: $colours-light-gray;
+	padding: 13px 16px;
+	border-bottom: 1px solid $colours-silver;
+	cursor: pointer;
+	display: inline-block
+}
+vfes-autocomplete-item:first-of-type {
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+}
+
+vfes-autocomplete-item:last-of-type {
+	border-bottom: none;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+}

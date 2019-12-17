@@ -1,0 +1,972 @@
+.#{$ns-prefix}card {
+    border: 1px solid $colours-aluminium;
+    display: block;
+    border-radius: 6px;
+    width: 100%;
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.16);
+
+    &-border-left {
+        border-left: 6px solid $colours-vodafone-red;
+    }
+
+    &-no-shadow {
+        box-shadow: 0 0 0 0 transparent;
+    }
+
+    &-no-border {
+        border: none;
+    }
+
+    &-border-red {
+        border: 1px solid $colours-vodafone-red;
+    }
+
+    &-border-radius {
+        border-radius: 12px;
+    }
+
+    &__product {
+        padding: 20px 16px 26px;
+        text-align: center;
+        background-color: $colours-vodafone-white;
+
+        .#{$ns-prefix}title {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .#{$ns-prefix}button {
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        &-title {
+            font-size: $font-size-h3;
+            margin-bottom: 30px;
+
+            &-info {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+
+        &-name {
+            font-size: $font-size-h5;
+            font-weight: bold;
+            margin-bottom: 5px;
+    
+            span {
+                display: block;
+                font-size: $font-size-h5;
+                font-weight: bold;
+                margin-top: 8px;
+            }
+
+            &-info {
+                margin-bottom: 12px;
+                font-weight: bold;
+            }
+        }
+
+        &-price {
+            strong {
+                font-size: $font-size-h5;
+                font-weight: bold;
+            }
+
+            & + .#{$ns-prefix}card__product-initial-price {
+               margin-top: 4px;
+            }
+
+            & + .#{$ns-prefix}button {
+                margin-top: 16px;
+            }
+        }
+
+        &-initial-price {
+            & + .#{$ns-prefix}button {
+                margin: 12px 0 14px 0;
+            }
+        }
+
+        &-information {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid $colours-silver;
+
+            &:first-of-type {
+                border-top: 1px solid $colours-silver;
+            }
+
+            &:last-of-type {
+                margin-bottom: 12px;
+            }
+
+            &-text {
+                flex: 1 100%;
+                text-align: right;
+            }
+        }
+
+        &-text {
+            margin-bottom: 1px;
+
+            &-info {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+
+        &-gigas {
+            margin-bottom: 20px;
+        }
+
+        img {
+            margin-bottom: 19px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__selector {
+        padding: 5px 9px;
+        text-align: center;
+        border-color: $colours-mid-gray;
+        color: $colours-anthracite;
+        border: 1px solid $colours-mid-gray;
+        box-shadow: 0 0 0 0 transparent;
+        background-color: $colours-vodafone-white;
+
+        .#{$ns-prefix}paragraph {
+            margin-bottom: 0;
+            color: $colours-anthracite;
+
+            &:first-of-type {
+                margin-bottom: 6px;
+            }
+
+            &:last-of-type {
+                strong {
+                    font-size: 20px;
+                    margin-right: 4px;
+                }
+            }
+        }
+
+        .icon {
+            top: 0;
+            right: 0;
+            position: absolute;
+            z-index: 2;
+        }
+        
+        &-icon {
+            display: block;
+            position: absolute;
+            right: -13px;
+            top: -5px;
+            width: 0; 
+            height: 0; 
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid $colours-silver;
+            transform: rotate(-135deg);
+            
+            &-plus {
+                display: inline-block;
+                color: $colours-anthracite;
+            }
+
+            &-tick {
+                display: none;
+                color: $colours-vodafone-white;
+            }
+        }
+
+        &-title {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 0;
+        }
+
+        &-remove {
+            display: none;
+        }
+
+        &.active {
+            background-color: $colours-vodafone-white;
+            position: relative;
+            color: $colours-dark-gray;
+
+            .#{$ns-prefix}card__selector-icon {
+                border-top: 20px solid $colours-digital-green;
+
+                &-tick {
+                    color: $colours-vodafone-white;
+                    display: inline-block;
+                }
+
+                &-plus {
+                    display: none;
+                }
+            }
+
+            .#{$ns-prefix}card__selector-add {
+                display: none;
+            }
+
+            .#{$ns-prefix}card__selector-remove {
+                display: inline-block;
+            }
+        }
+
+        &.selected {
+            &.#{$ns-prefix}card__selector {
+                border: 2px solid $colours-turqoise;
+                color: $colours-dark-gray;
+
+                &  .#{$ns-prefix}card__selector-title {
+                    font-family: $font-family-vodafone-regular-bold;
+                }
+            }
+        }
+
+        &--large {
+            text-align: left;
+            padding: 24px 32px 32px;
+            border: 0;
+            color: $colours-dark-gray;
+
+            .#{$ns-prefix}paragraph {
+                margin-bottom: 16px;
+            }
+
+            .#{$ns-prefix}button {
+                width: 100%;
+            }
+
+            .#{$ns-prefix}card__selector{
+                position: relative;
+
+                &-title {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+
+                &-icon {
+                    border-left: 35px solid transparent;
+                    border-right: 35px solid transparent;
+                    border-top: 35px solid $colours-silver;
+                    right: -23px;
+                }
+
+                &-text {
+                    margin-top: 16px;
+                }
+
+                &-border {
+                    border-top: 7px solid $colours-red-violet;
+                    border-radius: 6px;
+                    width: 100%;
+                    top: 0;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+
+            .icon {
+                top: 4px;
+                right: 3px;
+            }
+
+            &.active.#{$ns-prefix}card__selector {
+                .#{$ns-prefix}card__selector-icon {
+                    border-top: 35px solid $colours-digital-green;
+                }
+            }
+        }
+
+        &--disabled {
+            background-color: $colours-light-gray;
+            color: $colours-mid-gray;
+        }
+
+
+    }
+
+    &__list {
+        &-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 9px 12px 7px;
+            border-bottom: 1px solid $colours-vodafone-red;
+ 
+            .#{$ns-prefix}card__list-paragraphs {
+                display: flex;
+                width: auto;
+                justify-content: space-between;
+ 
+                .#{$ns-prefix}paragraph:first-of-type {
+                    width: 90px;
+                }
+            }
+ 
+            .#{$ns-prefix}paragraph {
+                margin-bottom: 0;
+            }
+ 
+            .icon {
+                margin-right: 10px;
+            }
+        }
+ 
+        &-price-head {
+            font-size: $font-size-h5-large;
+        }
+ 
+        &-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 12px;
+            border-bottom: 1px solid $colours-aluminium;
+ 
+            .icon {
+                margin-right: 10px;
+            }
+ 
+            .#{$ns-prefix}paragraph {
+                margin-bottom: 2px;
+            }
+        }
+ 
+        &-paragraphs {
+            flex: 1 auto;
+        }
+ 
+        &-button {
+            display: flex;
+            align-items: center;
+ 
+            .#{$ns-prefix}paragraph {
+                margin-bottom: 0;
+                margin-right: 4px;
+                color: $colours-anthracite;
+            }
+ 
+            .icon {
+                vertical-align: text-bottom;
+            }
+        }
+ 
+        &-price {
+            font-size: $font-size-h5;
+            right: 0;
+        }
+ 
+        &-content {
+            padding: 17px 12px 16px 20px;
+ 
+            &-title {
+                display: flex;
+                align-items: initial;
+                margin-bottom: 9px;
+ 
+                &:last-of-type {
+                    margin-top: 17px;
+                }
+ 
+                .icon {
+                    margin-right: 4px;
+                }
+ 
+                .#{$ns-prefix}paragraph {
+                    margin-bottom: 0;
+                }
+            }
+        }
+ 
+        &-span-price {
+            text-align: right;
+        }
+ 
+        &-list {
+            margin-left: 28px;
+            font-size: 14px;
+        }
+ 
+        &-footer {
+            padding: 10px 12px;
+ 
+            .#{$ns-prefix}paragraph {
+                font-size: $font-size-text-small;
+            }
+        }
+    }
+
+    &__mobile {
+        display: flex;
+        flex-direction: row;
+        padding: 27px 11px 17px;
+        border: 2px solid $colours-vodafone-red;
+
+        &.#{$ns-prefix}tag-label {
+            overflow: initial;
+        }
+
+        &-img {
+            width: 110px;
+            height: 230px;
+            margin-right: 15px;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &-title {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        strong {
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        span {
+            display: block;
+        }
+
+        &--no-border {
+            border: 0;
+        }
+    }
+
+    &__ticket {
+        background-color: $colours-vodafone-white;
+        margin-bottom: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+        .#{$ns-prefix}card__list-header {
+            justify-content: space-between;
+            width: 100%;
+
+            .icon {
+                color: $colours-vodafone-red;
+            }
+        }
+
+        &--border-red {
+            border-bottom-color: $colours-vodafone-red;
+        }
+
+        .#{$ns-prefix}card__list-footer {
+
+            .#{$ns-prefix}paragraph {
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 0;
+
+                &:last-of-type {
+                    margin-bottom: 9px;
+                }
+            }
+
+            strong {
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    &__counter {
+        display: flex;
+        padding: 14px 0 24px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            z-index: 2;
+
+            &--tick {
+                display: none;
+            }
+
+            &--plus {
+                display: block;
+            }
+        }
+        
+        &-column {
+            display: inline-flex;
+            align-items: center;
+            flex: 1 50%;
+
+            &:last-child {
+                justify-content: space-around;
+            }
+        }
+
+        &-info {
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        &-counter {
+            position: relative;
+            padding: 0 20px;
+        }
+
+        &-button {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.16);
+            border-radius: 100%;
+            background-color: $colours-vodafone-red;
+            color: $colours-vodafone-white;
+            opacity: 1;
+
+            &--less {
+                left: 0;
+            }
+
+            &--more {
+                right: 0;
+            }
+
+            &--disabled {
+                background-color: $colours-vodafone-white;
+                pointer-events: none;
+                color: $colours-vodafone-red;
+            }
+        }
+
+        &-num {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 23px 40px;
+            font-size: 20px;
+            line-height: 28px;
+            border-radius: 6px;
+        }
+
+        .#{$ns-prefix}paragraph {
+            margin-bottom: 0;
+        }
+
+        img {
+            margin-bottom: 0;
+        }
+    }
+
+    &__promotional {
+        .#{$ns-prefix}play {
+            display: initial;
+
+            & + img {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpoint-mov) {
+    .#{$ns-prefix}card {
+
+        &__product {
+            padding: 20px;
+    
+            .#{$ns-prefix}title {
+                margin-bottom: 15px;
+            }
+    
+            &-title {
+                font-size: $font-size-h3-tablet;
+                margin-bottom: 24px;
+
+                &-info {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+    
+            &-name {
+                font-size: $font-size-h5-large;
+                margin-bottom: 6px;
+        
+                span {
+                    font-size: $font-size-h5-large;
+                    margin-top: 4px;
+                }
+
+                &-info {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &-price {
+                strong {
+                    font-size: $font-size-h5-large;
+                }
+    
+                & + .#{$ns-prefix}card__product-initial-price {
+                   margin-top: 7px;
+                }
+    
+                & + .#{$ns-prefix}button {
+                    margin-top: 18px;
+                }
+            }
+    
+            &-initial-price {
+                font-size: 18px;
+                line-height: 24px;
+
+                & + .#{$ns-prefix}button {
+                    margin: 18px 0 12px 0;
+                }
+            }
+    
+            img {
+                margin-bottom: 17px;
+            }
+        }
+
+        &__selector {
+            padding: 9px;
+
+            &-title {
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            .#{$ns-prefix}carousel {
+
+                &__arrow::after {
+                    transform: translate(-70%, -50%) rotate(45deg);
+                    width: 10px;
+                    height: 10px;
+                }
+    
+                &__list-element {
+                    padding: 0 5px;
+                }
+            }
+
+            .#{$ns-prefix}paragraph {
+                &:first-of-type {
+                    margin-bottom: 0;
+                }
+
+                &:last-of-type {
+                    font-size: 14px;
+                }
+            }
+
+            &--large {
+                padding: 24px 28px 28px;
+    
+                .#{$ns-prefix}card__selector {
+                    &-title {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+
+                    &-text {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+
+                .#{$ns-prefix}paragraph {
+                    &:last-of-type {
+                        font-size: 16px;
+
+                        strong {
+                            font-size: 28px;
+                            line-height: 34px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__list {
+            &-header {
+                padding: 15px 20px;
+
+                & .#{$ns-prefix}card__list-paragraphs {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    flex: 2 0;
+
+                    .#{$ns-prefix}paragraph:first-of-type {
+                        width: 100%;
+                    }
+                }
+
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 12px;
+                }
+            }
+
+            &-price-head {
+                flex: 1 100%;
+                text-align: right;
+            }
+
+            &-container {
+                padding: 15px 20px;
+
+                .#{$ns-prefix}paragraph {
+                    font-size: 18px;
+
+                    .icon {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+                
+                .icon {
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+            
+            &-span-price {
+                font-size: 20px;
+            }
+
+            &-price {
+                font-size: 20px;
+            }
+
+            &-content {
+                padding: 20px 20px 20px 30px;
+
+                &-title {
+                    align-items: center;
+
+                    .icon {
+                        width: 34px;
+                        height: 34px;
+                        margin-right: 7px;
+                    }
+                }
+            }
+
+            &-list {
+                margin-left: 41px;
+            }
+
+            &-footer {
+                padding: 20px;
+            }
+        }
+
+        &__ticket {
+            .#{$ns-prefix}card__list-header {
+                padding: 8px 16px;
+                
+                .#{$ns-prefix}paragraph {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+
+                .icon {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .#{$ns-prefix}card__list-container {
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .#{$ns-prefix}card__list-button .#{$ns-prefix}icon__button {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .#{$ns-prefix}card__list-footer {
+                &-total {
+                    font-size: 20px;
+                    line-height: 28px;
+
+                    strong {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                }
+
+                &-initial {
+                    font-size: 18px;
+                    line-height: 24px;
+
+                    strong {
+                        font-size: 20px;
+                        line-height: 28px;
+                    }
+                }
+
+                .#{$ns-prefix}button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    .#{$ns-prefix}card {
+
+        &__product {
+            padding: 30px 20px;
+
+            &-gigas {
+                margin-bottom: 12px;
+            }
+
+            &-name-info {
+                margin-bottom: 28px;
+            }
+        }
+
+        .#{$ns-prefix}title {
+            margin-bottom: 8px;
+        }
+
+        &-name {
+            font-size: $font-size-h4;
+            margin-bottom: 3px;
+    
+            span {
+                font-size: $font-size-h4;
+                font-weight: bold;
+                margin-top: 4px;
+            }
+        }
+
+        &__selector {
+            padding: 14px 40px;
+
+            .#{$ns-prefix}paragraph {
+                &:last-of-type {
+                    strong {
+                        margin-right: 3px;
+                    }
+                }
+            }
+
+            .icon {
+                width: 18px;
+                height: 18px;
+            }
+
+            &--large {
+                padding: 24px 32px 32px;
+    
+                .#{$ns-prefix}card__selector {
+                    &-title {
+                        font-size: 28px;
+                        line-height: 34px;
+                    }
+
+                    &-text {
+                        font-size: 18px;
+                        line-height: 24px;
+                        margin-top: 12px;
+                    }
+                }
+
+                .icon {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+
+        &__list {
+            &-price-head {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+.#{$ns-prefix}colours-bg-dark-gray {
+    .#{$ns-prefix}card__selector {
+        border-color: $colours-anthracite;
+        background-color: transparent;
+        color: $colours-vodafone-white;
+
+        &.selected {
+            border-color: $colours-aqua-blue;
+            color: $colours-vodafone-white;
+        }
+        
+        &--disabled {
+            color: $colours-anthracite;
+        }
+
+        .#{$ns-prefix}paragraph {
+            color: $colours-silver;
+        }
+    }
+}
+
+.#{$ns-prefix}colours-bg-vodafone-red {
+    .#{$ns-prefix}card__selector {
+        border-color:  $colours-vodafone-white;
+        background-color: transparent;
+        color: $colours-vodafone-white;
+        
+        &.selected {
+            background-color: $colours-vodafone-white;
+            color: $colours-dark-gray;
+            border-color: transparent;
+
+            .#{$ns-prefix}paragraph {
+                color: $colours-anthracite;
+            }
+        }  
+        
+        &--disabled {
+            background-color: $colours-vodafone-red;
+            color: $colours-vodafone-white;
+
+            .#{$ns-prefix}card__selector-title, .#{$ns-prefix}paragraph {
+                opacity: 0.5;
+            }
+        }
+
+        .#{$ns-prefix}paragraph {
+            color: $colours-vodafone-white;
+        }
+    }
+}
+

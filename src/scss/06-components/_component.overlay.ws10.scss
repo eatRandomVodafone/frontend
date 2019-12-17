@@ -1,0 +1,625 @@
+.#{$ns-prefix}overlay {
+    background-color: $color-gallery;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999;
+
+    &--dark {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    &--show {
+        display: flex;
+    }
+
+    &__item {
+        display: none;
+        width: auto;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+        flex-direction: column;
+        border: 0;
+        justify-content: center;
+        justify-self: center;
+        max-height: 600px;
+        position: absolute;
+        left: 16px;
+        right: 16px;
+
+        &--show {
+            display: inline-flex;
+        }
+
+
+        &--dark {
+
+            .#{$ns-prefix}overlay__head {
+                background-color: $color-dove-gray;
+                .#{$ns-prefix}paragraph:first-of-type{
+                    color: $color-vodafone-white;
+                }
+                .#{$ns-prefix}overlay__close .icon {
+                    color: $color-vodafone-white;
+                }
+            }
+
+            .#{$ns-prefix}overlay__content {
+                background-color: $color-black;
+                .#{$ns-prefix}paragraph:first-of-type{
+                    color: $color-vodafone-white;
+                }
+            }
+
+            .#{$ns-prefix}overlay__footer {
+                background-color: $color-dove-gray;
+            }
+
+        }
+
+        &--youtube {
+            left: 16px;
+            right: 16px;
+        }
+
+        &--expanded {
+            max-height: 100%;
+            height: 100%;
+            position: relative;
+            right: 0;
+            left: 0;
+    
+            .#{$ns-prefix}overlay__head {
+                border-radius: 0;
+            }
+    
+            .#{$ns-prefix}overlay__content {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+
+    &__head {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        padding: 24px 10px 24px;
+        background-color: $color-vodafone-white;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+
+        .#{$ns-prefix}paragraph {
+            font-size: 20px;
+            line-height: 28px;
+            color: $color-dove-gray;
+        }
+        .#{$ns-prefix}svg {
+            width: 72px;
+            height: 72px;
+        }
+    }
+
+    &__icon {
+        height: 42px;
+        width: 42px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    &__footer {
+        height: 40px;
+        background-color: $color-vodafone-white;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    &__close {
+        display: inline-block;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        vertical-align: top;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        * {
+            pointer-events: none;
+            vertical-align: top;
+        }
+        &--hide {
+            display: none;
+        }
+
+        .icon {
+            height: 28px;
+            width: 28px;
+        }
+    }
+
+    &__content {
+        overflow: overlay;
+        max-height: 100%;
+        background-color: $color-wild-sand;
+        padding: 0 10px 0px;
+        height: auto;
+        text-align: center;
+
+        &--youtube {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            margin: 25px 0;
+        }
+
+        .#{$ns-prefix}paragraph {
+           
+            margin-bottom: 0;
+            color: $color-dove-gray;
+
+            &:first-of-type {
+                padding-top: 24px;
+            }
+            &:last-of-type {
+                padding-bottom: 24px;
+            }
+        }
+
+        .#{$ns-prefix}button {
+            margin-bottom: 16px;
+            &:last-of-type {
+                margin-bottom: 28px;
+            }
+        }
+    }
+
+    &__youtube {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--welcome {
+        padding: 0;
+
+        .#{$ns-prefix}overlay__item {
+            height: 100%;
+            max-height: none;
+
+            .#{$ns-prefix}overlay__content {
+                height: 100%;
+                color: $color-vodafone-white;
+                text-align: left;
+                background-color: $color-vodafone-red;
+                background-size: cover;
+                background-position: center;
+                border-radius: 6px;
+                padding: 0 16px 0px;
+    
+                .#{$ns-prefix}paragraph {
+                    color: $color-vodafone-white;
+    
+                    &:first-of-type {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                .#{$ns-prefix}overlay__close {
+                    color: $color-vodafone-white;
+                    z-index: 2;
+
+                    .icon {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                .#{$ns-prefix}carousel {
+                    position: relative;
+                }
+
+                .#{$ns-prefix}carousel__list {
+                    height: 100%;
+
+                    .#{$ns-prefix}carousel__list-element {
+                        height: 100%;
+                    }
+                }
+
+                .#{$ns-prefix}carousel__bullets-bullet {
+                    margin-bottom: 15px;
+                }
+
+                .#{$ns-prefix}carousel__bullets-bullet--active::after {
+                    border-color: $color-vodafone-white;
+                }
+
+                .#{$ns-prefix}carousel__bullets-bullet::before {
+                    background-color: $color-vodafone-white;
+                }
+
+                &.#{$ns-prefix}flex {
+                    flex-direction: column;
+                    
+                    .#{$ns-prefix}carousel {
+                        flex: 1 100%;
+                    }
+                }
+
+                .#{$ns-prefix}overlay__title {
+                    font-size: 24px;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+
+    &__item--information {
+        top: 80%;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: 0;
+        transition: 0.3s;
+
+        & .#{$ns-prefix}overlay__head {
+            padding: 14px 48px 17px 16px;
+            text-align: left;
+
+            .#{$ns-prefix}paragraph {
+                font-size: 28px;
+                line-height: 36px;
+            }
+        }
+        
+        .#{$ns-prefix}overlay__content {
+            background-color: $color-vodafone-white;
+            padding: 0 16px 35px;
+            top: 100%;
+            height: 100%;
+            
+            .#{$ns-prefix}paragraph:first-of-type {
+                padding-top: 0;
+            }
+            
+            .#{$ns-prefix}button {
+                display: block;
+                margin: 0 auto 20px auto;
+            }
+        }
+
+        .#{$ns-prefix}overlay__button-up {
+            top: -10px;
+            text-align: center;
+            display: inline-flex;
+            padding: 10px 5px 5px;
+
+            &-inner {
+                background-color: $color-dusty-gray;
+                display: inline-block;
+                border-radius: 6px;
+                padding: 1px 18px;
+            }
+        }
+
+        .#{$ns-prefix}button {
+            margin: 5px;
+        }
+
+        &.slide {
+            top: 10%;
+            height: 100%;
+        }
+
+        .#{$ns-prefix}overlay__img {
+            width: 100%;
+
+            & + .#{$ns-prefix}overlay__content {
+                padding-top: 20px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        padding: 120px 20px;
+
+        &__icon {
+            margin-bottom: 20px;
+        }
+
+        &__close .icon {
+            height: 36px;
+            width: 36px;
+        }
+
+        &__item {
+            left: initial;
+            right: initial;
+
+            &--youtube {
+                left: 20px;
+                right: 20px;
+            }
+        }
+
+        &__head {
+            padding: 28px 10px 28px;
+
+            .#{$ns-prefix}paragraph {
+                font-size: 24px;
+                line-height: 30px;
+            }
+            .#{$ns-prefix}svg {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 16px;
+            }
+        }
+
+        &__content {
+            padding: 0px 74px;
+            max-height: 570px;
+
+            .#{$ns-prefix}paragraph {
+               
+                font-size: 18px;
+                line-height: 24px;
+
+                &:first-of-type {
+                    padding-top: 28px;
+                }
+                &:last-of-type {
+                    padding-bottom: 28px;
+                }
+            }
+            
+            .#{$ns-prefix}button:last-of-type {
+                margin-bottom: 32px;
+            }
+
+            .#{$ns-prefix}button:nth-of-type(2) {
+                margin-left: 16px;
+            }
+            
+        }
+
+        &__footer {
+            height: 44px;
+        }
+
+        &--welcome {
+            padding: 120px 83px;
+
+            .#{$ns-prefix}overlay__item {
+                height: 380px;
+    
+                .#{$ns-prefix}overlay__content {
+                    height: 380px;
+                    text-align: center;
+                    padding: 50px 55px 24px;
+                    align-items: center;
+
+                    .#{$ns-prefix}paragraph {
+                        font-size: 20px;
+
+                        &:first-of-type {
+                            padding-top: 0;
+                        }
+
+                        &:last-of-type {
+                            margin-bottom: 93px;
+                            padding-bottom: 0;
+                        }
+                    }
+
+                    .#{$ns-prefix}button {
+                        margin: 0;
+                        margin-top: 24px;
+                        width: 150px;
+                    }
+
+                    .#{$ns-prefix}carousel--active {
+                        padding: 0;
+                    }
+
+                    .#{$ns-prefix}carousel__bullets-bullet {
+                        margin-right: 10px;
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+
+                    .#{$ns-prefix}overlay__title {
+                        font-size: 34px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    
+        .#{$ns-prefix}overlay__item--information {
+            top: 0;
+            align-items: center;
+            max-width: 603px;
+            width: 100%;
+            padding-top: 120px;
+
+            .#{$ns-prefix}overlay__head {
+                padding: 58px 42px 0;
+                text-align: center;
+
+                .#{$ns-prefix}paragraph {
+                    font-size: 34px;
+                    line-height: 40px;
+                    margin-bottom: 14px;
+                }
+
+                .#{$ns-prefix}overlay__close {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+            
+            .#{$ns-prefix}overlay__content {
+                padding: 24px 42px 18px;
+
+                .#{$ns-prefix}paragraph {
+                    margin-bottom: 40px;
+                    padding-bottom: 0;
+                }
+
+                .#{$ns-prefix}button {
+                    margin-bottom: 14px;
+                }
+            }
+
+            .#{$ns-prefix}overlay__button-up {
+                display: none;
+            }
+
+            img {
+                max-height: 150px;
+                width: 100%;
+            }
+        }
+
+        &__item--expanded {
+            position: relative;
+    
+            .#{$ns-prefix}overlay__head {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .#{$ns-prefix}overlay__content {
+                background-color: $color-vodafone-white;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        padding: 148px 0;
+
+        &__item {
+            max-width: 780px;
+
+            &--youtube {
+                left: initial;
+                right: initial;
+                width: 100%;
+            }
+        }
+
+        &__head {
+            padding: 32px 10px 32px;
+            
+            .#{$ns-prefix}paragraph {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            .#{$ns-prefix}svg {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__close .icon {
+            height: 48px;
+            width: 48px;
+        }
+
+        &__content {
+            padding: 0 100px;
+            max-height: 570px;
+
+            .#{$ns-prefix}paragraph {
+                &:first-of-type {
+                    padding-top: 32px;
+                }
+                &:last-of-type {
+                    padding-bottom: 32px;
+                }
+            }
+
+            .#{$ns-prefix}button:last-of-type {
+                margin-bottom: 36px;
+            }
+        }
+
+        &__footer {
+            height: 48px;
+        }
+
+        &--welcome {
+            padding: 156px 250px;
+            .#{$ns-prefix}overlay__item {
+                height: 392px;
+    
+                .#{$ns-prefix}overlay__content {
+                    height: 392px;
+                    padding: 60px 90px 30px;
+
+                    .#{$ns-prefix}paragraph {
+                        &:last-of-type {
+                            margin-bottom: 66px;
+                            padding-bottom: 0;
+                        }
+                    }
+
+                    .#{$ns-prefix}button {
+                        margin-top: 30px;
+                    }
+
+                    .#{$ns-prefix}carousel__bullets-bullet {
+                        margin-right: 30px;
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+
+                    .#{$ns-prefix}overlay__title {
+                        font-size: 40px;
+                        line-height: 48px;
+                    }
+                }
+            }
+        }
+
+        .#{$ns-prefix}overlay__item--information {
+            position: initial;
+            padding: 0;
+            max-width: 780px;
+            width: 100%;
+
+            .#{$ns-prefix}overlay__head {
+                padding: 49px 98px 0;
+
+                .#{$ns-prefix}paragraph {
+                    font-size: 40px;
+                    line-height: 48px;
+                }
+            }
+            
+            .#{$ns-prefix}overlay__content {
+                padding: 30px 100px 21px;
+
+                .#{$ns-prefix}paragraph {
+                    padding-bottom: 0;
+                }
+            }
+            
+            img {
+                max-height: 184px;
+            }
+        }
+    }
+}

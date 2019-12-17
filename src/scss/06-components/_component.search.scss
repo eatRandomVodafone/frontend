@@ -1,0 +1,106 @@
+.#{$ns-prefix}search {
+
+    .#{$ns-prefix}form__box {
+        max-width: 256px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .#{$ns-prefix}form__icon {
+        padding: 6px 6px;
+        display: none;
+
+        * {
+            pointer-events: none;
+            vertical-align: top;
+        }
+    }
+
+    .#{$ns-prefix}form__input {
+        min-width: 256px;
+        padding: 11px 12px;
+        font-size: 16px;
+        line-height: 20px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__box {
+        display: inline-block;
+        position: relative;
+
+        &-focus {
+            & + .#{$ns-prefix}search__button {
+                background-color: $color-vodafone-red;
+                cursor: pointer;
+            }
+
+            .#{$ns-prefix}form__icon {
+                display: inline-block;
+            }
+
+            & ~ .#{$ns-prefix}search__location {
+                background-color: $color-vodafone-gray;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__group-button{
+        display: flex;
+    }
+
+    &__button, &__location {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+
+        * {
+            pointer-events: none;
+            vertical-align: top;
+        }
+    }
+
+    &__button {
+        background-color: $color-silver;
+        color: $color-vodafone-white;
+        padding: 4px;
+    }
+
+    &__location {
+        background-color: $color-dove-gray;
+        color: $color-vodafone-white;
+        padding: 4px;
+        margin-left: 12px;
+        border-radius: 6px;
+    }
+
+    &--location .#{$ns-prefix}form__input {
+        min-width: 200px;
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        .#{$ns-prefix}form__input {
+            min-width: 580px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        &__location {
+            margin-left: 20px;
+        }
+
+        &__button {
+            padding: 6px;
+        }
+
+        &__location {
+            padding: 6px;
+        }
+    }
+}

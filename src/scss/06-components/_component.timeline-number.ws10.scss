@@ -1,0 +1,51 @@
+.#{$ns-prefix}timeline-number {
+    text-align: center;
+
+    &__title {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 29px;
+    }
+
+    &__item {
+        border-top: 1px solid $colours-vodafone-red;
+        position: relative;
+        padding: 21px 0 29px 0;
+    }
+
+    &__step {
+        background-color: $colours-vodafone-red;
+        color: $colours-vodafone-white;
+        border-radius: 100%;
+        position: absolute;
+        top: -14px;
+        padding: 4px 10px;
+        transform: translateX(-50%);
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        &__title {
+            font-size: 40px;
+            line-height: 48px;
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        &__item-text {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}

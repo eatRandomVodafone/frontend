@@ -1,0 +1,80 @@
+/*	STYLES FOR TEST ACCESSIBILITY */
+@if $include-scss-accessibility {
+
+	.#{$ns-prefix}nudge {
+		position: relative;
+		background-color: #333;
+		padding: 40px 40px 60px 40px;
+		z-index: 0;
+		overflow: hidden;
+
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 580px;
+			height: 100%;
+			background-color: #e60000;
+			top: 0;
+			left: -200px;
+			z-index: -10;
+			transform: skewX(-45deg);
+		}
+
+		// ELEMENT
+		&__close {
+			// Position
+			position: absolute;
+			right: 15px;
+			top: 15px;
+
+			// Reset button style
+			padding: 0;
+			border: 0;
+			background-color: transparent;
+			height: 32px;
+			width: 32px;
+			z-index: 10;
+
+			&:hover {
+				cursor: pointer;
+
+			}
+
+			&:focus {
+				outline: 2px solid #e60000;
+			}
+		}
+
+		&__text {
+			width: 310px;
+			color: #fff;
+			font-size: 30px;
+			line-height: 39px;
+			margin: 0 0 24px 0;
+			z-index: 10;
+		}
+
+		&__link {
+			color: #fff;
+			text-decoration: none;
+			display: inline-block;
+			padding: 12px 20px;
+			border: 1px solid white;
+			border-radius: 6px;
+			font-family: $font-family-vodafone-regular;
+			font-size: 20px;
+			z-index: 10;
+
+			&:hover, &:focus {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+
+		// MODIFIER
+		&--svg-grey9 {
+			stroke: #999;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+@mixin mq-desktop {
+	@media only screen and (min-width: $breakpoint-tablet) {
+		@content;
+	}
+}
+
+@mixin mq-tablet-desktop {
+	@media only screen and (min-width: $breakpoint-mov) {
+		@content;
+	}
+}
+
+@mixin mq-tablet {
+	@media only screen and (min-width: $breakpoint-mov) and (max-width: $breakpoint-tablet) {
+		@content;
+	}
+}
+
+@mixin mq-phone {
+	@media only screen and (max-width: $breakpoint-mov) {
+		@content;
+	}
+}
+
+@mixin mq-phone-small {
+	@media only screen and (max-width: $breakpoint-mov-small) {
+		@content;
+	}
+}

@@ -1,0 +1,9 @@
+a {
+	color: $color-vodafone-gray;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	color: $color-vodafone-red;
+}

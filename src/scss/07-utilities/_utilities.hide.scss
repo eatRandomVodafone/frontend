@@ -1,0 +1,35 @@
+@media only screen and (max-width: $breakpoint-mov) {
+   .hide--xs {
+       display: none;
+   }
+}
+@media only screen and (min-width: $breakpoint-mov) {
+   .hide--tb {
+       display: none;
+   }
+}
+
+
+@media only screen and (max-width: $breakpoint-tablet) {
+   .hide--sm {
+       display: none;
+   }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+   .hide--lrg {
+       display: none;
+   }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+   .hide--md {
+       display: none;
+   }
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+   .hide--xlrg {
+       display: none;
+   }
+}

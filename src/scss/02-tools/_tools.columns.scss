@@ -1,0 +1,66 @@
+@mixin columns-classes($breakpoint: false, $columns-count: $columns-count-default, $columns-widths-delimiter: $columns-widths-delimiter-default) {
+	@if $breakpoint {
+		@if $breakpoint == lap {
+			@media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+				$device: "lap";
+				@include columns-width($columns-count, $columns-widths-delimiter, "-#{$device}");
+			}
+		} @else if $breakpoint == tablet {
+			@media screen and (min-width: $breakpoint-mov) and (max-width: $breakpoint-tablet) {
+				$device: "tablet";
+				@include columns-width($columns-count, $columns-widths-delimiter, "-#{$device}");
+			}
+		} @else if $breakpoint == lapup {
+			@media screen and (min-width: $breakpoint-tablet) {
+				$device: "lap-and-up";
+				@include columns-width($columns-count, $columns-widths-delimiter, "-#{$device}");
+			}
+		} @else if $breakpoint == desk {
+			@media screen and (min-width: $breakpoint-desktop) {
+				$device: "desk";
+				@include columns-width($columns-count, $columns-widths-delimiter, "-#{$device}");
+			}
+		} @else {
+			@media only screen and (max-width: $breakpoint) {
+				$device: "";
+
+				@if $breakpoint == $breakpoint-mov {
+					$device: "mov";
+				}
+				@if $breakpoint == $breakpoint-tablet {
+					$device: "palm";
+				}
+
+				@if $breakpoint == $breakpoint-desktop {
+					$device: "portable";
+				}
+
+				@if $breakpoint == $breakpoint-tv {
+					$device: "lg";
+				}
+
+				@include columns-width($columns-count, $columns-widths-delimiter, "-#{$device}");
+			}
+		}
+	} @else {
+		@include columns-width($columns-count, $columns-widths-delimiter);
+	}
+}
+
+@mixin columns-width($columns-count, $columns-widths-delimiter, $device: "") {
+	@for $x from 1 through $columns-count {
+		@for $y from 1 through $x {
+
+			@if ($y == $x   and $x != 1   ) or
+                ($y%2 == 0  and $x%2  == 0) or
+                ($y%3 == 0  and $x%3  == 0) or
+                ($y%5 == 0  and $x%5  == 0) {
+				// do nothing we already have that fraction
+			} @else {
+				&#{$y}#{$columns-widths-delimiter}#{$x}#{$device} {
+					width: percentage($y / $x) !important;
+				}
+			}
+		}
+	}
+}

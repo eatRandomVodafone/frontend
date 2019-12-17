@@ -1,0 +1,615 @@
+.#{$ns-prefix}form {
+	font-family: $font-family-vodafone-regular;
+
+	&__box {
+		position: relative;
+		display: inline-block;
+		font-family: $font-family-vodafone-regular;
+		width: 100%;
+		margin-bottom: 30px;
+		padding: 0;
+		border: 0;
+
+		&-ok {
+			padding: 46px 0 53px 0;
+			text-align: center;
+
+			.#{$ns-prefix}title {
+				font-family: $font-family-vodafone-regular;
+				font-size: $font-size-text-large;
+				line-height: $line-height-text-large;
+			}
+		}
+	}
+
+	&__alert {
+		background-color: $color-vodafone-white;
+		border-radius: 6px;
+		bottom: 55px;
+		box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+		display: none;
+		flex-direction: row;
+		font-family: $font-family-vodafone-regular;
+		left: 0;
+		position: absolute;
+		text-align: left;
+		width: 100%;
+		z-index: 2;
+
+		&-close {
+			// Reset style button
+			border: none;
+			background: none;
+			line-height: 0;
+			padding: 0;
+
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			width: 20px;
+			height: 20px;
+
+			cursor: pointer;
+			&:focus {
+				outline: 2px solid $color-turqoise;
+			}
+		}
+
+		&-icon {
+			vertical-align: top;
+			width: 28px;
+			height: 28px;
+			stroke-width: 0;
+			stroke: $color-vodafone-white;
+		}
+
+		&-icon-box {
+			border-radius: 6px 0 0 6px;
+			display: inline-block;
+			padding: 8px;
+			position: relative;
+
+			&::after {
+				content: '';
+				@include arrow($direction: "down", $width: 10px);
+				position: absolute;
+				bottom: -18px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		&-body {
+			width: 100%;
+			border-radius: 0 6px 6px 0;
+
+			& .#{$ns-prefix}paragraph {
+				font-size: $font-size-text;
+				line-height: 44px;
+				margin: 0 0 0 12px;
+			}
+		}
+
+		&-show {
+			display: flex;
+		}
+
+		&--error {
+			.#{$ns-prefix}form__alert-icon-box {
+				background-color: $color-lemon-yellow;
+
+				&::after {
+					border-top-color: $color-lemon-yellow;
+				}
+			}
+
+			.#{$ns-prefix}form__alert-icon {
+				padding: 0;
+				stroke: $color-vodafone-gray;
+			}
+
+			.#{$ns-prefix}form__alert-body {
+				border: 1px solid $color-lemon-yellow;
+			}
+
+			&.#{$ns-prefix}form__alert-show ~ .#{$ns-prefix}form__input {
+				border: 2px solid $color-lemon-yellow;
+			}
+		}
+
+		&--info {
+			.#{$ns-prefix}form__alert-icon-box {
+				background-color: $color-aqua-blue;
+
+				&::after {
+					border-top-color: $color-aqua-blue;
+				}
+			}
+
+			.#{$ns-prefix}form__alert-icon {
+				padding: 0;
+			}
+
+			.#{$ns-prefix}form__alert-body {
+				border: 1px solid $color-aqua-blue;
+			}
+
+			&.#{$ns-prefix}form__alert-show ~ .#{$ns-prefix}form__input {
+				border: 2px solid $color-aqua-blue;
+			}
+		}
+
+		&--ok {
+			.#{$ns-prefix}form__alert-icon-box {
+				background-color: $color-digital-green;
+
+				&::after {
+					border-top-color: $color-digital-green;
+				}
+			}
+
+			.#{$ns-prefix}form__alert-body {
+				border: 1px solid $color-digital-green;
+			}
+
+			&.#{$ns-prefix}form__alert-show ~ .#{$ns-prefix}form__input {
+				border: 2px solid $color-digital-green;
+			}
+		}
+	}
+
+	&__icon-ok-message {
+		padding: 7px;
+
+		.icon {
+			width: 34px;
+			height: 34px;
+		}
+	}
+
+	&__input {
+		border: 1px solid $color-dove-gray;
+		box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+		display: inline-block;
+		font-family: $font-family-vodafone-regular;
+		font-size: $font-size-text-large;
+		line-height: $line-height-text-large;
+		max-width: 100%;
+		padding: 9px 12px;
+		width: 100%;
+		border-radius: 6px;
+
+		&:focus,
+		&:active {
+			outline: 2px solid $color-turqoise;
+		}
+
+		&::placeholder {
+			color: $color-dusty-gray;
+		}
+
+		&--info,
+		&--ok,
+		&--error {
+			border-color: $color-aqua-blue;
+			border-style: solid;
+			border-width: 2px;
+		}
+
+		&--ok {
+			border-color: $color-digital-green;
+		}
+
+		&--error {
+			border-color: $color-lemon-yellow;
+		}
+
+		&--disabled {
+			background-color: $color-wild-sand;
+			border: 1px solid $color-dusty-gray;
+			box-shadow: 0 0 0 0 transparent;
+			color: $color-dusty-gray;
+			pointer-events: none;
+
+			&-dark {
+				background-color: $color-silver-chalice;
+				color: $color-dove-gray;
+				border: 1px solid $color-dusty-gray;
+				box-shadow: 0 0 0 0 transparent;
+				pointer-events: none;
+			}
+		}
+	}
+
+	&__textarea {
+		font-family: $font-family-vodafone-regular;
+		width: 100%;
+		max-width: 780px;
+		padding: 19px 16px;
+		border: 1px solid $color-dusty-gray;
+		box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+		border-radius: 6px;
+
+		&:focus,
+		&:active {
+			outline: 2px solid $color-turqoise;
+		}
+
+		&::placeholder {
+			color: $color-dusty-gray;
+		}
+	}
+
+	&__checkbox,
+	&__radio {
+		position: absolute;
+		opacity: 0;
+
+		&:focus + .#{$ns-prefix}form__label::before {
+			border: 2px solid $color-turqoise;
+		}
+
+		& + .#{$ns-prefix}form__label {
+			padding-left: 30px;
+			margin-bottom: 0;
+			min-height: 24px;
+			display: flex;
+			align-items: center;
+		}
+
+		& + .#{$ns-prefix}form__label::before {
+			content: '';
+			width: 20px;
+			height: 20px;
+			top: 2px;
+			border: 1px solid $color-dusty-gray;
+			background-color: $color-vodafone-white;
+			position: absolute;
+			left: 0;
+			box-sizing: border-box;
+			box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+			border-radius: 3px;
+		}
+
+		&:checked + .#{$ns-prefix}form__label::after {
+			content: '';
+			position: absolute;
+		}
+	}
+	
+	&__checkbox:checked + .#{$ns-prefix}form__label::after {
+		top: 6px;
+		left: 4px;
+		display: block;
+		width: 11px;
+		height: 6px;
+		border: 1px solid $color-digital-green;
+		border-top: 0;
+		border-right: 0;
+		transform: rotate(-45deg);
+	}
+
+	&__radio {
+		& + .#{$ns-prefix}form__label::before {
+			border-radius: 50%;
+		}
+
+		&:checked + .#{$ns-prefix}form__label::after {
+			width: 10px;
+			height: 10px;
+			top: 2px;
+			border-radius: 50%;
+			background-color: $color-digital-green;
+			margin: 5px;
+			left: 0;
+			box-sizing: border-box;
+		}
+	}
+	
+	&__label {
+		cursor: pointer;
+		display: block;
+		font-family: $font-family-vodafone-regular;
+		font-size: $font-size-text-large;
+		font-weight: normal;
+		line-height: $line-height-text-large;
+		margin: 0 0 10px;
+		text-align: left;
+		position: relative;
+	}
+
+	&__dropdown {
+		position: relative;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+		&-button {
+			display: inline-block;
+			font-size: $font-size-text-large;
+			line-height: $line-height-text-large;
+			margin: 0;
+			width: 100%;
+			padding: 9px 45px 9px 12px;
+			text-align: left;
+			position: relative;
+			border: 1px solid $color-dusty-gray;
+			border-radius: 6px;
+
+			&:focus {
+				outline: 2px solid $color-turqoise;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 15px;
+				top: 50%;
+				@include chevron('down', 14px, 1px, $color-vodafone-gray);
+				transform: translate3d(0, -12px, 0) rotate(135deg);
+			}
+
+			&.opened {
+				border-bottom-color: transparent;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+				
+				&::before {
+					transform: translate3d(0, 0, 0) rotate(-45deg);
+				}
+			}
+		}
+
+		&-list {
+			display: none;
+			text-align: left;
+
+			&.opened {
+				display: block;
+				text-align: left;
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+				position: absolute;
+				top: 100%;
+				background-color: $color-vodafone-white;
+				width: 100%;
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+				border-left: 1px solid $color-dusty-gray;
+				border-right: 1px solid $color-dusty-gray;
+				border-bottom: 1px solid $color-dusty-gray;
+				z-index: 3;
+
+				&::before {
+					content: '';
+					height: 1px;
+					background-color: $color-dusty-gray;
+					position: absolute;
+					top: 0;
+					left: 12px;
+					right: 12px;
+				}
+			}
+
+			&-button {
+				padding: 10px 18px 10px 12px;
+				width: 100%;
+				text-align: left;
+
+				&:not([disabled]) {
+					color: $color-dove-gray;
+				}
+
+				&:hover:not([disabled]),
+				&:focus {
+					color: $color-vodafone-white;
+					background-color: $color-silver-chalice;
+				}
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-mov) {
+
+		&__icon {
+			// reset style button
+			border: none;
+			background: none;
+			position: absolute;
+			right: 0;
+			bottom: 4px;
+			display: inline-block;
+			z-index: 1;
+			color: $color-vodafone-gray;
+			line-height: 0;
+			cursor: pointer;
+	
+			&:focus {
+				position: absolute;
+				text-decoration: none;
+				color: inherit;
+				outline: none;
+				&:after {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -53%);
+					display: inline-block;
+					content: '';
+					width: 30px;
+					height: 30px;
+					border-radius: 100%;
+					border: 2px solid $color-turqoise;
+				}
+			}
+	
+			& + .#{$ns-prefix}form__input {
+				padding-right: 40px;
+			}
+	
+			&-ok-message {
+				display: inline-block;
+				border-radius: 100%;
+				padding: 14px 15px;
+				margin-bottom: 23px;
+	
+				.icon {
+					height: 30px;
+					width: 32px;
+					stroke-width: 0;
+					stroke: $color-vodafone-white;
+				}
+			}
+			&-search:focus:after {
+				border-radius: 0;
+			}
+		}
+
+		&__select:focus,
+		&__select:active {
+			+ .#{$ns-prefix}form__dropdown {
+				outline: 2px solid $color-turqoise;
+			}
+		}
+
+		&__alert {
+			&-body {
+				padding-left: 20px;
+
+				.#{$ns-prefix}paragraph {
+					margin: 0;
+				}
+			}
+
+			&-icon {
+				width: 32px;
+				height: 32px;
+
+				&-box {
+					padding: 8px 12px;
+				}
+			}
+
+			&--error .#{$ns-prefix}form__alert-icon {
+				padding: 2.5px 3.5px;
+			}
+
+			&--info .#{$ns-prefix}form__alert-icon {
+				padding: 2.5px;
+			}
+		}
+
+		&__switch {
+
+			&-trigger {
+				cursor: pointer;
+				display: inline-block;
+				text-align: center;
+				background-color: $color-maroon;
+				max-width: 40px;
+				width: 100%;
+				border-radius: 12px;
+				height: 24px;
+				position: relative;
+	
+				&::after {
+					content:'X';
+					width: 22px;
+					height: 22px;
+					background-color: $color-vodafone-white;
+					box-shadow: 0 1px 2px $color-vodafone-gray;
+					border-radius: 50%;
+					display: inline-flex;
+					left: 2px;
+					position: absolute;
+					justify-content: center;
+					align-items: center;
+					top: 1px;
+					color: $color-maroon;
+					transition: left .3s;
+				}
+			}
+	
+			&-input {
+				position: absolute;
+				opacity: 0;
+				pointer-events: none;
+				
+				&:checked + .#{$ns-prefix}form__switch-trigger {
+					background-color: $color-digital-green;
+	
+					&::after {
+						left: calc(50% - 4px);
+						content:'✓';
+						color: $color-digital-green;
+					}
+				}
+	
+				&:focus + .#{$ns-prefix}form__switch-trigger {
+					outline: 2px solid $color-turqoise;
+					border-radius: 10px;
+				}
+	
+				&:disabled + .#{$ns-prefix}form__switch-trigger {
+					pointer-events: none;
+					background-color: $color-silver-chalice;
+		
+					&::after {
+						background-color: $color-gallery;
+						color: $color-dove-gray;
+					}
+				}
+			}
+	
+			&--warning {
+	
+				& + .#{$ns-prefix}form__switch-trigger {
+					background-color: $color-lemon-yellow;
+	
+					&::after {
+						content:'!';
+						color: $color-vodafone-gray;
+					}
+				}
+				&:checked + .#{$ns-prefix}form__switch-trigger {
+					background-color: $color-lemon-yellow;
+	
+					&::after {
+						content:'!';
+						color: $color-vodafone-gray;
+					}
+				}
+			}
+	
+			&--undefined {
+				& + .#{$ns-prefix}form__switch-trigger {
+					background-color: $color-vodafone-white;
+					border: 1px solid $color-silver;
+	
+					&::after {
+						content: '';
+						top: -1px;
+						box-shadow: -1px 2px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+						border: 1px solid $color-silver;
+						margin-left: 0;
+						height: 22px;
+						width: 22px;
+						left: -1px;
+					}
+				}
+	
+				&:checked + .#{$ns-prefix}form__switch-trigger {
+					background-color: $color-vodafone-white;
+	
+					&::after {
+						content: '';
+						right: -1px;
+					}
+				}
+			}
+		}
+	}
+}

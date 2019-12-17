@@ -1,0 +1,26 @@
+$font-path: 'https://www.vodafone.es/c/statics/fonts/';
+$font-local-path: '../fonts/' !default;
+
+$font-family-vodafone-light: 'VodafoneLight', Helvetica, Arial, sans-serif;
+$font-family-vodafone-light-type: 'VodafoneLight';
+$font-path-vodafone-light: $font-path + 'VodafoneLt-Regular';
+$font-path-vodafone-light-local: $font-local-path + 'vodafone-light';
+
+$font-family-vodafone-regular: 'VodafoneRegular', Helvetica, Arial, sans-serif;
+$font-family-vodafone-regular-type: 'VodafoneRegular';
+$font-path-vodafone-regular: $font-path + 'VodafoneRg';
+$font-path-vodafone-regular-local: $font-local-path + 'vodafone-regular';
+
+$font-family-vodafone-regular-bold: 'VodafoneRegularBold', Helvetica, Arial, sans-serif;
+$font-family-vodafone-regular-bold-type: 'VodafoneRegularBold';
+$font-path-vodafone-regular-bold: $font-path + 'vodafonergbd-webfont';
+$font-path-vodafone-regular-bold-local: $font-local-path + 'vodafone-bold';
+
+$font-family-sans-serif: $font-family-vodafone-regular, Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace: 'Fira Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$font-list-vodafone: ($font-family-vodafone-light-type, $font-path-vodafone-light, $font-path-vodafone-light-local),
+	($font-family-vodafone-regular-type, $font-path-vodafone-regular, $font-path-vodafone-regular-local),
+	($font-family-vodafone-regular-bold-type, $font-path-vodafone-regular-bold, $font-path-vodafone-regular-bold-local);
+

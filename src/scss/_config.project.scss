@@ -1,0 +1,59 @@
+/*-------------------------------------------
+	Framework configuration variables
+--------------------------------------------*/
+
+// Environment for class
+$ns-prefix: vfes-;
+
+// Font default
+$font-size-default: 16;
+
+
+
+// Wrapper width for layout
+$wrapper-width-desktop: 1200px !default;
+$wrapper-width-tablet: 768px !default;
+$wrapper-width-mobile: 320px !default;
+
+
+
+// Define number of column for project
+$columns-count-default: 12;
+$columns-widths-delimiter-default: \/ !default;
+
+
+
+// Define breakpoints for project
+// $mq-before-xlrg: 1200px;
+$breakpoint-tv: 1844px !default;
+$breakpoint-desktop: 1420px !default;
+$breakpoint-tablet: 970px !default;
+$breakpoint-mov: 640px !default;
+$breakpoint-mov-small: 362px !default;
+
+
+
+/*--------------------------------------------
+	Don't use for production [START]
+---------------------------------------------*/
+
+
+// Include stylesheet of components for accessibility test.
+// Default value "false"
+$include-scss-accessibility: false !default;
+
+
+
+// Include stylesheet for accessibility test
+// Default Value "false"
+$include-scss-debug: false !default;
+
+
+
+//Include stylesheet of tools color-contrast
+// Default Value "false"
+$include-scss-color-contrast: false !default;
+
+/*--------------------------------------------
+	Don't use for production [END]
+---------------------------------------------*/

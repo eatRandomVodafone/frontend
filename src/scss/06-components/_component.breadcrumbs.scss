@@ -1,0 +1,96 @@
+// Estilos para Breadcrumbs estandar
+
+.#{$ns-prefix}breadcrumbs {
+    padding: 20px 20px;
+    border-top: 1px solid $color-silver;
+    border-bottom: 1px solid $color-silver;
+
+    &__wrapper {
+        display: flex;
+        margin: 0 auto;
+        list-style: none;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 10px;
+
+        li:last-child .#{$ns-prefix}link {
+            text-decoration: none;
+            pointer-events: none;
+            cursor: default;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+    
+    .#{$ns-prefix}link {
+        padding-right: 17px;
+        text-decoration: underline;
+        font-size: 18px;
+    }
+
+// Estilos para colores alternativos
+    &.#{$ns-prefix}color-bg-vodafone-gray {
+        .#{$ns-prefix}link {
+            color: $color-silver;
+
+            &::after{
+                border-top-color: $color-vodafone-white;
+                border-right-color: $color-vodafone-white;
+            }
+        }
+    }
+
+    &.#{$ns-prefix}color-bg-abbey, &.#{$ns-prefix}color-bg-dusty-gray {
+        .#{$ns-prefix}link {
+            color: $color-vodafone-white;
+
+            &::after{
+                border-top-color: $color-vodafone-white;
+                border-right-color: $color-vodafone-white;
+            }
+        }
+    }
+
+}  
+
+// Responsive Tablet
+
+@media only screen and (max-width: $breakpoint-tablet) {
+
+    .#{$ns-prefix}breadcrumbs {
+        padding: 15px 0;
+
+        &__wrapper {
+            padding: 0 20px;
+        }
+
+        li:nth-last-child(2) .#{$ns-prefix}link {
+            display: inline-block;
+        }
+    
+        .#{$ns-prefix}link {
+            display: none;
+            padding-right: 14px;
+            padding-left: 24px;
+            text-decoration: underline;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 6px;
+                margin-left: 0;
+                transform: rotate(225deg);
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-mov) {
+    .#{$ns-prefix}breadcrumbs__wrapper {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,148 @@
+@mixin button-common {
+	// Reset default style button
+	border: none;
+	background: none;
+	padding: 0;
+	width: 57px;
+	height: 57px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+@mixin button-hover-focus {
+	position: absolute;
+	top: 47%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	content: '';
+	display: block;
+	border: 2px solid $color-vodafone-red;
+	width: 57px;
+	height: 57px;
+	border-radius: 100%;
+}
+
+@mixin button-pseudo-common {
+	content: '';
+	display: inline-block;
+	width: 57px;
+	height: 57px;
+	background-repeat: no-repeat;
+}
+
+@mixin button-size-tablet {
+	width: 52px;
+	height: 52px;
+}
+
+@mixin button-size-mobile {
+	width: 46px;
+	height: 46px;
+}
+
+.#{$ns-prefix}navigation {
+	position: relative;
+
+	&__right {
+		@include button-common;
+
+		&:hover, &:focus {
+			position: relative;
+			outline: none;
+
+			&:after {
+				@include button-hover-focus;
+			}
+		}
+
+		&::before {
+			@include button-pseudo-common;
+			right: 0;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="57" viewBox="0 0 57 57"><defs><circle id="b" cx="24.5" cy="24.5" r="24"/><filter id="a" width="129.2%" height="129.2%" x="-14.6%" y="-10.4%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(4 2)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><circle cx="24.5" cy="24.5" r="23.5" fill="#FFF" stroke="#CCC" stroke-linejoin="square"/></g><path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M22.375 38.75l12.25-12.25-12.25-12.25"/></g></svg>');
+		}
+	}
+
+	&__left {
+		@include button-common;
+
+		&:hover, &:focus {
+			position: relative;
+			outline: none;
+
+			&:before {
+				@include button-hover-focus;
+			}
+		}
+
+		&::after {
+			@include button-pseudo-common;
+			left: 0;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="57" viewBox="0 0 57 57"><defs><circle id="b" cx="25.5" cy="25.5" r="24"/><filter id="a" width="129.2%" height="129.2%" x="-14.6%" y="-10.4%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(3 1)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><circle cx="25.5" cy="25.5" r="23.5" fill="#FFF" stroke="#CCC" stroke-linejoin="square"/></g><path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M34.875 39.25L22.125 26.5l12.75-12.75"/></g></svg>');
+		}
+	}
+
+	@media screen and (max-width: $breakpoint-tablet) {
+		& {
+			&__right {
+				@include button-size-tablet;
+
+				&:hover, &:focus {
+					&:after {
+						@include button-size-tablet;
+					}
+				}
+
+				&::before {
+					background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52"><defs><circle id="b" cx="22" cy="22" r="22"/><filter id="a" width="131.8%" height="131.8%" x="-15.9%" y="-11.4%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(4 2)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><circle cx="22" cy="22" r="21.542" fill="#FFF" stroke="#CCC" stroke-linejoin="square" stroke-width=".917"/></g><path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.283" d="M20.5 35l11-11-11-11"/></g></svg>');
+				}
+			}
+
+			&__left {
+				@include button-size-tablet;
+
+				&:hover, &:focus {
+					&:before {
+						@include button-size-tablet;
+					}
+				}
+
+				&::after {
+					background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52"><defs><circle id="b" cx="22" cy="22" r="22"/><filter id="a" width="131.8%" height="131.8%" x="-15.9%" y="-11.4%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(4 2)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><circle cx="22" cy="22" r="21.542" fill="#FFF" stroke="#CCC" stroke-linejoin="square" stroke-width=".917"/></g><path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.283" d="M31.5 35l-11-11 11-11"/></g></svg>');
+				}
+			}
+		}
+	}
+	@media screen and (max-width: $breakpoint-mov) {
+		& {
+			&__right {
+				@include button-size-mobile;
+
+				&:hover, &:focus {
+					&:after {
+						@include button-size-mobile;
+					}
+				}
+
+				&::before {
+					background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46"><defs><circle id="b" cx="20" cy="20" r="20"/><filter id="a" width="127.5%" height="127.5%" x="-13.8%" y="-8.8%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(3 1)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><circle cx="20" cy="20" r="19.583" fill="#FFF" stroke="#CCC" stroke-linejoin="square" stroke-width=".833"/></g><path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.167" d="M18 31l10-10-10-10"/></g></svg>');
+				}
+			}
+
+			&__left {
+				@include button-size-mobile;
+
+				&:hover, &:focus {
+					&:before {
+						@include button-size-mobile;
+					}
+				}
+
+				&::after {
+					background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46"><defs><circle id="b" cx="20" cy="20" r="20"/><filter id="a" width="127.5%" height="127.5%" x="-13.8%" y="-8.8%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(3 1)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><circle cx="20" cy="20" r="19.583" fill="#FFF" stroke="#CCC" stroke-linejoin="square" stroke-width=".833"/></g><path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.167" d="M28 31L18 21l10-10"/></g></svg>');
+				}
+			}
+
+		}
+	}
+}

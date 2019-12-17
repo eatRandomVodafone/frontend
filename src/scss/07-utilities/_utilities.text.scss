@@ -1,0 +1,35 @@
+.#{$ns-prefix}text {
+    &--underline {
+        text-decoration: underline;
+    }
+    
+    &--strikethrough {
+        text-decoration: line-through;
+        &-red {
+            position: relative;
+            &::after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: $color-vodafone-red;
+                position: absolute;
+                right: 0;
+                top: 9px;
+            }
+        }
+
+        &-rotated {
+            position: relative;
+            &::after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: $color-vodafone-red;
+                position: absolute;
+                right: 0;
+                top: 9px;
+                transform: rotate(-5deg);
+            }
+        }
+    }
+}

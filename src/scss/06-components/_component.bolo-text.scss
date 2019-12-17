@@ -1,0 +1,254 @@
+.#{$ns-prefix}bolo-text {
+    width: 156px;
+    height: 156px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 100%;
+    box-sizing: border-box;
+    
+    * {
+        box-sizing: border-box;
+    }
+
+    &__content {
+        text-align: center;
+        padding: 20px 19px 23px;
+        width: 100%;
+    }
+ 
+    &__sup {
+        font-size: $font-size-text;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__num {
+        font-size: 64px;
+        line-height: 36px;
+        display: inline-block;
+        & strong{
+            vertical-align: middle;
+        }
+    }
+
+    &__complement {
+        display: inline-block;
+    }
+
+    &__decimal {
+        margin-top: -13px;
+        display: inline-block;
+        font-size: 31.3px;
+        line-height: 41.8px;
+        & span{
+            vertical-align: text-top;
+            line-height: 0;
+        }
+    }
+
+    &__month {
+        margin-top: -17px;
+        display: block;
+        font-size: 27.7px;
+        line-height: 14.7px;
+    }
+
+    &__foot {
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 2px;
+    }
+
+    &__sub {
+        font-size: 14px;
+        line-height: 16px;
+        margin: 0px;
+    }
+
+    
+
+    &--l {
+        width: 128px;
+        height: 128px;
+
+        .#{$ns-prefix}bolo-text__content {
+            padding: 17px 16px 19px 17px;
+
+            &.#{$ns-prefix}bolo-text__content-1 {
+                padding: 35px 14px 34px 12px;
+
+                .#{$ns-prefix}bolo-text__num{
+                    margin-bottom:5px;
+                }                
+                .#{$ns-prefix}bolo-text__num, .#{$ns-prefix}bolo-text__month {
+                    margin-bottom: 0;
+                }
+                .#{$ns-prefix}bolo-text__foot {
+                    margin: 2px 0 0 0;
+                }
+            }
+        }
+
+        .#{$ns-prefix}bolo-text__sup {
+            margin-bottom: 0;
+        }
+
+        .#{$ns-prefix}bolo-text__num {
+            margin-bottom: 0;
+            font-size: 53px;
+            line-height: 36px;
+        }
+
+        .#{$ns-prefix}bolo-text__num-dto {
+            margin-bottom: 0;
+            font-size: 62px;
+            line-height: 36px;
+        }
+
+        .#{$ns-prefix}bolo-text__percentage {
+            margin-bottom: -10px;
+            font-size: 37.1px;
+            line-height: 40.6px;
+        }
+
+        .#{$ns-prefix}bolo-text__dto {
+            margin: 2px 0 2px;
+            font-size: 20px;
+            line-height: 22.8px;
+        }
+
+        .#{$ns-prefix}bolo-text__decimal {
+            position: relative;
+            top: 3px;
+            font-size: 26.6px;
+            line-height: 38.4px;
+        }
+
+        .#{$ns-prefix}bolo-text__month {
+            margin-bottom: 0;
+            font-size: 23.6px;
+            line-height: 10.9px;
+            position: relative;
+            top: 3px;
+            left: -1px;
+            font-weight: bold;
+        }
+
+        .#{$ns-prefix}bolo-text__foot {
+            margin: 0;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &--m {
+        width: 100px;
+        height: 100px;
+
+        .#{$ns-prefix}bolo-text__content {
+            padding: 15px 18px 23px 18px;
+            
+            &.#{$ns-prefix}bolo-text__content-1 {
+                padding: 18px 14px;
+                
+                .#{$ns-prefix}bolo-text__num-dto {
+                    font-size: 50px;
+                }
+
+                .#{$ns-prefix}bolo-text__percentage {
+                    font-size: 26px;
+                    line-height: 56px;
+                    & strong{
+                        vertical-align: middle;
+                    }
+                }
+
+                
+            }
+
+            &.#{$ns-prefix}bolo-text__content-2 {
+                padding: 27px 6px 7px 7px;
+
+                .#{$ns-prefix}bolo-text__txt {
+                    font-size: 18px;
+                    line-height: 22px;
+                    margin-top: 2px;
+                }
+            }
+
+            .#{$ns-prefix}bolo-text__num-dto {
+                margin-bottom: 0;
+                font-size: 42px;
+                line-height: 48px;
+            }
+
+            .#{$ns-prefix}bolo-text__percentage {
+                margin-bottom: -10px;
+                font-size: 24.2px;
+                line-height: 36px;
+            }
+
+            .#{$ns-prefix}bolo-text__dto {
+                margin-bottom: 0;
+                font-size: 13.6px;
+                line-height: 15.5px;
+            }
+
+            .#{$ns-prefix}bolo-text__foot {
+                margin: -8px;
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &--s {
+        width: 64px;
+        height: 64px;
+
+        .#{$ns-prefix}bolo-text__content {
+            padding: 10px 9px 13px 10px;
+            
+            &.#{$ns-prefix}bolo-text__content-1{
+                padding: 18px 14px;
+                
+                .#{$ns-prefix}bolo-text__txt{
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .#{$ns-prefix}bolo-text__num-dto {
+            margin-bottom: 0;
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        .#{$ns-prefix}bolo-text__foot {
+            margin: -6px;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &--xs {
+        width: 36px;
+        height: 36px;
+        
+        p {
+            margin: 0;
+        }
+        .#{$ns-prefix}bolo-text__content {
+            padding: 10px 5px 10px 6px;
+        }
+
+        .#{$ns-prefix}bolo-text__num-dto {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &--noRadius {
+        border-radius: 0;
+    }
+}

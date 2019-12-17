@@ -1,0 +1,290 @@
+.#{$ns-prefix}progress-ring {
+    position: relative;
+    display: inline-block;
+
+    &__item {
+        border: 10px solid $color-aqua-blue;
+        border-radius: 100%;
+        max-width: 260px;
+        width: 100%;
+        padding: 43px 28px 6px;
+        text-align: center;
+        position: relative;
+
+        .#{$ns-prefix}carousel--active {
+            padding-bottom: 16px;
+            padding-top: 0;
+        }
+
+        .#{$ns-prefix}carousel__arrow {
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            background-color: transparent;
+
+            &--right{
+
+                &::after {
+                    border-color: $color-vodafone-red;
+                }
+            }
+
+            &--left{
+
+                &::after {
+                    border-color: $color-vodafone-red;
+                }
+            }
+        }
+
+        .#{$ns-prefix}title {
+            text-align: center;
+        }
+    
+        .#{$ns-prefix}title--3 {
+            margin-bottom: 2px;
+        }
+    
+        .#{$ns-prefix}title--1 {
+            margin-bottom: 6px;
+            font-size: 44px;
+        }
+    
+        .#{$ns-prefix}title--5 {
+            margin-bottom: 12px;
+        }
+    
+        .#{$ns-prefix}carousel__control--circle {
+            border-radius: 50%;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+            transform: translateY(-100%);
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+    
+        .#{$ns-prefix}carousel__slide {
+            margin-right: 0;
+            padding-bottom: 0;
+            text-align: center;
+            padding-top: 12px;
+    
+            .#{$ns-prefix}title--5 {
+                margin-bottom: 0;
+                
+                &:last-of-type {
+                    padding-bottom: 12px;
+                }
+            }
+        }
+    
+        .#{$ns-prefix}carousel__content {
+            padding-bottom: 12px;
+        }
+    
+        .#{$ns-prefix}carousel__control-icon {
+            stroke-width: 0;
+            color: $color-vodafone-red;
+            padding: 8px 12px;
+        }
+
+        &--small{
+            padding: 12px 20px 0;
+            max-width: 160px;
+            width: 100%;
+            background-color: $color-vodafone-white;
+
+            .#{$ns-prefix}title--5 {
+                margin: 0;
+            }
+
+            .#{$ns-prefix}paragraph {
+                margin-bottom: 2px;
+            }
+        }
+
+        &--turqoise {
+            border-color: $color-turqoise;        
+        }
+
+        & + &--small {
+            position: absolute;
+            bottom: -20px;
+            left: calc(100% - 40px);
+        }
+    }
+
+    &__icon-turqoise {
+        color: $color-turqoise;
+    }
+
+    &__dial {
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 0;
+        position: relative;
+        z-index: 1;
+        width: 180px;
+        > .#{$ns-prefix}progress-ring__svg{
+            overflow: visible;
+        }
+    }
+
+    &--full {
+        overflow: visible;
+        padding: 0;
+    }
+
+    &--body {
+        &::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: $color-vodafone-white;
+            border-radius: 50%;
+            z-index: 3;
+            left: 50%;
+            margin-left: -2px;
+            margin-top: -2px;
+            animation: fade-in-extended 1.5s;
+        }   
+    }
+
+    &__value-wrapper {
+        animation: value 1s 1s forwards;
+        left: 50%;
+        line-height: 1;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        margin-top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        width: 100%;
+
+        > .#{$ns-prefix}paragraph{
+            margin-bottom: 0;
+            &--text{
+                padding-bottom: 2px;
+
+            }
+        }
+        
+    }
+
+    &__indicator {
+        position: absolute;
+        transform-origin: 0 100%;
+        left: 50%;
+        padding-left: 50%;
+        padding-top: 50%;
+        z-index: 1;
+        transition: transform .4s ease-in-out;
+
+        &::before {
+            content: '';
+            border: 3px solid transparent;
+            border-right-color: $color-vodafone-white;
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 0;
+            top: -1px;
+            margin-left: -6px;
+            animation: fade-in-extended 1.5s forwards;
+        }
+    }
+
+    &__cta {
+        animation: value 1s 1.5s forwards;
+        border-radius: 50%;
+        bottom: 100%;
+        height: 65px;
+        left: 50%;
+        position: absolute;
+        margin-left: 35px;
+        width: 65px;
+        z-index: 1;
+        margin-bottom: -24px;
+
+        &-icon {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 25px;
+            height: 25px;
+            z-index: 1;
+        }
+    }
+
+    &__svg {
+        animation-name: circle;
+        animation-duration: .4s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        display: block;
+        width: 100%;
+        overflow: inherit;
+    }
+
+    &--body &__circle-track {
+        stroke: $color-silver;
+        stroke-width: 16px;
+    }
+
+    &__circle-track { 
+        fill: transparent;
+    }
+
+    &__circle {
+        fill: transparent;
+        stroke-linecap: round;
+        transition: stroke-dasharray .4s ease-in-out;
+        stroke: $color-albergine;
+        stroke-width: 26px;
+    }
+
+    &--finn &__cta-icon, &--finn &__value-wrapper {
+        color: $color-vodafone-gray;
+    }
+
+    &__around {
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $color-abbey;
+        border-radius: 100%;
+        left: calc(100% - -7px);
+        top: 98px;
+        width: 50px;
+        height: 50px;
+
+        &-dark {
+            background-color: $color-abbey;
+            left: calc(100% - 30px);
+            top: 156px;
+            color: $color-vodafone-white;
+        }
+
+        &-bottom {
+            left: calc(100% - 96px);
+            top: 188px;
+        }
+
+        &-left {
+            left: calc(100% - 168px);
+            top: 180px;
+        }
+    }
+    
+    .#{$ns-prefix}paragraph__value {
+        font-size: 48px;
+        height: 42px;
+        line-height: 42px;
+    }
+}

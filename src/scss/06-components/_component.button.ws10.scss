@@ -1,0 +1,154 @@
+.#{$ns-prefix}button {
+    font-size: 18px;
+    padding: 9px 14px 11px;
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:active,
+	&:focus {
+		outline: 3px solid $colours-turqoise;
+	}
+
+	&--primary {
+		font-size: $font-size-h5;
+
+		&:hover,
+		&:active,
+		&:focus {
+
+		}
+
+		&-dark {
+
+			&:hover,
+			&:active,
+			&:focus {
+
+			}
+		}
+	}
+
+	&--secondary {
+		font-size: $font-size-h5;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $colours-vodafone-gray;
+            color: $colours-vodafone-white;
+        }
+
+        &-dark {
+            background-color: $colours-platinum;
+            color: $colours-dark-gray;
+
+            &:active,
+            &:focus {
+
+            }
+
+            &:hover {
+                background-color: $colours-silver;
+            }
+        }
+	}
+
+	&--tertiary {
+        font-size: $font-size-h5;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $colours-light-gray;
+        }
+
+        &-dark {
+            &-1 {
+                background-color: $colours-dark-gray;
+                color: $colours-vodafone-white;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $colours-vodafone-gray;
+                }
+            }
+            &-2 {
+                background-color: $colours-vodafone-white;
+                color: $colours-dark-gray;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $colours-aluminium;
+                }
+            }
+        }
+    }
+
+    &--small {
+        padding: 5px 28px 7px 28px;
+        font-size: 16px;
+    }
+
+    &--green {
+        background-color: $colours-digital-green;
+        color: $colours-vodafone-white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $colours-green-hoverSDK;
+            color: $colours-vodafone-white;
+        }
+
+        &-dark {
+            background-color: $colours-digital-green;
+            color: $colours-vodafone-white;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $colours-green-hoverSDKdark;
+                color: $colours-vodafone-white;
+            }
+        }
+
+        .icon,
+        &-dark .icon {
+            vertical-align: top;
+            margin-left: 6px;
+            stroke-width: 0;
+            position: relative;
+            top: 2px;
+            stroke: $colours-vodafone-white;
+        }
+    }
+
+    &--purple {
+        background-color: $colours-red-violet;
+        color: $colours-vodafone-white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $colours-albergine;
+            color: $colours-vodafone-white;
+        }
+    }
+
+    &[disabled] {
+        background-color: $colours-anthracite;
+        color: $colours-dark-gray;
+    }
+
+	@media only screen and (min-width: $breakpoint-mov) {
+        padding: 10px 20px 12px;
+        font-size: 20px;
+        line-height: 28px;
+    }
+}

@@ -1,0 +1,24 @@
+.#{$ns-prefix}layout { 
+    &__item {
+        position: relative;
+    }
+}
+
+
+@media only screen and (max-width: $breakpoint-mov) {
+    .#{$ns-prefix}layout {
+        
+
+        &--gutter {
+            
+        }
+
+        &__wrapper {
+            padding: 0 8px;
+        }
+
+        &__item {
+            padding: 0 8px;
+        }
+    }
+}

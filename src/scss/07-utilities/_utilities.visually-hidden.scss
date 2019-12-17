@@ -1,0 +1,4 @@
+.visually-hidden,
+.access /*<--- Legacy fix */ {
+    @include visually-hidden;
+}

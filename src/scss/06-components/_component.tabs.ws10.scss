@@ -1,0 +1,948 @@
+.#{$ns-prefix}colours-bg-vodafone-gray .#{$ns-prefix}tabs {
+
+    &__tab {
+
+        .#{$ns-prefix}tabs__container {
+            background-color: $colours-vodafone-gray;
+        }
+
+        .#{$ns-prefix}tabs__content-open {
+            background-color: $colours-dark-gray;
+            color: $colours-vodafone-white;
+        }
+
+        &:hover {
+            color: $colours-aluminium;
+        }
+
+        &-active {
+            color: $colours-vodafone-white;
+
+            &::before {
+                background-color: $colours-vodafone-white;
+            }
+
+            &::after {
+                border-top: 5px solid $colours-vodafone-white;
+            }
+
+            .#{$ns-prefix}tabs__tab-button {
+                color: $colours-vodafone-white;
+            }
+        }
+    }
+
+    &--circle {
+        &>.#{$ns-prefix}tabs__container {
+
+            &>.#{$ns-prefix}tabs__tab {
+
+                &>.#{$ns-prefix}tabs__tab-button {
+
+                    &:hover {
+                        color: $colours-vodafone-white;
+
+                        svg {
+                            color: $colours-vodafone-white;
+                            border-color: $colours-vodafone-white;
+                        }
+
+                        .#{$ns-prefix}tabs__tab-text {
+                            color: $colours-vodafone-white;
+                        }
+                    }
+
+                    svg {
+                        color: $colours-vodafone-white;
+                        border-color: $colours-vodafone-white;
+                    }
+
+                    .#{$ns-prefix}tabs__tab-text {
+                        color: $colours-silver;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-active.#{$ns-prefix}tabs__tab-button {
+
+                    svg {
+                        background-color: $colours-vodafone-white;
+                        color: $colours-vodafone-gray;
+                        stroke: $colours-vodafone-gray;
+                        border-color: $colours-vodafone-white;
+                    }
+
+                    .#{$ns-prefix}tabs__tab-text {
+                        color: $colours-vodafone-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &--group {
+        &>.#{$ns-prefix}tabs__container>.#{$ns-prefix}tabs__tab {
+            .#{$ns-prefix}tabs__tab-button.#{$ns-prefix}tabs__tab-active {
+                color: $colours-dark-gray;
+                background-color: $colours-vodafone-white;
+            }
+
+            &>.#{$ns-prefix}tabs__tab-button {
+                background-color: $colours-vodafone-gray;
+                color: $colours-silver;
+            }
+        }
+    }
+
+    &--dark {
+        &>.#{$ns-prefix}tabs__container {
+
+            &>.#{$ns-prefix}tabs__tab {
+                padding: 0;
+
+                &>.#{$ns-prefix}tabs__tab-button {
+                    background-color: $colours-dark-gray;
+                    color: $colours-vodafone-white;
+                    width: 100%;
+                    border: 1px solid $colours-vodafone-white;
+
+                    &:first-of-type {
+                        border-top-left-radius: 6px;
+                        border-bottom-left-radius: 6px;
+                    }
+
+                    &:last-child {
+                        border-top-right-radius: 6px;
+                        border-bottom-right-radius: 6px;
+                        margin-right: 0;
+                    }
+
+                    &:last-of-type {
+                        border-left: none;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-button.#{$ns-prefix}tabs__tab-active {
+                    color: $colours-dark-gray;
+                    background-color: $colours-vodafone-white;
+                }
+            }
+        }
+    }
+
+    &--dropdown {
+        &>.#{$ns-prefix}tabs__container {
+            &>.#{$ns-prefix}tabs__tab {
+
+                .#{$ns-prefix}tabs__tab-button {
+                    background-color: $colours-vodafone-gray;
+                    color: $colours-vodafone-white;
+
+                    &:hover {
+                        color: $colours-dark-gray;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-active {
+
+                    &+.#{$ns-prefix}tabs__content-copy {
+                        color: $colours-vodafone-white;
+
+                        &::after {
+                            background-color: $colours-silver;
+                        }
+
+                        &>.#{$ns-prefix}layout__wrapper {}
+
+                        .#{$ns-prefix}tabs__container {
+
+                            .#{$ns-prefix}tabs__tab {}
+                        }
+
+                        .#{$ns-prefix}tabs__content {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.#{$ns-prefix}colours-bg-aluminium .#{$ns-prefix}tabs.#{$ns-prefix}tabs--group .#{$ns-prefix}tabs__tab > .#{$ns-prefix}tabs__tab-button {
+    background-color: $colours-vodafone-white;
+    color: $colours-dark-gray;
+}
+
+.#{$ns-prefix}tabs {
+
+    /* Elements */
+
+    &__tab {
+
+        &:hover {
+            color: $colours-vodafone-red;
+        }
+
+        &-button {
+            color: $colours-dark-gray;
+            padding: 3px 27px 14px;
+            font-size: $font-size-text-large;
+
+
+            &:focus {
+                text-decoration: underline;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &-active {
+            color: $colours-dark-gray;
+            font-family: $font-family-vodafone-regular-bold;
+
+            &::before {
+                background-color: $colours-vodafone-red;
+                height: 3px;
+            }
+
+            &::after {
+                border-top: 5px solid $colours-vodafone-red;
+            }
+        }
+    }
+
+    .#{$ns-prefix}link__box {
+        padding: 33px 20px 32px;
+    }
+
+    /* Modifiers */
+    &--simple {
+        &>.#{$ns-prefix}tabs__container {
+            &>.#{$ns-prefix}tabs__tab {
+                padding: 0;
+
+                &>.#{$ns-prefix}tabs__tab-button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &--group {
+        & .#{$ns-prefix}tabs__tab {
+            margin-right: 2px;
+            margin-bottom: 1px;
+
+            &:first-child {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+                margin-right: 0;
+            }
+        }
+
+        & .#{$ns-prefix}tabs__tab,
+        &.#{$ns-prefix}tabs__tab {
+
+            .#{$ns-prefix}tabs__tab-button.#{$ns-prefix}tabs__tab-active {
+                background-color: $colours-vodafone-red;
+                color: $colours-vodafone-white;
+
+            }
+
+            &>.#{$ns-prefix}tabs__tab-button {
+                background-color: $colours-aluminium;
+                color: $colours-dark-gray;
+                padding: 12px 28px 11px;
+
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &--block {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        &>.#{$ns-prefix}tabs__container {
+            width: calc((100% / 4) - 15px);
+            margin-right: 20px;
+            margin-top: 0;
+            max-width: 280px;
+
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+        }
+
+        &>.#{$ns-prefix}tabs__container,
+        &-container.#{$ns-prefix}tabs__container {
+            letter-spacing: normal;
+            white-space: normal;
+            padding-bottom: 0px;
+
+            &>.#{$ns-prefix}tabs__content {
+                background-color: $colours-anthracite;
+                border-top: 0;
+                z-index: 1;
+                padding: 81px 100px 39px;
+
+                &>.#{$ns-prefix}tabs__close {
+                    top: 16px;
+                    right: 24px;
+
+                    svg {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+            }
+        }
+
+        .#{$ns-prefix}link__box {
+            padding: 33px 20px;
+            background-color: $colours-vodafone-white;
+            color: $colours-dark-gray;
+            font-size: 20px;
+            line-height: 1.4;
+            display: inline-block;
+            border-radius: 6px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 23px;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+        }
+
+        & .#{$ns-prefix}tabs__tab,
+        &-container .#{$ns-prefix}tabs__tab {
+            border: 1px solid $colours-silver;
+            border-radius: 6px;
+            display: block;
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 20px;
+
+            &>.#{$ns-prefix}tabs__tab-button {
+                border-radius: 6px;
+                padding-top: 15px;
+                padding-bottom: 22px;
+                width: 100%;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            svg {
+                width: 66px;
+                height: 66px;
+                display: inline-block;
+                color: $colours-vodafone-gray;
+                fill: transparent;
+                stroke-width: 0;
+                stroke: $colours-vodafone-gray;
+                margin-bottom: 6px;
+            }
+
+            p {
+                margin: 0;
+                font-size: $font-size-h5;
+                line-height: $line-height-h5;
+            }
+
+            &::after {
+                border-bottom-color: $colours-anthracite;
+            }
+
+            &-active {
+                border: none;
+
+                .#{$ns-prefix}tabs__tab-button {
+                    background-color: $colours-vodafone-red;
+                    color: $colours-vodafone-white;
+                    border: 1px solid $colours-vodafone-red;
+                }
+
+                margin-bottom: 36px;
+
+                &::before {
+                    display: none;
+                }
+
+                &::after {
+                    content: '';
+                    bottom: -37px;
+                    border-top: 20px solid transparent;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 20px solid $colours-anthracite;
+                    transform: translateX(-50%);
+                }
+
+                svg {
+                    color: $colours-vodafone-white;
+                    stroke: $colours-vodafone-white;
+                }
+
+                &+.#{$ns-prefix}tabs__content {
+                    display: block;
+                    text-align: left;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    &--circle {
+
+        & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab {
+            margin-right: 26px;
+        }
+
+        & > .#{$ns-prefix}tabs__container > .#{$ns-prefix}tabs__tab,
+        &.#{$ns-prefix}tabs__tab {
+
+            svg.icon--small,
+            vfes-icon {
+                margin-bottom: 8px;
+            }
+
+            vfes-icon svg {
+                position: relative;
+                left: -13px;
+                top: -13px;
+            }
+
+            p {
+                margin: 0 auto;
+            }
+
+            & .#{$ns-prefix}tabs__tab-button {
+                padding: 0;
+
+                &:hover {
+                    color: $colours-vodafone-red;
+                }
+            }
+        }
+
+        &>.#{$ns-prefix}tabs__content {
+            padding-top: 30px;
+        }
+    }
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+        .#{$ns-prefix}tabs {
+
+            /* Elements */
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+
+            .#{$ns-prefix}link__box {
+                padding: 19px 20px;
+            }
+        }
+
+        /* Modifiers */
+        &--group {
+            &>.#{$ns-prefix}tabs__container>.#{$ns-prefix}tabs__tab {
+                border: none;
+                margin-right: 2px;
+                margin-bottom: 1px;
+                padding: 0;
+            }
+        }
+
+        &--block {
+            max-width: 768px;
+
+            &>.#{$ns-prefix}tabs__container {
+                width: calc(100% / 3);
+                margin-right: 0;
+            }
+
+            &>.#{$ns-prefix}tabs__container,
+            &-container.#{$ns-prefix}tabs__container {
+                padding-left: 10px;
+                padding-right: 10px;
+                max-width: 100%;
+
+                &>.#{$ns-prefix}tabs__tab {
+                    padding: 0;
+
+                    &>.#{$ns-prefix}tabs__tab-button {
+                        padding-top: 10px;
+                        padding-bottom: 20px;
+
+                        svg {
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+
+                &>.#{$ns-prefix}tabs__tab-active>.#{$ns-prefix}tabs__content {
+                    top: 18px;
+                    width: 36px;
+                    height: 36px;
+                }
+
+                &>.#{$ns-prefix}tabs__tab-active+.#{$ns-prefix}tabs__content {
+                    padding: 88px 8px 50px;
+                    left: 18px;
+                    width: calc(100% - 34px);
+                }
+
+                .#{$ns-prefix}accordion__item {
+                    &:last-of-type {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__content .#{$ns-prefix}link__box {
+                    margin-bottom: 20px;
+                    padding: 21px 20px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-mov) {
+
+    .#{$ns-prefix}tabs {
+
+
+        .#{$ns-prefix}link__box {
+            padding: 20px 15px 19px;
+        }
+
+        &--group {
+            &>.#{$ns-prefix}tabs__container {
+                margin-left: 16px;
+                margin-right: 16px;
+
+                &>.#{$ns-prefix}tabs__header.#{$ns-prefix}tabs__tab-active {
+                    &::after {
+                        border-color: $colours-vodafone-red;
+                    }
+                }
+
+                &>.#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child,
+                &>.#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child~.#{$ns-prefix}tabs__tab {
+                    padding: 0;
+
+                    .#{$ns-prefix}tabs__tab-button {
+                        background-color: $colours-light-gray;
+                        color: $colours-dark-gray;
+                        text-align: left;
+                        padding-left: 15px;
+
+                        &:hover {
+                            background-color: $colours-aluminium;
+                        }
+                    }
+
+                    .#{$ns-prefix}tabs__tab-active.#{$ns-prefix}tabs__tab-button {
+                        background-color: $colours-aluminium;
+                        color: $colours-dark-gray;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-button {
+                    font-size: $font-size-text;
+                }
+
+            }
+        }
+
+        &--group-dark {
+            &>.#{$ns-prefix}tabs__container>.#{$ns-prefix}tabs__tab-button {
+                background-color: $colours-dark-gray;
+                color: $colours-vodafone-white;
+                border-color: $colours-vodafone-white;
+            }
+        }
+
+        &--group-close {
+            &>.#{$ns-prefix}tabs__container {
+
+
+                &>.#{$ns-prefix}tabs__tab:nth-last-child(n+3):first-child::after,
+                &>.#{$ns-prefix}tabs__tab:nth-last-child(n+3)~.#{$ns-prefix}tabs__tab-active::after {
+                    border-color: $colours-vodafone-red;
+                }
+            }
+
+            &>.#{$ns-prefix}tabs__content {
+                display: none;
+            }
+
+            &>.#{$ns-prefix}tabs__header {
+                display: block;
+            }
+        }
+
+        &--block {
+            max-width: 320px;
+
+            &>.#{$ns-prefix}tabs__container {
+                width: 50%;
+                margin-left: 0;
+            }
+
+            &>.#{$ns-prefix}tabs__container,
+            &-container.#{$ns-prefix}tabs__container {
+                padding: 0;
+                margin-right: 0;
+                padding-right: 8px;
+                padding-left: 8px;
+
+                &:nth-of-type(1) {
+                    margin-left: 0px;
+                }
+
+                &:nth-of-type(2n) {
+                    margin-right: 0px;
+                }
+
+                &:nth-of-type(2n+1) {
+                    margin-left: 0px;
+                }
+
+                &>.#{$ns-prefix}tabs__tab {
+                    padding: 0;
+                    margin-bottom: 12px;
+
+                    p {
+                        font-size: $font-size-text;
+                    }
+
+                    &.#{$ns-prefix}tabs__tab-active {
+                        margin-bottom: 24px;
+
+                        &::after {
+                            bottom: -27px;
+                        }
+                    }
+
+                    .#{$ns-prefix}tabs__tab-button {
+                        padding-top: 15px;
+                        padding-bottom: 23px;
+
+                        svg {
+                            width: 60px;
+                            height: 60px;
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+
+                &>.#{$ns-prefix}tabs__tab-active+.#{$ns-prefix}tabs__content {
+                    padding: 60px 0 30px;
+                    left: 16px;
+                    width: calc(100% - 32px);
+                }
+
+                .#{$ns-prefix}tabs__content>.#{$ns-prefix}tabs__close {
+                    top: 10px;
+                    right: 14px;
+
+                    svg {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__content .#{$ns-prefix}link__box {
+                    padding: 10px 15px;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                }
+            }
+
+
+        }
+
+        &--circle {
+            & > .#{$ns-prefix}tabs__container {
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+            & > .#{$ns-prefix}tabs__tab {
+                vertical-align: baseline;
+                margin-right: 8px;
+            }
+
+            & .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab {
+                svg {
+                    margin-bottom: 11px;
+                }
+
+            }
+
+        }
+
+        &--dropdown {
+            &>.#{$ns-prefix}tabs__container {
+                padding: 0 16px;
+            }
+
+            & .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab {
+                padding: 0;
+
+                .#{$ns-prefix}tabs__tab-button {
+                    width: 100%;
+                    padding: 17px 68px 17px 20px;
+                    text-align: left;
+                    font-size: $font-size-text;
+                }
+
+                &::after {
+                    width: 12px;
+                    height: 12px;
+
+                }
+
+                &::before {
+                    display: none;
+                }
+
+                &:hover {
+                    color: $colours-vodafone-gray;
+                }
+
+                .#{$ns-prefix}tabs__tab-active {
+
+                    &::after {
+                        display: none;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+
+                    &+.#{$ns-prefix}tabs__content-copy {
+                        border: none;
+                        border-bottom-left-radius: 6px;
+                        border-bottom-right-radius: 6px;
+                        display: block;
+                        padding: 17px 20px;
+
+                        &::after {
+                            content: '';
+                            top: 54px;
+                            height: 1px;
+                            left: 0;
+                            right: 0;
+                            background-color: $colours-silver;
+                            position: absolute;
+                            z-index: 1;
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+
+        &--progress-simple {
+            &>.#{$ns-prefix}tabs__container {
+                padding-top: 1px;
+            }
+
+            & .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab {
+                padding: 0;
+                max-width: 79px;
+                width: 100%;
+
+                .#{$ns-prefix}tabs__tab-button {
+                    color: $colours-anthracite;
+                    font-size: $font-size-text;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-button.#{$ns-prefix}tabs__tab-active {
+                    font-family: $font-family-vodafone-regular-bold;
+                    color: $colours-dark-gray;
+                }
+            }
+        }
+
+        &--progress-complete {
+            &>.#{$ns-prefix}tabs__container {
+                padding-top: 1px;
+            }
+
+            & .#{$ns-prefix}tabs__tab,
+            &.#{$ns-prefix}tabs__tab {
+                padding: 0;
+                max-width: 79px;
+                width: 100%;
+
+                .#{$ns-prefix}tabs__tab-button {
+                    color: $colours-anthracite;
+                    font-size: $font-size-text;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-button.#{$ns-prefix}tabs__tab-active-complete {
+                    color: $colours-anthracite;
+                    font-weight: normal;
+
+                    &::before {
+                        content: '';
+                        height: 3px;
+                        width: 100%;
+                        bottom: 0;
+                        position: absolute;
+                        left: 0;
+                        background-color: $colours-vodafone-red;
+                    }
+                }
+
+                .#{$ns-prefix}tabs__tab-active.#{$ns-prefix}tabs__tab-button {
+                    color: $colours-dark-gray;
+                    font-size: $font-size-text;
+                    font-family: $font-family-vodafone-regular-bold;
+
+                    &::before {
+                        content: '';
+                        height: 3px;
+                        width: 100%;
+                        bottom: 0;
+                        position: absolute;
+                        left: 0;
+                        background-color: $colours-vodafone-red;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+vfes-tab-circular {
+    width: calc(100% / 6 - 80px);
+    margin-right: 26px;
+    display: inline-flex;
+}
+
+vfes-tab-group {
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 2px;
+    margin-bottom: -4px;
+
+    &:first-of-type {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+
+    &:last-of-type {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        margin-right: 0;
+    }
+}
+
+vfes-tab-block {
+    width: calc((100% / 4) - 15px);
+    margin-right: 20px;
+    margin-top: 0;
+    max-width: 280px;
+
+    &:nth-of-type(4n) {
+        margin-right: 0;
+    }
+
+    .#{$ns-prefix}link__box {
+        padding: 33px 20px;
+        background-color: $colours-vodafone-white;
+        color: $colours-dark-gray;
+        font-size: 20px;
+        line-height: 1.4;
+        display: inline-block;
+        border-radius: 6px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 23px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+    vfes-tab-block {
+        width: calc(100% / 3);
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-mov) {
+    vfes-tab-circular {
+        max-width: 60px;
+        padding: 0;
+        width: 100%;
+        margin-right: 24px;
+        vertical-align: baseline;
+        margin-right: 8px;
+        overflow: visible;
+    }
+
+    vfes-tab-block {
+        width: 50%;
+        margin-right: 0;
+
+        &:nth-of-type(1) {
+            margin-left: 0px;
+        }
+
+        &:nth-of-type(2n) {
+            margin-right: 0px;
+        }
+
+        &:nth-of-type(2n+1) {
+            margin-left: 0px;
+        }
+
+        .#{$ns-prefix}link__box {
+            padding: 10px 15px;
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.#{$ns-prefix}guide-device {
+    text-align: center;
+
+    &__content {
+        padding: 10px 24px;
+        background-color: $color-vodafone-white;
+        margin-bottom: 8px;
+    }
+
+    &__img {
+        max-width: 98px;
+    }
+
+    .#{$ns-prefix}title + .#{$ns-prefix}paragraph {
+        margin-bottom: 40px;
+    }
+
+    .#{$ns-prefix}button {
+        margin-top: 20px;
+    }
+
+    .#{$ns-prefix}carousel {
+        margin-bottom: 24px;
+    }
+
+    .#{$ns-prefix}carousel &__content {
+        margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        &__content {
+            margin-bottom: 20px;
+        }
+
+        .#{$ns-prefix}button {
+            margin-top: 8px;
+        }
+    }
+}

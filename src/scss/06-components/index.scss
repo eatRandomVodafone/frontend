@@ -1,0 +1,45 @@
+@import "component.form";
+@import "component.play";
+@import "component.navigation";
+@import "component.bolo-text";
+@import "component.button";
+@import "component.tag-label";
+@import "component.accordion";
+@import "component.banner60";
+@import "component.card";
+@import "component.channel";
+@import "component.nudge-alert";
+@import "component.tabs";
+@import "component.extra-option";
+@import "component.card-shop";
+@import "component.carousel";
+@import "component.breadcrumbs";
+@import "component.hero-image";
+@import "component.mobile-gallery";
+@import "component.search";
+@import "component.service-value";
+@import "component.list-product";
+@import "component.offer-selector";
+@import "component.property-list";
+@import "component.timeline";
+@import "component.tooltip";
+@import "component.progress-ring";
+@import "component.grid-template";
+@import "component.bubble-voice";
+@import "component.avatar";
+@import "component.cards-standard";
+@import "component.guide-device";
+@import "component.dropdown";
+@import "component.configurator";
+@import "component.pagination";
+@import "component.modal";
+@import "component.select";
+
+
+// Test styles for accessibility. Don't use for production
+// For disable, change boolean variable $include-scss-accessibility (01-settings/_accessibility.scss)
+// VAR FOR TO INCLUDE STYLES
+@import "component.nudge";
+
+
+

@@ -1,0 +1,917 @@
+.#{$ns-prefix}color {
+	&--wild-sand {
+		color: $color-wild-sand !important;
+	}
+
+	&--gallery {
+		color: $color-gallery !important;
+	}
+
+	&--dusty-gray {
+		color: $color-dusty-gray !important;
+	}
+
+	&--silver {
+		color: $color-silver !important;
+	}
+
+	&--silver-chalice {
+		color: $color-silver-chalice !important;
+	}
+
+	&--abbey {
+		color: $color-abbey !important;
+	}
+
+	&--dove-gray {
+		color: $color-dove-gray !important;
+	}
+
+	&--vodafone-red {
+		color: $color-vodafone-red !important;
+	}
+
+	&--vodafone-gray {
+		color: $color-vodafone-gray !important;
+	}
+
+	&--vodafone-white {
+		color: $color-vodafone-white !important;
+	}
+
+	&--vodafone-red-violet {
+		color: $color-red-violet !important;
+	}
+
+	&--albergine {
+		color: $color-albergine !important;
+	}
+
+	&--aqua-blue {
+		color: $color-aqua-blue !important;
+	}
+
+	&--turqoise {
+		color: $color-turqoise !important;
+	}
+
+	&--spring-green {
+		color: $color-spring-green !important;
+	}
+
+	&--lemon-yellow {
+		color: $color-lemon-yellow !important;
+	}
+
+	&--fresh-orange {
+		color: $color-fresh-orange !important;
+	}
+
+	&--black {
+		color: $color-black !important;
+	}
+
+	&--maroon {
+		color: $color-maroon !important;
+	}
+
+	&--dark-red {
+		color: $color-dark-red !important;
+	}
+
+	&--digital-green {
+		color: $color-digital-green !important;
+	}
+
+	&-bg {
+		&-wild-sand {
+			background-color: $color-wild-sand !important;
+			color: $color-black;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-wild-sand !important;
+				color: $color-black;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-gallery {
+			background-color: $color-gallery !important;
+			color: $color-black;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-gallery !important;
+				color: $color-black;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-silver {
+			background-color: $color-silver !important;
+			color: $color-black;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-silver !important;
+				color: $color-black;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-silver-chalice {
+			background-color: $color-silver-chalice !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-silver-chalice !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-dusty-gray {
+			background-color: $color-dusty-gray !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-dusty-gray !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-dove-gray {
+			background-color: $color-dove-gray !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-dove-gray !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-abbey {
+			background-color: $color-abbey !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet::before {
+				background-color: $color-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet--active::after {
+				border-color: $color-vodafone-white;
+			}
+
+			&--overlay {
+				background-color: $color-abbey !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-vodafone-red {
+			background-color: $color-vodafone-red !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-vodafone-red !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-vodafone-gray {
+			background-color: $color-vodafone-gray !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&.#{$ns-prefix}paragraph a,
+			&.#{$ns-prefix}paragraph a:hover,
+			&.#{$ns-prefix}paragraph a:focus,
+			.#{$ns-prefix}paragraph a,
+			.#{$ns-prefix}paragraph a:hover,
+			.#{$ns-prefix}paragraph a:focus {
+				color: $color-white;
+				text-decoration: underline;
+			}
+
+			.#{$ns-prefix}list--checkmarks li::after {
+				border-color: $color-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet::before {
+				background-color: $color-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet--active::after {
+				border-color: $color-vodafone-white;
+			}
+
+			&--overlay {
+				background-color: $color-vodafone-gray !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-vodafone-white {
+			background-color: $color-vodafone-white !important;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-vodafone-white !important;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-black {
+			background-color: $color-black !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-black !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-red-violet {
+			background-color: $color-red-violet !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-red-violet !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-albergine {
+			background-color: $color-albergine !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-albergine !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-aqua-blue {
+			background-color: $color-aqua-blue !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-aqua-blue !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-turqoise {
+			background-color: $color-turqoise !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet::before {
+				background-color: $color-vodafone-white;
+			}
+
+			.#{$ns-prefix}carousel__bullets-bullet--active::after {
+				border-color: $color-vodafone-white;
+			}
+
+			&--overlay {
+				background-color: $color-turqoise !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-spring-green {
+			background-color: $color-spring-green !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-spring-green !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-lemon-yellow {
+			background-color: $color-lemon-yellow !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-lemon-yellow !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-fresh-orange {
+			background-color: $color-fresh-orange !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-fresh-orange !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-maroon {
+			background-color: $color-maroon !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-maroon !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-dark-red {
+			background-color: $color-dark-red !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-dark-red !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-digital-green {
+			background-color: $color-digital-green !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background-color: $color-digital-green !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+
+		&-vodafone-gradient-red {
+			background: linear-gradient(to right, $color-maroon, $color-vodafone-red) !important;
+			color: $color-white;
+
+			.dark {
+				display: none;
+			}
+
+			&--overlay {
+				background: linear-gradient(to right, hex-to-rgba($color-maroon, 0.8), hex-to-rgba($color-vodafone-red, 0.8)) !important;
+				color: $color-white;
+
+				.dark {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		&--responsive {
+			&--wild-sand {
+				color: $color-wild-sand !important;
+			}
+
+			&--gallery {
+				color: $color-gallery !important;
+			}
+
+			&--silver {
+				color: $color-silver !important;
+			}
+
+			&--silver-chalice {
+				color: $color-silver-chalice !important;
+			}
+
+			&--dove-gray {
+				color: $color-dove-gray !important;
+			}
+
+			&--dusty-gray {
+				color: $color-dusty-gray !important;
+			}
+
+			&--abbey {
+				color: $color-abbey !important;
+			}
+
+			&--vodafone-red {
+				color: $color-vodafone-red !important;
+			}
+
+			&--vodafone-gray {
+				color: $color-vodafone-gray !important;
+			}
+
+			&--vodafone-white {
+				color: $color-vodafone-white !important;
+			}
+
+			&--vodafone-red-violet {
+				color: $color-red-violet !important;
+			}
+
+			&--albergine {
+				color: $color-albergine !important;
+			}
+
+			&--aqua-blue {
+				color: $color-aqua-blue !important;
+			}
+
+			&--turqoise {
+				color: $color-turqoise !important;
+			}
+
+			&--spring-green {
+				color: $color-spring-green !important;
+			}
+
+			&--lemon-yellow {
+				color: $color-lemon-yellow !important;
+			}
+
+			&--fresh-orange {
+				color: $color-fresh-orange !important;
+			}
+
+			&--black {
+				color: $color-black !important;
+			}
+
+			&--maroon {
+				color: $color-maroon !important;
+			}
+
+			&--dark-red {
+				color: $color-dark-red !important;
+			}
+
+			&--digital-green {
+				color: $color-digital-green !important;
+			}
+
+			&-bg {
+				&--wild-sand {
+					background-color: $color-wild-sand !important;
+					color: $color-black;
+				}
+
+				&--gallery {
+					background-color: $color-gallery !important;
+					color: $color-black;
+				}
+
+				&--silver {
+					background-color: $color-silver !important;
+					color: $color-black;
+				}
+
+				&--silver-chalice {
+					background-color: $color-silver-chalice !important;
+					color: $color-white;
+				}
+
+				&--dusty-gray {
+					background-color: $color-dusty-gray !important;
+					color: $color-white;
+				}
+
+				&--dove-gray {
+					background-color: $color-dove-gray !important;
+					color: $color-white;
+				}
+
+				&--abbey {
+					background-color: $color-abbey !important;
+					color: $color-white;
+				}
+
+				&-vodafone-red {
+					background-color: $color-vodafone-red !important;
+					color: $color-white;
+				}
+
+				&-vodafone-gray {
+					background-color: $color-vodafone-gray !important;
+					color: $color-white;
+				}
+
+				&-vodafone-white {
+					background-color: $color-vodafone-white !important;
+				}
+
+				&-black {
+					background-color: $color-black !important;
+					color: $color-white;
+				}
+
+				&-red-violet {
+					background-color: $color-red-violet !important;
+					color: $color-white;
+				}
+
+				&-albergine {
+					background-color: $color-albergine !important;
+					color: $color-white;
+				}
+
+				&-aqua-blue {
+					background-color: $color-aqua-blue !important;
+					color: $color-white;
+				}
+
+				&-turqoise {
+					background-color: $color-turqoise !important;
+					color: $color-white;
+				}
+
+				&-spring-green {
+					background-color: $color-spring-green !important;
+					color: $color-white;
+				}
+
+				&-lemon-yellow {
+					background-color: $color-lemon-yellow !important;
+					color: $color-white;
+				}
+
+				&-fresh-orange {
+					background-color: $color-fresh-orange !important;
+					color: $color-white;
+				}
+
+				&-maroon {
+					background-color: $color-maroon !important;
+					color: $color-white;
+				}
+
+				&-dark-red {
+					background-color: $color-dark-red !important;
+					color: $color-white;
+				}
+
+				&-digital-green {
+					background-color: $color-digital-green !important;
+					color: $color-white;
+				}
+
+				&-vodafone-gradient-red {
+					background: linear-gradient(to right, $color-maroon, $color-vodafone-red) !important;
+					color: $color-white;
+				}
+			}
+		}
+
+	}
+	@media only screen and (max-width: $breakpoint-mov) {
+		&--mobile {
+			&--wild-sand {
+				color: $color-wild-sand !important;
+			}
+
+			&--gallery {
+				color: $color-gallery !important;
+			}
+
+			&--silver {
+				color: $color-silver !important;
+			}
+
+			&--silver-chalice {
+				color: $color-silver-chalice !important;
+			}
+
+			&--dusty-gray {
+				color: $color-dusty-gray !important;
+			}
+
+			&--dove-gray {
+				color: $color-dove-gray !important;
+			}
+
+			&--abbey {
+				color: $color-abbey !important;
+			}
+
+			&--vodafone-red {
+				color: $color-vodafone-red !important;
+			}
+
+			&--vodafone-gray {
+				color: $color-vodafone-gray !important;
+			}
+
+			&--vodafone-white {
+				color: $color-vodafone-white !important;
+			}
+
+			&--vodafone-red-violet {
+				color: $color-red-violet !important;
+			}
+
+			&--albergine {
+				color: $color-albergine !important;
+			}
+
+			&--aqua-blue {
+				color: $color-aqua-blue !important;
+			}
+
+			&--turqoise {
+				color: $color-turqoise !important;
+			}
+
+			&--spring-green {
+				color: $color-spring-green !important;
+			}
+
+			&--lemon-yellow {
+				color: $color-lemon-yellow !important;
+			}
+
+			&--fresh-orange {
+				color: $color-fresh-orange !important;
+			}
+
+			&--black {
+				color: $color-black !important;
+			}
+
+			&--maroon {
+				color: $color-maroon !important;
+			}
+
+			&--dark-red {
+				color: $color-dark-red !important;
+			}
+
+			&--digital-green {
+				color: $color-digital-green !important;
+			}
+
+			&-bg {
+				&-wild-sand {
+					background-color: $color-wild-sand !important;
+					color: $color-black;
+				}
+
+				&-gallery {
+					background-color: $color-gallery !important;
+					color: $color-black;
+				}
+
+				&-silver {
+					background-color: $color-silver !important;
+					color: $color-black;
+				}
+
+				&-silver-chalice {
+					background-color: $color-silver-chalice !important;
+					color: $color-white;
+				}
+
+				&-dusty-gray {
+					background-color: $color-dusty-gray !important;
+					color: $color-white;
+				}
+
+				&-dove-gray {
+					background-color: $color-dove-gray !important;
+					color: $color-white;
+				}
+
+				&-abbey {
+					background-color: $color-abbey !important;
+					color: $color-white;
+				}
+
+				&-vodafone-red {
+					background-color: $color-vodafone-red !important;
+					color: $color-white;
+				}
+
+				&-vodafone-gray {
+					background-color: $color-vodafone-gray !important;
+					color: $color-white;
+				}
+
+				&-vodafone-white {
+					background-color: $color-vodafone-white !important;
+				}
+
+				&-black {
+					background-color: $color-black !important;
+					color: $color-white;
+				}
+
+				&-red-violet {
+					background-color: $color-red-violet !important;
+					color: $color-white;
+				}
+
+				&-albergine {
+					background-color: $color-albergine !important;
+					color: $color-white;
+				}
+
+				&-aqua-blue {
+					background-color: $color-aqua-blue !important;
+					color: $color-white;
+				}
+
+				&-turqoise {
+					background-color: $color-turqoise !important;
+					color: $color-white;
+				}
+
+				&-spring-green {
+					background-color: $color-spring-green !important;
+					color: $color-white;
+				}
+
+				&-lemon-yellow {
+					background-color: $color-lemon-yellow !important;
+					color: $color-white;
+				}
+
+				&-fresh-orange {
+					background-color: $color-fresh-orange !important;
+					color: $color-white;
+				}
+
+				&-maroon {
+					background-color: $color-maroon !important;
+					color: $color-white;
+				}
+
+				&-dark-red {
+					background-color: $color-dark-red !important;
+					color: $color-white;
+				}
+
+				&-digital-green {
+					background-color: $color-digital-green !important;
+					color: $color-white;
+				}
+
+				&-vodafone-gradient-red {
+					background: linear-gradient(to right, $color-maroon, $color-vodafone-red) !important;
+					color: $color-white;
+				}
+			}
+		}
+	}
+}

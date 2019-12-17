@@ -1,0 +1,9 @@
+.#{$ns-prefix}box-shadow {
+	box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.16);
+	border: 1px solid $color-gallery;
+	border-radius: 10px;
+
+	&.#{$ns-prefix}color-bg-vodafone-gray {
+		border-color: $color-vodafone-gray;
+	}
+}

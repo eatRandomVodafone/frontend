@@ -1,0 +1,131 @@
+vfes-header, .#{$ns-prefix}e2m-header {
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: $colours-vodafone-white;
+
+    &__title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 19px;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 29px;
+    }
+
+    &__content {
+        & .icon {
+            display: none;
+        }
+    }
+
+    &__text {
+        color: $colours-vodafone-white;
+        margin-right: 19px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &--carousel {
+
+        .#{$ns-prefix}carousel {
+            &__arrow {
+                display: none;
+            }
+
+            &__list-element {
+                padding: 22px 3px;
+
+                .#{$ns-prefix}paragraph {
+                    font-size: 32px;
+                    line-height: 40px;
+                }
+            }
+
+            &__bullets-bullet {
+                &--active:after {
+                    border-color: $colours-vodafone-white;
+                }
+
+                &:before {
+                    background-color: $colours-vodafone-white;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-mov) {
+        &__title {
+            font-size: 56px;
+            line-height: 62px;
+            margin-bottom: 24px;
+        }
+
+        &__subtitle {
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 26px;
+        }
+
+        &__content {
+            text-align: center;
+
+            & .icon,
+            &.icon {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                color: $colours-vodafone-white;
+            }
+        }
+
+        &__text {
+            font-size: 18px;
+            line-height: 24px;
+            margin-right: 94px;
+        }
+
+        &--carousel {
+
+            .#{$ns-prefix}carousel {
+                &__arrow {
+                    display: block;
+                    background-color: transparent;
+                    box-shadow: 0 0 0 0;
+
+                    &:after {
+                        border-top-color: $colours-vodafone-white;
+                        border-right-color: $colours-vodafone-white;
+                    }
+                }
+
+                &__list-element {
+                    padding: 22px 3px;
+
+                    .#{$ns-prefix}header__title {
+                        margin-bottom: 31px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        &__title {
+            font-size: 64px;
+            line-height: 72px;
+            margin-bottom: 19px;
+        }
+
+        &__subtitle {
+            font-size: 28px;
+            line-height: 34px;
+        }
+    }
+}

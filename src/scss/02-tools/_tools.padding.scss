@@ -1,0 +1,79 @@
+@mixin padding-classes($breakpoint: false) {
+	@if $breakpoint {
+		@media only screen and (max-width: $breakpoint) {
+			$device: "";
+
+			@if $breakpoint == $breakpoint-mov {
+				$device: "mov";
+			}
+
+			@if $breakpoint == $breakpoint-tablet {
+				$device: "palm";
+			}
+
+			@if $breakpoint == $breakpoint-desktop {
+				$device: "portable";
+			}
+
+			@if $breakpoint == $breakpoint-tv {
+				$device: "lg";
+			}
+
+			@include padding-generate($device: "-#{$device}");
+			@include padding-generate($device: "-#{$device}", $type: "--");
+			@include padding-generate($device: "-#{$device}", $type: "-");
+			@include padding-generate($device: "-#{$device}", $type: "+");
+			@include padding-generate($device: "-#{$device}", $type: "0");
+		}
+	} @else {
+		@include padding-generate;
+		@include padding-generate($type: "--");
+		@include padding-generate($type: "-");
+		@include padding-generate($type: "+");
+		@include padding-generate($type: "0");
+	}
+}
+
+@mixin padding-generate($device: "", $type:"") {
+	$type-padding: $gutter-base;
+	// $type-delimiter: "";
+	@if $type == "--" {
+		$type-padding: $gutter-low-plus;
+	} @else if $type == "-" {
+		$type-padding: $gutter-low;
+	} @else if $type == "+" {
+		$type: \+;
+		// $type-delimiter: \ !global;
+		$type-padding: $gutter-up;
+	} @else if $type == "0" {
+		$type-padding: 0;
+	}
+
+	&#{$type}#{$device} {
+		padding: $type-padding !important;
+	}
+
+	&t#{$type}#{$device} {
+		padding-top: $type-padding !important;
+	}
+
+	&b#{$type}#{$device} {
+		padding-bottom: $type-padding !important;
+	}
+
+	&l#{$type}#{$device} {
+		padding-left: $type-padding !important;
+	}
+
+	&r#{$type}#{$device} {
+		padding-right: $type-padding !important;
+	}
+	&h#{$type}#{$device} {
+		padding-right: $type-padding !important;
+		padding-left: $type-padding !important;
+	}
+	&v#{$type}#{$device} {
+		padding-top: $type-padding !important;
+		padding-bottom: $type-padding !important;
+	}
+}

@@ -1,0 +1,124 @@
+.#{$ns-prefix}tag-label {
+    position: relative;
+    border-radius: 10px;
+    
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 12px solid $color-leg-blue;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid transparent;
+        position: absolute;
+        top: 8px;
+        left: -12px;
+    }
+
+    &--right {
+        &::after {
+            content: '';
+            left: unset;
+            right: -12px;
+            border-left: none;
+            border-right: 12px solid transparent;
+        }
+
+        .#{$ns-prefix}tag-label__outstanding {
+            left: unset;
+	        right: -12px;
+        }
+    }
+
+    &--blue {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: linear-gradient(to bottom, $color-leg-aquamarine 0%, $color-leg-aquamarine 25%, $color-leg-blue 100%);
+        }
+
+        &.#{$ns-prefix}tag-label::after {
+            border-top: 12px solid $color-leg-blue;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 3px $color-leg-aquamarine;
+        }
+    }
+
+    &--black {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: linear-gradient(to bottom, $color-dove-gray 0%, $color-dove-gray 25%, $color-vodafone-gray 100%);
+        }
+
+        &.#{$ns-prefix}tag-label::after {
+            border-top: 12px solid $color-vodafone-gray;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 3px $color-dove-gray;
+        }
+    }
+
+    &--red-violet {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: linear-gradient(to bottom, $color-red-violet 0%, $color-red-violet 25%, $color-albergine 100%);
+        }
+
+        &.#{$ns-prefix}tag-label::after {
+            border-top: 12px solid $color-albergine;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 3px $color-red-violet;
+        }
+    }
+
+    &--red {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: linear-gradient(to bottom, $color-vodafone-red 0%, $color-vodafone-red 25%, $color-dark-red 100%);
+        }
+
+        &.#{$ns-prefix}tag-label::after {
+            border-top: 12px solid $color-dark-red;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 3px $color-vodafone-red;
+        }
+    }
+
+    &--green {
+        .#{$ns-prefix}tag-label__outstanding {
+            background: linear-gradient(to bottom, $color-digital-green 0%, $color-digital-green 25%, $green-hoverSDKdark 100%);
+        }
+
+        &.#{$ns-prefix}tag-label::after {
+            border-top: 12px solid $green-hoverSDKdark;
+        }
+
+        &.#{$ns-prefix}tag-label--border {
+            border: solid 3px $color-digital-green;
+        }
+    }
+
+    &__outstanding {
+        padding: 6px 16px;
+        font-size: $font-size-text;
+        line-height: $line-height-text;
+        font-family: $font-family-vodafone-regular-bold;
+        color: #FFFFFF;
+        position: absolute;
+        top: -24px;
+        left: -12px;
+        box-sizing: border-box;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+
+        .icon {
+            vertical-align: top;
+            display: inline-block;
+            margin-right: 8px;
+            stroke-width: 0;
+            stroke: #fff;
+        }
+    }
+} 
