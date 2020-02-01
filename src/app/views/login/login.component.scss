@@ -1,8 +1,27 @@
+.e2m-login {
+  padding: 40px 16px;
+  background-image: linear-gradient(to bottom, #e60000, #990000);
+  height: 100vh;
+  &__title {
+    margin: 0 auto;
+    width: 190px;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    strong {
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+  }
+  &__media{
+    width: 390px;
+  }
+}
 
+/*
 .e2m-container {
   padding: 16px;
 }
-
 .e2m-layout {
   height: 100vh;
 
@@ -158,6 +177,7 @@
     margin-top: 40px;
   }
 }
+*/
 
 
 
