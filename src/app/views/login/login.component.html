@@ -1,78 +1,79 @@
 <!-- WELCOME TO EAT2MEET -->
 
-<section class="e2m-login">
-  <h1 class="e2m-login__title">
-    <strong>Bienvenid@ a</strong>
-    <img class="e2m-login__media" src="./assets/svg/logo-e2m-login.svg" alt="EAT2MEET">
-  </h1>
-  <section class="card">
-    <form action="">
-      <fieldset>
-        <legend>Login de usuario</legend>
-      </fieldset>
-    </form>
-  </section>
-</section>
+<div class="e2m-login">
+  <section class="e2m-wrapper">
 
-
-<!--<main class="e2m-layout vfes-color-bg-vodafone-gradient-red vfes-ws10">
-    <section class="e2m-container e2m-wrapper">
-        <h1 class="e2m-title vfes-title vfes-tittle&#45;&#45;center">
-            <strong>Bienvenid@ a</strong>
-            <img src="./assets/svg/logo-e2m-login.svg" alt="logo EAT2MEET">
-        </h1>
-        <div class="e2m-form vfes-color-bg-vodafone-white">
-            <img class="slide1" src="./assets/svg/plato-02.svg" alt="logo EAT2MEET">
-            <img class="slide2" src="./assets/svg/plato-04.svg" alt="logo EAT2MEET">
-            <img class="slide3" src="./assets/svg/plato-06.svg" alt="logo EAT2MEET">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <div class="vfes-form__box">
-                    <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="label" id="texto2" name="texto2" placeholder="Email" type="text" formControlName="email" />
-                    <span class="vfes-form__label" id="label">Email</span>
-                    <p class="vfes-form__error-text"
-                      *ngIf="errorMail">Por favor introduzca un correo corporativo</p>
-                    <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-                      <title>Warning</title>
-                      <use class="icon-v3" xlink:href='#icon3-warning'></use>
-                  </svg>
-                    <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-                      <title>Tick</title>
-                      <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-                  </svg>
-                </div>
-                <div class="vfes-form__box">
-                    <input id="password" class="vfes-form__input vfes-form__input" type="password"
-                           formControlName="password"
-                           placeholder="Password" />
-                    <span class="vfes-form__label" for="password">Password</span>
-                    &lt;!&ndash; <p class="vfes-form__error-text">Please enter your correct password</p> &ndash;&gt;
-                    <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-                      <title>Warning</title>
-                      <use class="icon-v3" xlink:href='#icon3-warning'></use>
-                  </svg>
-                    <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-                      <title>Tick</title>
-                      <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-                  </svg>
-                </div>
-                <div class="vfes-form-flex&#45;&#45;top">
-                    <div class="vfes-form-flex">
-                        <input class="vfes-form__switch" type="checkbox" id="switch4" name="worry-free-data" value="">
-                        <label class="vfes-form__switch-label" for="switch4"></label>
-                        <p>Recuérdame</p>
-                    </div>
-                    <a class="vfes-link vfes-link&#45;&#45;no-chevron" [routerLink]="'/reset-password'">¿Has olvidado la contraseña?</a>
-                </div>
-                <input class="vfes-button"
-                       [ngClass]="completeForm ? 'vfes-button&#45;&#45;primary': ''"
-                       type="submit"
-                       aria-labelledby="label"
-                       id="texto20"
-                       name="texto20"
-                       placeholder="Email"
-                       value="Bon apetit" />
-            </form>
+    <h1 class="e2m-login__title">
+      <strong>Bienvenid@ a</strong>
+      <img class="e2m-login__media"
+           src="./assets/svg/logo-e2m-login.svg"
+           alt="EAT2MEET">
+    </h1>
+    <article>
+      <form action="" class="e2m-form e2m-card">
+        <div class="e2m-login__banner">
+          <figure>
+            <img class="e2m-login__plate" src="assets/img/icons-login/plato-01-80px.png" alt>
+            <img class="e2m-login__plate" src="assets/img/icons-login/plato-02-80px.png" alt>
+            <img class="e2m-login__plate" src="assets/img/icons-login/plato-03-80px.png" alt>
+          </figure>
         </div>
-        <a [routerLink]="['/registro']" class="e2m-link vfes-paragraph vfes-paragraph&#45;&#45;center vfes-link vfes-link&#45;&#45;no-chevron">¿No estás registrado?</a>
-    </section>
-</main>-->
+        <fieldset>
+          <legend class="visually-hidden">Login de usuario</legend>
+          <div class="e2m-form__group">
+            <input class="e2m-form__field"
+                   type="email"
+                   name="email"
+                   aria-label="Escriba el mail">
+            <span class="e2m-form__text">e-mail</span>
+            <p class="e2m-form__check">
+              <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+              <span class="visually-hidden">El campo esta correctamente rellenado</span>
+            </p>
+            <p class="e2m-form__error">
+              <img src="assets/img/icons-login/tick-error.svg" alt>
+              <span>Feedback de error en el campo</span>
+            </p>
+          </div>
+          <div class="e2m-form__group">
+            <input class="e2m-form__field"
+                   type="password"
+                   name="pass"
+                   aria-label="Escriba la contraseña">
+            <span class="e2m-form__text">Contraseña</span>
+            <p class="e2m-form__check">
+              <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+              <span class="visually-hidden">El campo esta correctamente rellenado</span>
+            </p>
+            <p class="e2m-form__error">
+              <img src="assets/img/icons-login/tick-error.svg" alt>
+              <span>Feedback de error en el campo</span>
+            </p>
+          </div>
+          <div class="e2m-form__group">
+            <input id="remenber"
+                   class="e2m-form__radio"
+                   type="checkbox"
+                   name="remenber"
+                   aria-label="Recordar contraseña">
+            <label for="remenber"
+                   class="e2m-form__toggle">
+              Recuérdame
+              <span class="visually-hidden">. Quiero recordar mi contraseña</span>
+            </label>
+            <a class="e2m-login__link" href="#Page-recovery-password"
+               aria-label="Acceder a la página de recuración de contraseña. Abre en ventana nueva">
+              ¿Has olvidado tu contraseña?</a>
+          </div>
+        </fieldset>
+        <button class="e2m-btn"
+                type="submit"
+                aria-label="Acceder a eat 2 meet"
+                disabled> Bon apetit
+        </button>
+      </form>
+      <a class="e2m-login__register" href="#URL-RESGISTER"
+         aria-label="Acceder al registro de usuario. Abre en ventana nueva">¿No estás registrado?</a>
+    </article>
+  </section>
+</div>
