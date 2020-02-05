@@ -10,7 +10,9 @@
            alt="EAT2MEET">
     </h1>
     <article>
-      <form action="" class="e2m-form e2m-card">
+      <form action=""
+            class="e2m-form e2m-card"
+            [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="e2m-login__banner">
           <figure>
             <img class="e2m-login__plate" src="assets/img/icons-login/plato-01-80px.png" alt>
@@ -24,28 +26,33 @@
             <input class="e2m-form__field"
                    type="email"
                    name="email"
-                   aria-label="Escriba el mail">
+                   aria-label="Escriba el mail"
+                   formControlName="email">
             <span class="e2m-form__text">e-mail</span>
-            <p class="e2m-form__check">
+            <p *ngIf="loginForm.controls['email'].valid" class="e2m-form__check">
               <img src="assets/img/icons-login/tick-solved-green.svg" alt>
               <span class="visually-hidden">El campo esta correctamente rellenado</span>
             </p>
-            <p class="e2m-form__error">
+            <p *ngIf="isMailValid" class="e2m-form__error">
               <img src="assets/img/icons-login/tick-error.svg" alt>
-              <span>Feedback de error en el campo</span>
+              <span *ngIf="loginForm.controls['email'].errors.required">El campo es obligatorio</span>
+              <span *ngIf="loginForm.controls['email'].errors.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
             </p>
           </div>
           <div class="e2m-form__group">
             <input class="e2m-form__field"
                    type="password"
                    name="pass"
-                   aria-label="Escriba la contraseña">
+                   aria-label="Escriba la contraseña"
+                   formControlName="password">
             <span class="e2m-form__text">Contraseña</span>
-            <p class="e2m-form__check">
+            <p *ngIf="loginForm.controls['password'].valid"
+               class="e2m-form__check">
               <img src="assets/img/icons-login/tick-solved-green.svg" alt>
               <span class="visually-hidden">El campo esta correctamente rellenado</span>
             </p>
-            <p class="e2m-form__error">
+            <p *ngIf="isPasswordValid" class="e2m-form__error">
               <img src="assets/img/icons-login/tick-error.svg" alt>
               <span>Feedback de error en el campo</span>
             </p>
@@ -69,7 +76,7 @@
         <button class="e2m-btn"
                 type="submit"
                 aria-label="Acceder a eat 2 meet"
-                disabled> Bon apetit
+        > Bon apetit
         </button>
       </form>
       <a class="e2m-login__register" href="#URL-RESGISTER"

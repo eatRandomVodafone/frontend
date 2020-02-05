@@ -5,7 +5,7 @@ import {TokenService} from './token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class SigninService {
 
   constructor(
     private http: HttpClient,
@@ -14,13 +14,13 @@ export class UserService {
   }
 
   checkLogin(loginData: Object) {
-    const url: string = `https://eat2meet.herokuapp.com/eatwithrandom/signin`;
+    const url = `https://eat2meet.herokuapp.com/eatwithrandom/signin`;
     return this.http.post(url, loginData);
   }
 
   // Todo: El status ya lo recibimos en el checkLogin
   userStatus() {
-    const url: string = `https://eat2meet.herokuapp.com/eatwithrandom/status`;
+    const url = `https://eat2meet.herokuapp.com/eatwithrandom/status`;
     const jwt = this.tokenSrv.getToken();
 
     const headers = new HttpHeaders({

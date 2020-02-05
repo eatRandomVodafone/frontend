@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from 'src/app/services/user.service';
+import {SigninService} from 'src/app/services/signin.service';
 import {Subject} from 'rxjs';
-import {filter, map, takeUntil} from 'rxjs/operators';
+import {takeUntil} from 'rxjs/operators';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
@@ -16,27 +16,29 @@ import {TokenService} from 'src/app/services/token.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  completeForm = false;
-  errorMail = false;
+  public loginForm: FormGroup;
   private unsubscribe = new Subject();
 
   constructor(
-    private userSrv: UserService,
+    private userSrv: SigninService,
     private fb: FormBuilder,
     private aRoute: ActivatedRoute,
     private titleService: Title,
     private route: Router,
     private tokenSrv: TokenService
   ) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]]
-    });
   }
 
   ngOnInit() {
-    this.onValueChanges();
+
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required,
+        Validators.pattern('^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$')]],
+      password: ['', [Validators.required]]
+    });
+
+
+    // this.onValueChanges();
 
     // Set title page
     this.aRoute.data
@@ -44,7 +46,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    const email = this.loginForm.get('email').value;
+    //TODO VALIDAR CON EL SERVICIO
+    console.log(this.loginForm);
+    /*const email = this.loginForm.get('email').value;
     if (this.loginForm.valid && this.validEmail(email)) {
       const loginData = {
         username: email,
@@ -84,9 +88,18 @@ export class LoginComponent implements OnInit {
       this.errorMail = false;
     } else {
       this.errorMail = true;
-    }
+    }*/
   }
 
+  get isPasswordValid() {
+    return this.loginForm.controls['password'].dirty && this.loginForm.controls['password'].invalid;
+  }
+
+  get isMailValid() {
+    return this.loginForm.controls['email'].dirty && this.loginForm.controls['email'].errors;
+  }
+
+  /*
   private onValueChanges() {
     this.loginForm.valueChanges
       .pipe(
@@ -96,9 +109,6 @@ export class LoginComponent implements OnInit {
         this.completeForm = this.loginForm.valid ? true : false;
       });
   }
+  */
 
-  private validEmail(email) {//Validacion correos vodafone
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$/;
-    return re.test(String(email).toLowerCase());
-  }
 }
