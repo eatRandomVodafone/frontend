@@ -152,11 +152,6 @@
 			font-family: $font-family-vodafone-regular;
 		}
 	}
-
-	&__label {
-		
-	}
-
 	&--right-checkbox, &--right-radio {
 		.#{$ns-prefix}form__label {
 			display: inline-block;
@@ -170,14 +165,6 @@
 
 	&__checkbox {
 		
-		&:focus + .#{$ns-prefix}form__label::before {
-			
-		}
-
-		& + .#{$ns-prefix}form__label {
-			
-		}
-
 		& + .#{$ns-prefix}form__label::before {
 			box-shadow: 0 0 0 0 transparent;
 		}
@@ -359,12 +346,6 @@
 			display: none;
 		}
 
-		&--info,
-		&--ok,
-		&--error {
-			
-		}
-
 		&--ok {
 			border: 1px solid $colours-mid-gray;
 
@@ -490,9 +471,6 @@
 			color: $colours-mid-gray;
 			pointer-events: none;
 
-			&-dark {
-
-			}
 		}
 
 		&[aria-expanded='false'] ~ .#{$ns-prefix}form__autocomplete-list {
@@ -540,19 +518,7 @@
 		background-color: $colours-aluminium;
 	}
 
-	&__textarea {
-		
-
-		&:focus,
-		&:active {
-			
-		}
-
-		&::placeholder {
-			
-		}
-	}
-
+	
 	&__icon {
 		// reset style button
 		
@@ -582,14 +548,6 @@
 
 	&__box {
 		position: relative;
-
-		&-ok {
-			
-
-			.#{$ns-prefix}title {
-				
-			}
-		}
 	}
 
 	&__dropdown {

@@ -1,0 +1,105 @@
+.e2m-form {
+  padding: 80px 16px 24px 26px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin-bottom: 40px;
+  &__group {
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  &__field {
+    z-index: 1;
+    position: relative;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 6px;
+    border: solid 1px #666666;
+    background-color: transparent;
+    &:focus + .e2m-form__text,
+    &--fill {
+      top: 0;
+      transform: translateY(-50%);
+      z-index: 2;
+      font-size: 14px;
+      transition: all .3s ease;
+    }
+  }
+
+  &__text {
+    z-index: 0;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: #666666;
+    background-color: white;
+    transition: all .3s ease;
+  }
+
+  &__toggle {
+    position: relative;
+    padding-left: 34px;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #333333;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 20px;
+      border-radius: 68px;
+      background-color: #999999;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 1px;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 67.4px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      transition: all .3s ease;
+    }
+  }
+
+  &__radio {
+    &:focus + .e2m-form__toggle{
+      text-decoration: underline;
+    }
+    &:checked + .e2m-form__toggle {
+      &:before {
+        background-color: #007c92;
+      }
+      &:after {
+        left: 10px;
+        transition: all .3s ease;
+      }
+    }
+  }
+
+  &__check {
+    // display: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  &__error {
+    text-align: right;
+    color: #e60000;
+    & > img {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+}
