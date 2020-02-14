@@ -1,0 +1,17 @@
+.e2m-user-register {
+  background-image: linear-gradient(to bottom, #e60000, #990000);
+  height: 100vh;
+  //margin: 0 -16px;
+  &__title {
+    font-size: 20px;
+    font-family: "VodafoneRegularBold", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: white;
+    padding: 16px 0;
+    margin-bottom: 0;
+  }
+  &__form {
+    background-color: white;
+    padding: 16px;
+  }
+}

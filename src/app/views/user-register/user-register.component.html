@@ -1,0 +1,112 @@
+<section class="e2m-user-register e2m-wrapper">
+  <h1 class="e2m-user-register__title">Introduce tus datos para registrate</h1>
+  <form action="" class="e2m-user-register__form e2m-card" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend>Datos de usuario</legend>
+
+      <!-- Nombre y usuario-->
+      <div class="e2m-form__group">
+        <input class="e2m-form__field"
+               type="text"
+               name="name"
+               aria-label="Escriba su nombre y apellidos"
+               formControlName="name" required>
+        <span class="e2m-form__text">Nombre y apellidos</span>
+        <p *ngIf="registerForm.controls['name'].valid" class="e2m-form__check">
+          <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+          <span class="visually-hidden">El campo esta correctamente rellenado</span>
+        </p>
+        <p class="e2m-form__error">
+          <img src="assets/img/icons-login/tick-error.svg" alt>
+          <span *ngIf="registerForm.controls['name'].errors.required">El campo es obligatorio</span>
+          <span *ngIf="registerForm.controls['name'].errors.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+        </p>
+      </div>
+
+      <!-- Email -->
+      <div class="e2m-form__group">
+        <input class="e2m-form__field"
+               type="email"
+               name="email"
+               aria-label="Escriba su email"
+               formControlName="email" required>
+        <span class="e2m-form__text">Email</span>
+        <p *ngIf="registerForm.controls['email'].valid" class="e2m-form__check">
+          <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+          <span class="visually-hidden">El campo esta correctamente rellenado</span>
+        </p>
+        <p class="e2m-form__error">
+          <img src="assets/img/icons-login/tick-error.svg" alt>
+          <span *ngIf="registerForm.controls['email'].errors.required">El campo es obligatorio</span>
+          <span *ngIf="registerForm.controls['email'].errors.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+        </p>
+      </div>
+
+      <!-- Email Confirm -->
+      <div class="e2m-form__group">
+        <input class="e2m-form__field"
+               type="email"
+               name="emailconfirm"
+               aria-label="Confirme su email"
+               formControlName="emailconfirm" required>
+        <span class="e2m-form__text">Confirmación de email</span>
+        <p *ngIf="registerForm.controls['emailconfirm'].valid" class="e2m-form__check">
+          <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+          <span class="visually-hidden">El campo esta correctamente rellenado</span>
+        </p>
+        <p class="e2m-form__error">
+          <img src="assets/img/icons-login/tick-error.svg" alt>
+          <span *ngIf="registerForm.controls['emailconfirm'].errors.required">El campo es obligatorio</span>
+          <span *ngIf="registerForm.controls['emailconfirm'].errors.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+        </p>
+      </div>
+
+      <!-- Department -->
+      <div class="e2m-form__group">
+        <select name="department"
+                class="e2m-form__select"
+                aria-label="Selecciona el departamento al que perteneces">
+          <option *ngFor="let option of valueDepartments" [value]="option.value">{{option.show}}</option>
+        </select>
+        <p *ngIf="registerForm.controls['department'].valid" class="e2m-form__check">
+          <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+          <span class="visually-hidden">El campo esta correctamente rellenado</span>
+        </p>
+        <p class="e2m-form__error">
+          <img src="assets/img/icons-login/tick-error.svg" alt>
+          <span *ngIf="registerForm.controls['department'].errors.required">El campo es obligatorio</span>
+          <span *ngIf="registerForm.controls['department'].errors.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+        </p>
+      </div>
+
+      <!-- Rol -->
+      <div class="e2m-form__group">
+        <select name="rol"
+                class="e2m-form__select"
+                aria-label="Selecciona el departamento al que perteneces">
+          <option *ngFor="let option of valueRoles" [value]="option.value">{{option.show}}</option>
+        </select>
+        <p *ngIf="registerForm.controls['roles'].valid" class="e2m-form__check">
+          <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+          <span class="visually-hidden">El campo esta correctamente rellenado</span>
+        </p>
+        <p class="e2m-form__error">
+          <img src="assets/img/icons-login/tick-error.svg" alt>
+          <span *ngIf="registerForm.controls['roles'].errors.required">El campo es obligatorio</span>
+          <span *ngIf="registerForm.controls['roles'].errors.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+        </p>
+      </div>
+    </fieldset>
+
+    <button class="e2m-btn"
+            type="submit"
+            aria-label="Acceder a eat 2 meet"
+    > {{textBtn}}
+    </button>
+  </form>
+</section>
