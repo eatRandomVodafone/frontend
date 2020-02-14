@@ -1,5 +1,25 @@
+:host {
+  padding-top: 120px;
+}
+
 .e2m-reset {
-  padding: 40px 16px;
+  padding: 120px 16px 0 16px;
   background-image: linear-gradient(to bottom, #e60000, #990000);
   height: 100vh;
+  &__title {
+    color: white;
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  &__form {
+    padding-top: 20px;
+  }
+  &__confirm {
+    background-color: white;
+    padding: 52px;
+  }
+  &__textconfirm {
+    text-align: center;
+    font-family: "VodafoneRegularBold", Helvetica, Arial, sans-serif;
+  }
 }

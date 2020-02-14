@@ -15,6 +15,7 @@ export class ResetPassComponent implements OnInit {
 
   public title = '¿Has olvidado tu contraseña?';
   public btnText = 'Recordar contraseña';
+  public textConfirm = 'Te hemos enviado una nueva constraseña a tu email';
   public loginForm: FormGroup;
 
   constructor(
@@ -30,15 +31,14 @@ export class ResetPassComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required,
         Validators.pattern('^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$')]],
-      password: ['', [Validators.required]]
     });
     // Set title page
     this.aRoute.data
       .subscribe(data => this.titleService.setTitle(data.title));
   }
 
-  redirect() {
-    this.route.navigate(['/login']);
+  onSubmit() {
+    console.log(this.loginForm);
   }
 
 }
