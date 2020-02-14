@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
-import { RegistroComponent } from './views/registro/registro.component';
+import { RegisterPollComponent } from './views/register-poll/register-poll.component';
 import { AltaComponent } from './views/alta/alta.component';
 import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
@@ -23,7 +23,7 @@ import { SelectComponent } from './components/select/select.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent,
+    RegisterPollComponent,
     AltaComponent,
     StatusComponent,
     ConfirmComponent,

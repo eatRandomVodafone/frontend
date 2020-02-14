@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './views/login/login.component';
-import {RegistroComponent} from './views/registro/registro.component';
+import {RegisterPollComponent} from './views/register-poll/register-poll.component';
 import {AltaComponent} from './views/alta/alta.component';
 import {ProfileComponent} from './views/profile/profile.component';
 import {ConfirmComponent} from './views/confirm/confirm.component';
@@ -11,8 +11,8 @@ import {ResetPassComponent} from './views/reset-pass/reset-pass.component';
 
 const routes: Routes = [
   {
-    path: 'registro',
-    component: RegistroComponent,
+    path: 'register',
+    component: RegisterPollComponent,
     data: {
       title: 'Eat 2 Meet | Registro de usuario'
     }
