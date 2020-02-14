@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { ResetPassService } from 'src/app/services/resetpass.service';
-import { takeUntil } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {ResetPassService} from 'src/app/services/resetpass.service';
+import {takeUntil} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-reset-pass',
@@ -12,64 +13,31 @@ import { Router } from '@angular/router';
 })
 export class ResetPassComponent implements OnInit {
 
-  public completeForm = false;
-  public resetpassForm: FormGroup;
-  public isModalHidden = true;
-  private unsubscribe = new Subject();
-
+  public title = '¿Has olvidado tu contraseña?';
+  public btnText = 'Recordar contraseña';
+  public loginForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private resetPassSrv: ResetPassService,
-    private route: Router) {
-    this.resetpassForm = this.fb.group({
-      email: ['', [Validators.required]]
-    });
+    private aRoute: ActivatedRoute,
+    private titleService: Title,
+  ) {
   }
 
 
   ngOnInit() {
-    this.onValueChanges();
 
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required,
+        Validators.pattern('^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$')]],
+      password: ['', [Validators.required]]
+    });
+    // Set title page
+    this.aRoute.data
+      .subscribe(data => this.titleService.setTitle(data.title));
   }
 
-  statusModal(value) {
-    this.isModalHidden = value;
-  }
-
-  private onValueChanges(){
-    this.resetpassForm.valueChanges
-      .pipe(
-        takeUntil(this.unsubscribe)
-      )
-      .subscribe(() => {
-        this.completeForm = this.resetpassForm.valid ? true : false;
-      });
-  }
-
-  onSubmit() {
-    if (this.resetpassForm.valid) {
-      this.completeForm = true;
-
-      const resetPassData = {
-        email: this.resetpassForm.get('email').value
-      }
-      this.resetPassSrv.resetPass(resetPassData)
-        .pipe(
-          takeUntil(this.unsubscribe)
-        )
-        .subscribe(resp => {
-          console.log('Reset pass successfull');
-        });
-
-        this.statusModal(false);
-
-    } else {
-      this.completeForm = false;
-    }
-  }
-
-  redirect(){
+  redirect() {
     this.route.navigate(['/login']);
   }
 
