@@ -9,19 +9,28 @@ import {StatusComponent} from './views/status/status.component';
 import {TokenGuard} from './guards/token.guard';
 import {ResetPassComponent} from './views/reset-pass/reset-pass.component';
 import {UserRegisterComponent} from './views/user-register/user-register.component';
+import {TestingComponentsComponent} from './views/testing-components/testing-components.component';
 
 const routes: Routes = [
+  {
+    path: 'test',
+    component: TestingComponentsComponent,
+    data: {
+      title: 'Eat 2 Meet | Testing de componentes'
+    }
+  },
   {
     path: 'user-register',
     component: UserRegisterComponent,
     data: {
       title: 'Eat 2 Meet | Registro de usuario'
     }
-  },{
+  },
+  {
     path: 'register-poll',
     component: RegistroComponent,
     data: {
-      title: 'Eat 2 Meet | Registro de usuario en el poll'
+      title: 'Eat 2 Meet | Registro de usuario'
     }
   },
   {
