@@ -18,8 +18,6 @@ export class StatusComponent implements OnInit {
   ngOnInit() {
     this.aRoute.data
         .subscribe(data => this.titleService.setTitle(data.title));
-
-    //
   }
 
 }

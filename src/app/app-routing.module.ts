@@ -19,27 +19,8 @@ const routes: Routes = [
       title: 'Eat 2 Meet | Testing de componentes'
     }
   },
-  {
-    path: 'register',
-    component: RegisterPollComponent,
-    data: {
-      title: 'Eat 2 Meet | Registro de usuario'
-    }
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Eat 2 Meet | Login'
-    }
-  },
-  {
-    path: 'reset-password',
-    component: ResetPassComponent,
-    data: {
-      title: 'Eat 2 Meet | Resetea tu contraseña'
-    }
-  },
+
+
   {
     path: 'alta',
     component: AltaComponent,
@@ -64,12 +45,36 @@ const routes: Routes = [
       title: 'Eat 2 Meet | Confirmación de la mesa'
     }
   },
+
+
   {
     path: 'status',
     component: StatusComponent,
     canLoad: [TokenGuard],
     data: {
       title: 'Eat 2 Meet | Estado de mesa'
+    }
+  },
+
+  {
+    path: 'user-register',
+    component: UserRegisterComponent,
+    data: {
+      title: 'Eat 2 Meet | Registro de usuario'
+    }
+  },
+  {
+    path: 'reset-password',
+    component: ResetPassComponent,
+    data: {
+      title: 'Eat 2 Meet | Resetea tu contraseña'
+    }
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Eat 2 Meet | Login'
     }
   },
   {
