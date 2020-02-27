@@ -8,11 +8,11 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.scss'],
+  templateUrl: './register-poll.component.html',
+  styleUrls: ['./register-poll.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class RegistroComponent implements OnInit {
+export class RegisterPollComponent implements OnInit {
 
   errorMail = false;
   registroForm: FormGroup;
