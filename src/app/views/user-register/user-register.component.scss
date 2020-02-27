@@ -1,0 +1,39 @@
+.e2m-user-register {
+  background-image: linear-gradient(to bottom, #e60000, #990000);
+  height: 100vh;
+  //margin: 0 -16px;
+  &__title {
+    font-size: 20px;
+    font-family: "VodafoneRegularBold", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: white;
+    padding: 16px 0;
+    margin-bottom: 0;
+  }
+  &__form {
+    background-color: #ebebeb;
+    padding: 16px;
+    .e2m-form__field {
+      background-color: white;
+      &:focus + .e2m-form__text {
+        color: #333333;
+        background: linear-gradient(180deg, rgba(235,235,235,1) 62%, rgba(255,255,255,1) 62%,  rgba(255,255,255,1) 63%);
+      }
+    }
+    .e2m-form__text{
+      z-index: 1;
+      padding-left: 4px;
+      padding-right: 4px;
+      color: #666666;
+      border-radius: 6px;
+    }
+    .e2m-form__select {
+      background-color: white;
+      color: #666666;
+    }
+    .e2m-form__error > img,
+    .e2m-form__check{
+      z-index: 10
+    }
+  }
+}

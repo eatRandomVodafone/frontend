@@ -37,9 +37,6 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]]
     });
 
-
-    // this.onValueChanges();
-
     // Set title page
     this.aRoute.data
       .subscribe(data => this.titleService.setTitle(data.title));

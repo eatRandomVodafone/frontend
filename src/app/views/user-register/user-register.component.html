@@ -1,0 +1,103 @@
+<section class="e2m-user-register">
+  <div class="e2m-wrapper">
+
+
+    <h1 class="e2m-user-register__title">Introduce tus datos para registrate</h1>
+    <form action="" class="e2m-user-register__form e2m-card" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <legend class="visually-hidden">Datos de usuario para el registro</legend>
+
+        <!-- Nombre y usuario-->
+        <div class="e2m-form__group">
+          <input class="e2m-form__field"
+                 type="text"
+                 name="name"
+                 aria-label="Escriba su nombre y apellidos"
+                 formControlName="name" required>
+          <span class="e2m-form__text">Nombre y apellidos</span>
+          <p *ngIf="registerForm.controls['name'].valid" class="e2m-form__check">
+            <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+            <span class="visually-hidden">El campo esta correctamente rellenado</span>
+          </p>
+          <p class="e2m-form__error" *ngIf="registerForm.controls['name'].errors">
+            <img src="assets/img/icons-login/tick-error.svg" alt>
+            <span *ngIf="registerForm.controls['name'].errors?.required">El campo es obligatorio</span>
+          </p>
+        </div>
+
+        <!-- Email -->
+        <div class="e2m-form__group">
+          <input class="e2m-form__field"
+                 type="email"
+                 name="email"
+                 aria-label="Escriba su email"
+                 formControlName="email" required>
+          <span class="e2m-form__text">Email</span>
+          <p *ngIf="registerForm.controls['email'].valid" class="e2m-form__check">
+            <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+            <span class="visually-hidden">El campo esta correctamente rellenado</span>
+          </p>
+          <p class="e2m-form__error" *ngIf="registerForm.controls['email'].errors">
+            <img src="assets/img/icons-login/tick-error.svg" alt>
+            <span *ngIf="registerForm.controls['email'].errors?.required">El campo es obligatorio</span>
+            <span *ngIf="registerForm.controls['email'].errors?.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+          </p>
+        </div>
+
+        <!-- Email Confirm -->
+        <div class="e2m-form__group">
+          <input class="e2m-form__field"
+                 type="email"
+                 name="emailconfirm"
+                 aria-label="Confirme su email"
+                 formControlName="emailconfirm" required>
+          <span class="e2m-form__text">Confirmación de email</span>
+          <p *ngIf="registerForm.controls['emailconfirm'].valid" class="e2m-form__check">
+            <img src="assets/img/icons-login/tick-solved-green.svg" alt>
+            <span class="visually-hidden">El campo esta correctamente rellenado</span>
+          </p>
+          <p class="e2m-form__error" *ngIf="registerForm.controls['emailconfirm'].errors">
+            <img src="assets/img/icons-login/tick-error.svg" alt>
+            <span *ngIf="registerForm.controls['emailconfirm'].errors?.required">El campo es obligatorio</span>
+            <span *ngIf="registerForm.controls['emailconfirm'].errors?.pattern">Necesitas un mail de Vodafone para poder
+                logarte</span>
+          </p>
+        </div>
+
+        <!-- Department -->
+        <div class="e2m-form__group">
+          <select name="department"
+                  class="e2m-form__select"
+                  aria-label="Selecciona el departamento al que perteneces">
+            <option *ngFor="let option of valueDepartments" [value]="option.value">{{option.show}}</option>
+          </select>
+        </div>
+
+        <!-- Rol -->
+        <div class="e2m-form__group">
+          <select name="rol"
+                  class="e2m-form__select"
+                  aria-label="Selecciona el departamento al que perteneces">
+            <option *ngFor="let option of valueRoles" [value]="option.value">{{option.show}}</option>
+          </select>
+        </div>
+
+        <!-- History -->
+        <div class="e2m-form__group">
+          <input class="e2m-form__field"
+                 type="text"
+                 name="history"
+                 [attr.aria-label]="historyText">
+          <span class="e2m-form__text">{{historyText}}</span>
+        </div>
+
+      </fieldset>
+      <button class="e2m-btn"
+              type="submit"
+              aria-label="Acceder a eat 2 meet"
+      > {{textBtn}}
+      </button>
+    </form>
+  </div>
+</section>

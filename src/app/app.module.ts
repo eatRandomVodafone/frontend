@@ -18,8 +18,8 @@ import { CardComponent } from './components/card/card.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
 import { SelectComponent } from './components/select/select.component';
+import { UserRegisterComponent } from './views/user-register/user-register.component';
 import { TestingComponentsComponent } from './views/testing-components/testing-components.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,7 @@ import { TestingComponentsComponent } from './views/testing-components/testing-c
     ModalComponent,
     ResetPassComponent,
     SelectComponent,
+    UserRegisterComponent,
     TestingComponentsComponent,
   ],
   imports: [
