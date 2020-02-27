@@ -18,6 +18,7 @@ import { CardComponent } from './components/card/card.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
 import { SelectComponent } from './components/select/select.component';
+import { TestingComponentsComponent } from './views/testing-components/testing-components.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SelectComponent } from './components/select/select.component';
     ModalComponent,
     ResetPassComponent,
     SelectComponent,
+    TestingComponentsComponent,
   ],
   imports: [
     BrowserModule,
