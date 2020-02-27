@@ -56,6 +56,7 @@ export class UserRegisterComponent implements OnInit {
     },
   ];
   public textBtn = 'Registrarme';
+  public historyText = 'Cuéntanos algo sobre ti';
 
   constructor(
     private fb: FormBuilder,
@@ -68,10 +69,10 @@ export class UserRegisterComponent implements OnInit {
 
     this.registerForm = this.fb.group({
       name: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      emailconfirm: ['', [Validators.required]],
-      department: ['', [Validators.required]],
-      roles: ['', [Validators.required]],
+      email: ['', [Validators.required,
+        Validators.pattern('^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$')]],
+      emailconfirm: ['', [Validators.required,
+        Validators.pattern('^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$')]],
     });
 
     // Set title page
