@@ -1,64 +1,62 @@
-<div class="vfes-align--center e2m-registro">
-  <div class="e2m-wrapper background vfes-ws10">
-    <div class="vfes-card">
-      <app-slide></app-slide>
-    </div>
-    <p class="title"><strong>Introduce los siguientes datos para registrate</strong></p>
-    <form [formGroup]="registroForm" (ngSubmit) = "onSubmit()">
-      <div class="vfes-form__box">
-        <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="nombre" id="nombre" name="nombre" placeholder="Nombre y apellidos" formControlName="nombre"/>
-        <span class="vfes-form__label" id="nombre">Nombre</span>
-        <!-- <p class="vfes-form__error-text">Introduce tu nombre y apellidos</p> -->
-        <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-            <title>Warning</title>
-            <use class="icon-v3" xlink:href='#icon3-warning'></use>
-        </svg>
-        <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-            <title>Tick</title>
-            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-        </svg>
-      </div>
-      <div class="vfes-form__box">
-        <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="email" id="email" name="email" placeholder="Email" formControlName="email"/>
-        <span class="vfes-form__label" id="email">Email</span>
-        <p class="vfes-form__error-text"
-        *ngIf="errorMail">Por favor introduzca un correo corporativo</p>
-        <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-            <title>Warning</title>
-            <use class="icon-v3" xlink:href='#icon3-warning'></use>
-        </svg>
-        <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-            <title>Tick</title>
-            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-        </svg>
-      </div>
-      <div class="vfes-form__box">
-        <input class="vfes-form__input vfes-form__input" type="password" aria-labelledby="password" id="password" name="password" placeholder="Password" formControlName="password"/>
-        <span class="vfes-form__label" id="password">Contraseña</span>
-        <!-- <p class="vfes-form__error-text">Introduce una contraseña</p> -->
-        <svg class="icon vfes-form__icon vfes-form__icon-warning" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-            <title>Warning</title>
-            <use class="icon-v3" xlink:href='#icon3-warning'></use>
-        </svg>
-        <svg class="icon vfes-form__icon vfes-form__icon-tick" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='32px'>
-            <title>Tick</title>
-            <use class="icon-v3" xlink:href='#icon3-tick-or-solved'></use>
-        </svg>
-      </div>
+<div class="e2m-wrapper">
+  <app-slide></app-slide>
+  <section class="e2m-alta">
+    <form [formGroup]="altaForm"
+          (ngSubmit)="onSubmit()">
+      <fieldset class="e2m-alta__eating">
+        <legend class="visually-hidden">
+          ¿Con quien quieres comer hoy?
+        </legend>
 
-      <app-select [tipo]='["Área"]' [value]='["Marketing", "Ventas", "Legal", "Finanzas", "Digital", "Recursos Humanos", "Sistemas"]'></app-select>
-      <app-select [tipo]='["Rol"]' [value]='["Producto", "Canal Presencial", "Televenta", "E-Commerce", "Operaciones", "Control Económico", "Internet of Things","Desarrollo Web", "Diseño UX/UI", "Analítica"]'></app-select>
+      </fieldset>
+      <!-- ONE TO ONE -->
+      <!-- <p>Quiero comer una persona de...</p>
+      <select class="custom-select"  formControlName="departament">
+          <option value="" disabled>Selecciona un departamento</option>
+          <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
+      </select> -->
+      <fieldset class="e2m-alta__time">
+        <p class="e2m-alta__legend-hour">
+          <strong>Mi horario preferido es...</strong>
+        </p>
+        <div class="e2m-alta__content">
+          <label (click)="checkActive('13h',$event)" class="e2m-alta__hour"
+                 [ngClass]="activeCheck == '13h'? 'active' : ''">
+            <input type="radio"
+                   formControlName="radiotime"
+                   value="13h"/>
+            De 13:00 a 14:00 h.
+          </label>
+          <label (click)="checkActive('14h', $event)" class="e2m-alta__hour"
+                 [ngClass]=" activeCheck == '14h'? 'active' : ''">
+            <input type="radio"
+                   formControlName="radiotime"
+                   value="14h"/>
+            De 14:00 a 15:00 h.
+          </label>
 
-        <input class="vfes-form__input vfes-form__input" type="text" aria-labelledby="bio" id="bio" name="bio" placeholder="Cuéntanos algo sobre ti" formControlName="bio"/>
-      <button type="submit"
-              name="cta"
-              title="CTA"
-              class="vfes-button"
-              [ngClass]="completeForm ? 'vfes-button--primary': ''"
-              data-analytics-element=""
-              data-analytics-category="cta">
-          Registrarme
-      </button>
+        </div>
+        <div class="vfes-ws10 e2m-alta__language">
+          <div class="e2m-alta__group">
+            <input class="vfes-form__switch" type="checkbox" id="switch6" name="wantEnglish" value="">
+            <label class="vfes-form__switch-label" for="switch6"></label>
+          </div>
+          <p class="e2m-alta__text">
+            <strong>Me gustaría hablar en inglés</strong>
+          </p>
+        </div>
+        <p class="e2m-alta__msj">Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
+      </fieldset>
+
+      <div class="e2m-alta__footer">
+        <button class="e2m-btn"
+                type="submit">Voy a tener suerte!
+        </button>
+      </div>
     </form>
-  </div>
+  </section>
 </div>
+
+
+
+

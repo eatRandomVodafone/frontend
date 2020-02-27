@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AltaComponent } from './alta.component';
+import { CarouselItemComponent } from './carousel-item.component';
 
-describe('AltaComponent', () => {
-  let component: AltaComponent;
-  let fixture: ComponentFixture<AltaComponent>;
+describe('CarouselItemComponent', () => {
+  let component: CarouselItemComponent;
+  let fixture: ComponentFixture<CarouselItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AltaComponent ]
+      declarations: [ CarouselItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AltaComponent);
+    fixture = TestBed.createComponent(CarouselItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

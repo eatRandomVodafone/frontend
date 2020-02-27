@@ -1,0 +1,9 @@
+$positions: ("top", "bottom", "left", "right");
+
+@mixin getBorder($width, $type, $color, $position:"") {
+  @if(index($positions, $position)) {
+    border-#{$position}: $width $type $color;
+  } @else {
+    border: $width $type $color;
+  }
+}

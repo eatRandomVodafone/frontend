@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation, Input } from '@angular/core';
+import {Component, OnInit, AfterViewInit, ViewEncapsulation, Input} from '@angular/core';
 
 @Component({
   selector: 'app-slide',
@@ -8,13 +8,40 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulat
 })
 export class SlideComponent implements OnInit, AfterViewInit {
   @Input() img: string;
+  public configSrc: object = {
+    'responsive':
+      {
+        '0':
+          {
+            'breakpoint': 0,
+            'elements': 1
+          },
+        '1':
+          {
+            'breakpoint': 769,
+            'elements': 2
+          },
+        '2': {
+          'breakpoint': 1025,
+          'elements': 3,
+          'arrows': true
+        }
+      },
+    'build': {
+      'arrows': false,
+      'bullets': true,
+      'clickable_bullets': true
+    }
+  };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+  }
 
   generateURL(imgName: string) {
     return `assets/img/${imgName}`;

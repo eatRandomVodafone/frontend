@@ -1,86 +1,69 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RegisterService } from 'src/app/services/register.service';
-import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { AltaService } from 'src/app/services/alta.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-register-poll',
   templateUrl: './register-poll.component.html',
-  styleUrls: ['./register-poll.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./register-poll.component.scss']
 })
 export class RegisterPollComponent implements OnInit {
 
-  errorMail = false;
-  registroForm: FormGroup;
-  completeForm = false;
-
+  meetTypeSelected: string;
+  altaForm: FormGroup;
+  departamentos: any[] = ['A', 'B', 'C'];
+  public activeCheck: string;
   private unsubscribe = new Subject();
 
   constructor(
     private fb: FormBuilder,
-    private registroSrv: RegisterService,
+    private altaSrv: AltaService,
     private aRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private route: Router,
+    private tokenSrv: TokenService
+
   ) {
-    this.registroForm = this.fb.group({
-      nombre: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      area: ['',],
-      rol: ['',],
-      bio: ['', [Validators.required]],
+    this.altaForm = this.fb.group({
+      meetype: ['GROUP', Validators.required],
+      departament: ['', ],
+      radiotime: ['', [Validators.required]]
     });
   }
 
-  ngOnInit() {
-    this.onValueChanges();
 
+  ngOnInit() {
     // Set title page
     this.aRoute.data
       .subscribe(data => this.titleService.setTitle(data.title));
-  }
 
+  }
+  checkActive(value, event){
+    this.activeCheck = value;
+    console.log(this.activeCheck);
+  }
   onSubmit() {
-    const email = this.registroForm.get('email').value;
-    if (this.registroForm.valid && this.validEmail(email)) {
-      const registroData = {
-        name: this.registroForm.get('nombre').value,
-        username: email,
-        password: this.registroForm.get('password').value,
-        area: this.registroForm.get('area').value,
-        rol: this.registroForm.get('rol').value,
-        bio: this.registroForm.get('bio').value,
-      }
-      this.registroSrv.doRegister(registroData)
+    if (this.altaForm.valid) {
+        const newPool = {
+          queue: this.altaForm.get('meetype').value,
+          action: 'UP',
+          horario: this.altaForm.get('radiotime').value
+        }
+        this.altaSrv.insertPool(newPool)
         .pipe(
           takeUntil(this.unsubscribe)
         )
-        .subscribe(resp => {
-          console.log('Registro successfull');
+        .subscribe(resp =>{
+
+          this.route.navigate(['/status']);
+          this.tokenSrv.setToken(resp['jwt']);
+          console.log('Alta pool successfull');
         });
-
-      this.errorMail = false;
-    } else {
-      this.errorMail = true;
     }
-  }
-
-  private onValueChanges() {
-    this.registroForm.valueChanges
-      .pipe(
-        takeUntil(this.unsubscribe)
-      )
-      .subscribe(() => {
-        this.completeForm = this.registroForm.valid ? true : false;
-      });
-  }
-
-  private validEmail(email) {//Validacion correos vodafone
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@vodafone.com|corp.vodafone.es$/;
-    return re.test(String(email).toLowerCase());
   }
 }

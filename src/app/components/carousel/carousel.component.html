@@ -1,0 +1,12 @@
+<div
+  #carousel
+  class="e2m-carousel"
+>
+  <div class="e2m-carousel__mask">
+    <ul class="e2m-carousel__list js-carousel-list">
+      <li class="e2m-carousel__list-element js-carousel-list-element" *ngFor="let item of itemsCarousel">
+        <ng-container *ngTemplateOutlet="item.template"></ng-container>
+      </li>
+    </ul>
+  </div>
+</div>

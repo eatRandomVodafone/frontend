@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterPollComponent } from './views/register-poll/register-poll.component';
-import { AltaComponent } from './views/alta/alta.component';
 import { StatusComponent } from './views/status/status.component';
 import { ConfirmComponent } from './views/confirm/confirm.component';
 import { ProfileComponent } from './views/profile/profile.component';
@@ -20,12 +19,16 @@ import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
 import { SelectComponent } from './components/select/select.component';
 import { UserRegisterComponent } from './views/user-register/user-register.component';
 import { TestingComponentsComponent } from './views/testing-components/testing-components.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterPollComponent,
-    AltaComponent,
+    RegisterPollComponent,
     StatusComponent,
     ConfirmComponent,
     ProfileComponent,
@@ -39,6 +42,8 @@ import { TestingComponentsComponent } from './views/testing-components/testing-c
     SelectComponent,
     UserRegisterComponent,
     TestingComponentsComponent,
+    CarouselComponent,
+    CarouselItemComponent,
   ],
   imports: [
     BrowserModule,
