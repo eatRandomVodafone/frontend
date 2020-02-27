@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           takeUntil(this.unsubscribe)
         )
         .subscribe(resp => {
-          // this.route.navigate(['/alta']);
+          // this.route.navigate(['/register-poll']);
           this.tokenSrv.setToken(resp['jwt']);
           this.userSrv.userStatus()
             .subscribe(res => {
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
               this.tokenSrv.setToken(res['jwt']);
               let status = decodejwt['status'];
               if (status === null) {
-                this.route.navigate(['/alta']);
+                this.route.navigate(['/register-poll']);
                 status = '';
 
               }

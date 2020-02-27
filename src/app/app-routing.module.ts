@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './views/login/login.component';
 import {RegisterPollComponent} from './views/register-poll/register-poll.component';
-import {AltaComponent} from './views/alta/alta.component';
 import {ProfileComponent} from './views/profile/profile.component';
 import {ConfirmComponent} from './views/confirm/confirm.component';
 import {StatusComponent} from './views/status/status.component';
@@ -17,16 +16,6 @@ const routes: Routes = [
     component: TestingComponentsComponent,
     data: {
       title: 'Eat 2 Meet | Testing de componentes'
-    }
-  },
-
-
-  {
-    path: 'alta',
-    component: AltaComponent,
-    canLoad: [TokenGuard],
-    data: {
-      title: 'Eat 2 Meet | Date de alta en el pool'
     }
   },
   {
@@ -46,7 +35,14 @@ const routes: Routes = [
     }
   },
 
-
+  {
+    path: 'register-poll',
+    component: RegisterPollComponent,
+    canLoad: [TokenGuard],
+    data: {
+      title: 'Eat 2 Meet | Date de alta en el pool'
+    }
+  },
   {
     path: 'status',
     component: StatusComponent,
