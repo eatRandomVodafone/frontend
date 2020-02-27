@@ -19,12 +19,12 @@ export class SlideComponent implements OnInit, AfterViewInit {
         '1':
           {
             'breakpoint': 769,
-            'elements': 2
+            'elements': 1
           },
         '2': {
           'breakpoint': 1025,
-          'elements': 3,
-          'arrows': true
+          'elements': 1,
+          'arrows': false
         }
       },
     'build': {

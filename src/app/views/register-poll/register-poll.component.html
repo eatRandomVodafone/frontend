@@ -1,61 +1,59 @@
-<div class="e2m-wrapper">
-  <app-slide></app-slide>
-  <section class="e2m-alta">
-    <form [formGroup]="altaForm"
-          (ngSubmit)="onSubmit()">
-      <fieldset class="e2m-alta__eating">
-        <legend class="visually-hidden">
-          ¿Con quien quieres comer hoy?
-        </legend>
+<section class="e2m-alta">
+  <div class="e2m-alta__header">
+    <div class="e2m-wrapper">
+      <app-slide></app-slide>
+    </div>
+  </div>
 
-      </fieldset>
-      <!-- ONE TO ONE -->
-      <!-- <p>Quiero comer una persona de...</p>
-      <select class="custom-select"  formControlName="departament">
-          <option value="" disabled>Selecciona un departamento</option>
-          <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
-      </select> -->
-      <fieldset class="e2m-alta__time">
-        <p class="e2m-alta__legend-hour">
-          <strong>Mi horario preferido es...</strong>
-        </p>
-        <div class="e2m-alta__content">
-          <label (click)="checkActive('13h',$event)" class="e2m-alta__hour"
-                 [ngClass]="activeCheck == '13h'? 'active' : ''">
-            <input type="radio"
-                   formControlName="radiotime"
-                   value="13h"/>
-            De 13:00 a 14:00 h.
-          </label>
-          <label (click)="checkActive('14h', $event)" class="e2m-alta__hour"
-                 [ngClass]=" activeCheck == '14h'? 'active' : ''">
-            <input type="radio"
-                   formControlName="radiotime"
-                   value="14h"/>
-            De 14:00 a 15:00 h.
-          </label>
+  <form [formGroup]="altaForm"
+        (ngSubmit)="onSubmit()"
+        class="e2m-wrapper">
+    <fieldset class="e2m-alta__eating">
+      <legend class="e2m-alta__legend"> RESERVA TU MESA </legend>
+    <!-- ONE TO ONE -->
+    <!-- <p>Quiero comer una persona de...</p>
+    <select class="custom-select"  formControlName="departament">
+        <option value="" disabled>Selecciona un departamento</option>
+        <option *ngFor="let dep of departamentos" [value]="">{{dep}}</option>
+    </select> -->
+      <p class="e2m-alta__legend-hour">
+        <strong>Mi horario preferido es...</strong>
+      </p>
+      <div class="e2m-alta__content">
+        <label (click)="checkActive('13h',$event)" class="e2m-alta__hour"
+               [ngClass]="activeCheck == '13h'? 'active' : ''">
+          <input type="radio"
+                 formControlName="radiotime"
+                 value="13h"/>
+          De 13:00 a 14:00 h.
+        </label>
+        <label (click)="checkActive('14h', $event)" class="e2m-alta__hour"
+               [ngClass]=" activeCheck == '14h'? 'active' : ''">
+          <input type="radio"
+                 formControlName="radiotime"
+                 value="14h"/>
+          De 14:00 a 15:00 h.
+        </label>
 
-        </div>
-        <div class="vfes-ws10 e2m-alta__language">
-          <div class="e2m-alta__group">
-            <input class="vfes-form__switch" type="checkbox" id="switch6" name="wantEnglish" value="">
-            <label class="vfes-form__switch-label" for="switch6"></label>
-          </div>
-          <p class="e2m-alta__text">
-            <strong>Me gustaría hablar en inglés</strong>
-          </p>
-        </div>
-        <p class="e2m-alta__msj">Recuerda que puedes cancelar tu reserva antes de las 12:00</p>
-      </fieldset>
-
-      <div class="e2m-alta__footer">
-        <button class="e2m-btn"
-                type="submit">Voy a tener suerte!
-        </button>
       </div>
-    </form>
-  </section>
-</div>
+      <div class="vfes-ws10 e2m-alta__language">
+        <div class="e2m-alta__group">
+          <input class="vfes-form__switch" type="checkbox" id="switch6" name="wantEnglish" value="">
+          <label class="vfes-form__switch-label" for="switch6"></label>
+        </div>
+        <p class="e2m-alta__text">
+          <strong>Me gustaría hablar en inglés</strong>
+        </p>
+      </div>
+    </fieldset>
+
+    <div class="e2m-alta__footer">
+      <button class="e2m-btn"
+              type="submit">Voy a tener suerte!
+      </button>
+    </div>
+  </form>
+</section>
 
 
 
